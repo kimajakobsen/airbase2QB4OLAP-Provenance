@@ -13,7 +13,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 import dk.aau.cs.qweb.airbase.database.Database;
-import dk.aau.cs.qweb.airbase.parser.InputParser;
+import dk.aau.cs.qweb.airbase.input.FileSignature;
 import dk.aau.cs.qweb.airbase.types.CubeStructure;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
@@ -61,10 +61,8 @@ public class App {
 		
 		Database dbConnection = new Database();
 		
-		
 		for (String file : files) {
-			InputParser inputParser = new InputParser(file,structure);
-			
+			FileSignature inputParser = new FileSignature(file,structure);
 			
 			for (Tuple tuple : inputParser.getTuples()) {
 				dbConnection.writeToDisk(tuple);

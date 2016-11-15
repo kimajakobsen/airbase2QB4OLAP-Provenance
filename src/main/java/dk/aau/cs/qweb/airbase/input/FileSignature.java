@@ -1,13 +1,14 @@
-package dk.aau.cs.qweb.airbase.parser;
+package dk.aau.cs.qweb.airbase.input;
 
-import java.io.File;
 import java.util.List;
 
+import dk.aau.cs.qweb.airbase.types.CubeStructure;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
-public class InputParser {
+public class FileSignature {
+	
 
-	public InputParser(File file) {
+	public FileSignature(String file, CubeStructure structure) {
 		FileParser data = FileParserBuilder.build(file);
 	}
 
