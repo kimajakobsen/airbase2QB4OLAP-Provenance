@@ -2,9 +2,9 @@ package dk.aau.cs.qweb.airbase.input;
 
 import java.io.File;
 
-public class FileParserBuilder {
+public class FileSignatureBuilder {
 
-	public static FileParser build(String file) {
+	public static FileStructure build(String file) {
 		// TODO Auto-generated method stub
 		return null;
 	}

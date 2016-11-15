@@ -1,10 +1,8 @@
 package dk.aau.cs.qweb.airbase.types;
 
-import java.io.File;
-
 public class CubeStructure {
 
-	public CubeStructure(File schema) {
+	public CubeStructure(String string) {
 		// TODO Auto-generated constructor stub
 	}
 
