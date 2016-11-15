@@ -2,6 +2,7 @@ package dk.aau.cs.qweb.airbase;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,9 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 import dk.aau.cs.qweb.airbase.database.Database;
-import dk.aau.cs.qweb.airbase.input.FileAnalyser;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
 import dk.aau.cs.qweb.airbase.types.CubeStructure;
+import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
 public class App {
@@ -64,11 +65,16 @@ public class App {
 		
 		for (String file : files) {
 			
-			FileStructure fileStructure = FileAnalyser.build(file);
-			
-			
-			for (Tuple tuple : fileStructure) {
-				dbConnection.writeToDisk(tuple);
+			FileStructure fileStructure;
+			try {
+				fileStructure = new FileStructure(file);
+				while (fileStructure.hasNext()) {
+					Tuple tuple = (Tuple) fileStructure.next();
+					TripleContainer triples = new TripleContainer(tuple);
+					
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}
