@@ -1,8 +1,6 @@
 package dk.aau.cs.qweb.airbase.input;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -22,10 +20,8 @@ public class FileStructure implements Iterator<Tuple> {
 		this.file = new File(file);
 		it = FileUtils.lineIterator(this.file, "UTF-8");
 		
-		BufferedReader input = new BufferedReader(new FileReader(file));
-		String line = input.readLine();
+		String line = it.next();
 		this.header = Arrays.asList(line.split("\\s*\t\\s*"));
-		input.close();
 	}
 
 	@Override
