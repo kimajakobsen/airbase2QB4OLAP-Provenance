@@ -3,6 +3,7 @@ package dk.aau.cs.qweb.airbase.types;
 import java.util.ArrayList;
 import java.util.List;
 
+import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
 
 public class TripleContainer {
@@ -16,19 +17,22 @@ public class TripleContainer {
 		List<Quad> provenanceTriples = new ArrayList<Quad>();
 		
 		int index = 0;
-		
+		System.out.println(tuple);
 		for (String predicateString : this.tuple.getHeader()) {
 			
-			if (CubeStructure.isPredicatePartOfCube(predicateString)) {
-				String predicate = CubeStructure.getPredicate(predicateString);
-				String subject = createSubject(predicate);
+			if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
+				String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
 				String object = tuple.getData().get(index);
-				
-				Quad quad =  new Quad(subject,predicate,object);
-				String graphLabel = getGraphLabel(quad);
-				quad.setGraphLabel(graphLabel);
-				
-				informationTriples.add(quad);
+				List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
+				for (String level : levels) {
+					String subject = createSubject(level);
+					Quad quad =  new Quad(subject,predicate,object);
+					System.out.println(quad);
+					String graphLabel = getGraphLabel(quad);
+					quad.setGraphLabel(graphLabel);
+					
+					informationTriples.add(quad);
+				}
 			}
 			index++;
 		}
@@ -39,11 +43,11 @@ public class TripleContainer {
 		return null;
 	}
 
-	private String createSubject(String predicate) {
-		List<Integer> indexes = CubeStructure.getPrimaryKeyIndexes(tuple.getHeader(),predicate);
+	private String createSubject(String level) {
+		List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
 		String subject = Config.getNamespace();
-		for (Integer index : indexes) {
-			subject += tuple.getData().get(index)+"_";
+		for (String index : attributes) {
+			subject += tuple.getValue(index)+"_";
 		}
 		subject = replacelastUnderscoreWithSlash(subject);
 		return subject;
@@ -56,4 +60,5 @@ public class TripleContainer {
 	    }
 	    return str;
 	}
+
 }
