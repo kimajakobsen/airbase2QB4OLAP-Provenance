@@ -54,4 +54,9 @@ public class Quad {
 		return graphLabel;
 	}
 	
+	@Override
+	public String toString() {
+		return "< "+ subject +" "+predicate + " " + object + " " + graphLabel + ">";
+	}
+	
 }
