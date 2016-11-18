@@ -45,7 +45,7 @@ public class App {
 					String fileLine;
 					while ((fileLine = br.readLine()) != null) {
 						if (fileLine.startsWith("cube-structure")) {
-							structure = new CubeStructure(fileLine.split(" ")[1]);
+							Config.setCubeStructurePath(fileLine.split(" ")[1]);
 						}
 						else if (fileLine.startsWith("input-file")) {
 							files.add(fileLine.split(" ")[1]);
@@ -70,7 +70,9 @@ public class App {
 				fileStructure = new FileStructure(file);
 				while (fileStructure.hasNext()) {
 					Tuple tuple = (Tuple) fileStructure.next();
+					System.out.println(tuple);
 					TripleContainer triples = new TripleContainer(tuple);
+					
 					
 				}
 			} catch (IOException e) {
