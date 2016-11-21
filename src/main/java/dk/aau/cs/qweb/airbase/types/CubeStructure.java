@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.Attribute;
@@ -16,7 +20,7 @@ import dk.aau.cs.qweb.airbase.Qb4OLAP.Level;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.Measure;
 
 public class CubeStructure {
-	private List<String> prefix = new ArrayList<String>();
+	private Map<String,String> prefix = new HashMap<String,String>();
 	private String dataStructureDefinition;
 	private List<Measure> meassures = new ArrayList<Measure>();
 	private List<Dimension> dimensions = new ArrayList<Dimension>();
@@ -44,7 +48,8 @@ public class CubeStructure {
 		
 	}
 	private void parseTriplesStatement(String line) {
-		line = line.trim(); //TODO ensure that spaces between elements are not trimmed
+		line = line.trim(); // ensure that spaces between elements are not trimmed
+		line = line.substring(0, line.length()-1);
 		if (line.startsWith("@prefix")) {
 			addPrefix(line);
 		} else if (line.isEmpty()) {
@@ -55,7 +60,7 @@ public class CubeStructure {
 			parseLineWithSquareBrackets(line);
 		} else if (line.startsWith("_:")) {
 			parseLineWithBlankNode(line);
-		} else if (prefix.contains(line.split(":")[0])) {
+		} else if (prefix.containsKey(line.split(":")[0])) {
 			parseLine(line);
 		} else {
 			throw new IllegalStateException("the Cube Structure file contains an line that cannot be passed: "+ line);
@@ -64,45 +69,70 @@ public class CubeStructure {
 	
 	private void parseLine(String line) {
 		String[] colonSplit = line.split(";");
-		colonSplit = transformPrefixIntoFullURL(colonSplit);
+		
 		String subject = "";
 		String predicate = "";
 		String object = "";
 		String type = "";
 		
 		for (String colonSplitLine : colonSplit) {
-			
 			for (String commaSplitLine : colonSplitLine.split(",")) {
-				String[] elements = commaSplitLine.split(" ");
-
-				if (elements.length == 3) {
-					subject = elements[0];
-					predicate = elements[1];
-					object = elements[2];
-				} else if (elements.length == 2) {
-					predicate = elements[1];
-					object = elements[2];
-				} else if (elements.length == 1) {
-					object = elements[2];
+				List<String> elements = new ArrayList<String>();
+				Pattern regex = Pattern.compile("[^\\s\"']+|\"[^\"]*\"|'[^']*'");
+				Matcher regexMatcher = regex.matcher(commaSplitLine);
+				while (regexMatcher.find()) {
+				    elements.add(transformPrefixIntoFullURL(regexMatcher.group()));
+				} 
+				
+				if (elements.size() == 3) {
+					subject = elements.get(0);
+					predicate = elements.get(1);
+					object = elements.get(2);
+				} else if (elements.size() == 2) {
+					predicate = elements.get(0);
+					object = elements.get(1);
+				} else if (elements.size() == 1) {
+					object = elements.get(0);
 				} else {
-					throw new IllegalArgumentException("unexpected number of elements in triple: "+ elements.toString());
+					String errorString = "";
+					for (String string : elements) {
+						errorString += string + " ";
+					}
+					throw new IllegalArgumentException("unexpected number of elements in triple: "+ errorString);
 				}
 					
-				if (predicate.equals("a")) {
-					type = elements[2];
+				if (predicate.equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type") || predicate.equals("a")) {
+					type = elements.get(2);
 				}
 				addTripleToStructure(subject,predicate,object,type);
 			}
 		}
 	}
 
-	private String[] transformPrefixIntoFullURL(String[] colonSplit) {
-		// TODO Auto-generated method stub
-		return null;
+	public String transformPrefixIntoFullURL(String colonSplit) {
+		String result = "";
+		colonSplit = colonSplit.trim();
+		
+		if (colonSplit.contains("_:")) {
+			result = colonSplit + " ";
+		} else if (colonSplit.contains(":")) {
+			String[] element = colonSplit.split(":");
+			result += getPrefix(element[0]) + element[1] + " ";
+			
+		} else {
+			result = colonSplit + " ";
+		}
+		result = result.substring(0, result.length()-1);
+		return result;
 	}
+	
+	public String getPrefix(String string) {
+		return prefix.get(string);
+	}
+	
 	private void addTripleToStructure(String subject, String predicate, String object, String type) {
 		if (type.equals("http://purl.org/linked-data/cube#DataStructureDefinition")) {
-			if (predicate.equals("a")) {
+			if (predicate.equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type") || predicate.equals("a")) {
 				dataStructureDefinition = subject;
 			}
 		} else if (type.equals("http://purl.org/linked-data/cube#DataSet")) {
@@ -162,7 +192,7 @@ public class CubeStructure {
 		} else if (type.equals("http://purl.org/qb4olap/cubes#HierarchyStep")) {
 			boolean exists = false;
 			for (HierarchyStep hierarchyStep : hierarchySteps) {
-				if (hierarchyStep.equals(subject)) {
+				if (hierarchyStep.getSubject().equals(subject)) {
 					if (predicate.equals("http://purl.org/qb4olap/cubes#childLevel")) {
 						hierarchyStep.setChildLevel(object);
 					} else if (predicate.equals("http://purl.org/qb4olap/cubes#inHierarchy")) {
@@ -204,8 +234,8 @@ public class CubeStructure {
 				}
 			}
 			if (!exists) {
-				HierarchyStep hierarchyStep = new HierarchyStep(subject);
-				hierarchySteps.add(hierarchyStep);
+				Level hierarchyStep = new Level(subject);
+				levels.add(hierarchyStep);
 			}
 		} else if (type.equals("http://purl.org/qb4olap/cubes#LevelAttribute")) {
 			boolean exists = false;
@@ -236,8 +266,10 @@ public class CubeStructure {
 		
 	}
 	private void addPrefix(String line) {
-		prefix.add(line);
+		String[] split = line.split("\\ +");
+		prefix.put(split[1].replaceAll(":", ""), split[2].substring(1, split[2].length()-1));
 	}
+	
 	private boolean endOfStatement(String line) {
 		return line.matches(".+\\.\\s*") ? true : false;
 	}
@@ -249,18 +281,34 @@ public class CubeStructure {
 		return instance;
 	}
 
-	public List<Integer> getPrimaryKeyIndexes(List<String> list, String predicate) {
-		
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public String getTitle() {
 		return title;
 	}
 	
-	
 	public String getDataStructureDefinition() {
 		return dataStructureDefinition;
+	}
+	public List<Level> getLevels() {
+		return levels;
+	}
+	
+	public List<HierarchyStep> getHierarchyStepByParentLevel(String level) {
+		List<HierarchyStep> hs = new ArrayList<HierarchyStep>();
+		for (HierarchyStep step : hierarchySteps) {
+			System.out.println(step.getParentLevel());
+			if (step.getParentLevel().equals(level)) {
+				hs.add(step);
+			}
+		}
+		return hs;
+	}
+	
+	public HierarchyStep getHierarchyStepByChildLevel(String level) {
+		for (HierarchyStep step : hierarchySteps) {
+			if (step.getChildLevel().equals(level)) {
+				return step;
+			}
+		}
+		throw new IllegalArgumentException("no hierarchy step found for level: "+level);
 	}
 }
