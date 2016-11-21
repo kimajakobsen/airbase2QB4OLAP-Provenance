@@ -2,33 +2,71 @@ package dk.aau.cs.qweb.airbase.Qb4OLAP;
 
 public class HierarchyStep {
 
+	private String subject;
+	private String rollup;
+	private String cardinality;
+	private String parentLevel;
+	private String hierarchy;
+	private String childLevel;
+
 	public HierarchyStep(String subject) {
-		// TODO Auto-generated constructor stub
+		this.subject = subject;
 	}
 
-	public void setChildLevel(String object) {
-		// TODO Auto-generated method stub
-		
+	public void setChildLevel(String childLevel) {
+		this.childLevel = childLevel;
 	}
 
-	public void setHierarchy(String object) {
-		// TODO Auto-generated method stub
-		
+	public void setHierarchy(String hierarchy) {
+		this.hierarchy = hierarchy;
 	}
 
-	public void setParentLevel(String object) {
-		// TODO Auto-generated method stub
-		
+	public void setParentLevel(String parentLevel) {
+		this.parentLevel = parentLevel;
 	}
 
-	public void setCardinality(String object) {
-		// TODO Auto-generated method stub
-		
+	public void setCardinality(String cordinality) {
+		this.cardinality = cordinality;
 	}
 
-	public void setRollup(String object) {
-		// TODO Auto-generated method stub
-		
+	public void setRollup(String rollup) {
+		this.rollup = rollup;
 	}
 
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getCordinality() {
+		return cardinality;
+	}
+
+	public void setCordinality(String cordinality) {
+		this.cardinality = cordinality;
+	}
+
+	public String getRollup() {
+		return rollup;
+	}
+
+	public String getParentLevel() {
+		return parentLevel;
+	}
+
+	public String getHierarchy() {
+		return hierarchy;
+	}
+
+	public String getChildLevel() {
+		return childLevel;
+	}
+
+	@Override 
+	public String toString() {
+		return subject + " child: " + childLevel + " parent: " + parentLevel + " hierarachy: " + hierarchy + " rollup: " + rollup + " cardinality: " + cardinality; 
+	}
 }
