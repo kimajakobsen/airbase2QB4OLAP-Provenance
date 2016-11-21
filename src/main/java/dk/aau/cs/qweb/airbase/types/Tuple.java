@@ -42,8 +42,6 @@ public class Tuple {
 			string += data.get(index)+", ";
 			index++;
 		}
-		
 		return string;
 	}
-
 }
