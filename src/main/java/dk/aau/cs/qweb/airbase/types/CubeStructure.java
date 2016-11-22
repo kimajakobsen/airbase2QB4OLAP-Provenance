@@ -44,9 +44,8 @@ public class CubeStructure {
 				}
 		    }
 		}
-		
-		
 	}
+	
 	private void parseTriplesStatement(String line) {
 		line = line.trim(); // ensure that spaces between elements are not trimmed
 		line = line.substring(0, line.length()-1);
@@ -249,6 +248,7 @@ public class CubeStructure {
 					exists = true;
 				}
 			}
+			
 			if (!exists) {
 				Attribute attribute = new Attribute(subject);
 				attributes.add(attribute);
@@ -285,7 +285,6 @@ public class CubeStructure {
 				string = string.trim();
 				String[] element = string.split(" ");
 				result += blankNode +" "+ element[0]+ " "+ element[1] + " . ";
-				
 			}
 			index++;
 		} 
