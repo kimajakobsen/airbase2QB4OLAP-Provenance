@@ -262,9 +262,45 @@ public class CubeStructure {
 	}
 	
 	private void parseLineWithSquareBrackets(String line) {
-		// TODO Auto-generated method stub
+		String subject = line.split(" ")[0];
+		String result = "";
+		for (String split : line.split(";")) {
+			if (!split.contains("[") && !split.contains("]")) {
+				result += split + " ; ";
+			}
+		}
 		
+		result = replaceLastSimicolonWithDot(result);
+		
+		Pattern regex2 = Pattern.compile("(qb:component.*?\\[.*?\\].*?;)");
+		Matcher regexMatcher2 = regex2.matcher(line);
+		int index = 1;
+		while (regexMatcher2.find()) {
+			String blankNode = Config.getNamespace()+"blankNode/"+index;
+			String match = regexMatcher2.group();
+			String[] stringWithBlankNode = match.split("\\[");
+			result += " " + subject +" "+ stringWithBlankNode[0] + blankNode + " . ";
+			
+			for (String string : stringWithBlankNode[1].split(";")) {
+				string = string.trim();
+				String[] element = string.split(" ");
+				result += blankNode +" "+ element[0]+ " "+ element[1] + " . ";
+				
+			}
+			index++;
+		} 
+		
+		for (String tripleStatement : result.split(".")) {
+			parseLine(tripleStatement);
+		}
 	}
+	
+	private String replaceLastSimicolonWithDot(String result) {
+		result = result.trim();
+		result = result.substring(0, result.length()-1);
+		return result +".";
+	}
+	
 	private void addPrefix(String line) {
 		String[] split = line.split("\\ +");
 		prefix.put(split[1].replaceAll(":", ""), split[2].substring(1, split[2].length()-1));
