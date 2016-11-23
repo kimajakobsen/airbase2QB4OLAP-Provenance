@@ -56,7 +56,6 @@ public class Quad {
 	
 	@Override
 	public String toString() {
-		return "< "+ subject +" "+predicate + " " + object + " " + graphLabel + ">";
+		return subject +" "+predicate + " " + object + " " + graphLabel;
 	}
-	
 }
