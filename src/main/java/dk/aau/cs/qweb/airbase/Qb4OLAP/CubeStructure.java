@@ -1,4 +1,4 @@
-package dk.aau.cs.qweb.airbase.types;
+package dk.aau.cs.qweb.airbase.Qb4OLAP;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,12 +12,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import dk.aau.cs.qweb.airbase.Config;
-import dk.aau.cs.qweb.airbase.Qb4OLAP.Attribute;
-import dk.aau.cs.qweb.airbase.Qb4OLAP.Dimension;
-import dk.aau.cs.qweb.airbase.Qb4OLAP.Hierarchy;
-import dk.aau.cs.qweb.airbase.Qb4OLAP.HierarchyStep;
-import dk.aau.cs.qweb.airbase.Qb4OLAP.Level;
-import dk.aau.cs.qweb.airbase.Qb4OLAP.Measure;
 
 public class CubeStructure {
 	private Map<String,String> prefix = new HashMap<String,String>();
@@ -330,7 +324,6 @@ public class CubeStructure {
 	public List<HierarchyStep> getHierarchyStepByParentLevel(String level) {
 		List<HierarchyStep> hs = new ArrayList<HierarchyStep>();
 		for (HierarchyStep step : hierarchySteps) {
-			System.out.println(step.getParentLevel());
 			if (step.getParentLevel().equals(level)) {
 				hs.add(step);
 			}
