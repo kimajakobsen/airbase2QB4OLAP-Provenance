@@ -15,7 +15,6 @@ import org.apache.commons.cli.ParseException;
 
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
-import dk.aau.cs.qweb.airbase.types.CubeStructure;
 import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
@@ -24,7 +23,6 @@ public class App {
 	public static void main(String[] args) {
 		
 		CommandLineParser parser = new DefaultParser();
-		CubeStructure structure = null;
 		List<String> files = new ArrayList<String>();
 		// create the Options
 		Options options = new Options();
@@ -64,15 +62,16 @@ public class App {
 		Database dbConnection = new Database();
 		
 		for (String file : files) {
-			
+			System.out.println(file);
+			Config.setCurrentInputFilePath(file);
 			FileStructure fileStructure;
 			try {
 				fileStructure = new FileStructure(file);
 				while (fileStructure.hasNext()) {
 					Tuple tuple = (Tuple) fileStructure.next();
-					System.out.println(tuple);
 					TripleContainer triples = new TripleContainer(tuple);
 					
+					dbConnection.writeToDisk(triples);
 					
 				}
 			} catch (IOException e) {
