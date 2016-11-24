@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import dk.aau.cs.qweb.airbase.callback.CallBack;
 import dk.aau.cs.qweb.airbase.callback.YesNo2TrueFalse;
 import dk.aau.cs.qweb.airbase.types.ColumnMetadata;
 
@@ -120,5 +121,24 @@ public class Airbase2QB4OLAP {
 			}
 	    }
 		return keys;
+	}
+	
+	public static String getColumnName(String predicate){
+		for (Entry<String, ColumnMetadata> entry : columns.entrySet()) {
+			if (entry.getValue().getName().equals(predicate)) {
+				return entry.getKey();
+			}
+		}
+		return "";
+	}
+	
+	public static CallBack getCallbackFunction(String predicate) {
+		for (Entry<String, ColumnMetadata> entry : columns.entrySet()) {
+			if (entry.getValue().getName().equals(predicate)) {
+				return entry.getValue().getCallBackFunction();
+			}
+		}
+		return null;
+		
 	}
 }
