@@ -22,8 +22,7 @@ public class Quad {
 	}
 
 	public void setGraphLabel(String graphLabel2) {
-		// TODO Auto-generated method stub
-		
+		graphLabel = graphLabel2;
 	}
 	
 	public String getSubject() {
