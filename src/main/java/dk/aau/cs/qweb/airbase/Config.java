@@ -4,7 +4,8 @@ public class Config {
 
 	private static String cubeStructurePath = "src/test/resources/Ontology/Airbase.ttl";
 	private static String namespace = "http://qweb.cs.aau.dk/airbase/";
-	private static String metadataGraphLabel = "http://qweb.cs.aau.dk/metadata";
+	private static String metadataGraphLabel = namespace+"metadata/";
+	private static String provenanceGraphLabel = namespace+"provenance/";
 	private static String file;
 
 	public static String getNamespace() {
@@ -29,5 +30,15 @@ public class Config {
 	
 	public static String getCurrentInputFilePath() {
 		return file;
+	}
+
+	public static String getProvenanceGraphLabel() {
+		return provenanceGraphLabel;
+	}
+
+	public static String getXMLfilePath() {
+		return null;
+		// TODO Auto-generated method stub
+		
 	}
 }
