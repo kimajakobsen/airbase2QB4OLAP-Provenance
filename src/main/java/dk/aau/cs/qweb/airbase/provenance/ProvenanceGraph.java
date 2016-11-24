@@ -1,24 +1,27 @@
 package dk.aau.cs.qweb.airbase.provenance;
 
-import java.time.LocalDate;
-import java.util.Collection;
+import java.util.Set;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
 
 public class ProvenanceGraph {
-
-	public ProvenanceGraph(Quad quad, String level, String file, LocalDate now) {
-		// TODO Auto-generated constructor stub
+	private ProvenanceFlow provenanceFlow = null;
+	private String provenanceIdentifier = "";
+	
+	public ProvenanceGraph(ProvenanceSignature signature) {
+		 provenanceFlow = new LongProvenanceWithSharedAncestors(signature);
+		 provenanceIdentifier = provenanceFlow.getProvenanceIdentifier();
+		 
+		 
+		 //Set provenance identifier;
 	}
 
-	public Collection<? extends Quad> getQuads() {
-		// TODO Auto-generated method stub
-		return null;
+	public Set<Quad> getQuads() {
+		return provenanceFlow.getQuads();
 	}
 
 	public String getProvenanceIdentifier() {
-		// TODO Auto-generated method stub
-		return null;
+		return provenanceIdentifier;
 	}
 
 }

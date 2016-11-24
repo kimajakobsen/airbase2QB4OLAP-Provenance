@@ -3,6 +3,7 @@ package dk.aau.cs.qweb.airbase.provenance;
 import java.time.LocalDate;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
+import dk.aau.cs.qweb.airbase.types.Tuple;
 
 public class ProvenanceSignature {
 
@@ -10,8 +11,10 @@ public class ProvenanceSignature {
 	private String level;
 	private String file;
 	private LocalDate now;
+	private Tuple tuple;
 
-	public ProvenanceSignature(Quad quad, String level, String file, LocalDate now) {
+	public ProvenanceSignature(Quad quad, String level, String file, LocalDate now, Tuple tuple) {
+		this.tuple = tuple;
 		this.setQuad(quad);
 		this.setLevel(level);
 		this.setFile(file);
@@ -34,7 +37,7 @@ public class ProvenanceSignature {
 		this.level = level;
 	}
 
-	public String getFile() {
+	public String getFilePath() {
 		return file;
 	}
 
@@ -48,6 +51,10 @@ public class ProvenanceSignature {
 
 	public void setNow(LocalDate now) {
 		this.now = now;
+	}
+	
+	public Tuple getTuple() {
+		return tuple;
 	}
 
 }

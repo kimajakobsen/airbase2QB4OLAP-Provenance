@@ -10,17 +10,19 @@ import org.apache.jena.vocabulary.RDFS;
 
 import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
+import dk.aau.cs.qweb.airbase.Qb4OLAP.CubeStructure;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.HierarchyStep;
+import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
 
 public class TripleContainer {
 
 	private Tuple tuple;
+	private Set<Quad> informationTriples = new HashSet<Quad>();
+	private Set<Quad> metadataTriples = new HashSet<Quad>();
 
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
-		Set<Quad> informationTriples = new HashSet<Quad>();
-		Set<Quad> metadataTriples = new HashSet<Quad>();
-		Set<Quad> provenanceTriples = new HashSet<Quad>();
+		
 		
 		int index = 0;
 		for (String predicateString : this.tuple.getHeader()) {
@@ -32,11 +34,14 @@ public class TripleContainer {
 				for (String level : levels) {
 					String subject = createSubject(level);
 					Quad quad =  new Quad(subject,predicate,object);
-					System.out.println(quad);
-					String graphLabel = getGraphLabel(quad);
+					String graphLabel = getGraphLabel(quad,level,tuple);
 					quad.setGraphLabel(graphLabel);
 					
 					metadataTriples.addAll(createMetadata(subject, level));
+					System.out.println("");
+					System.out.println(level);
+					System.out.println(predicateString);
+					System.out.println(quad);
 					informationTriples.add(quad);
 				}
 			}
@@ -44,9 +49,11 @@ public class TripleContainer {
 		}
 	}
 
-	private String getGraphLabel(Quad quad) {
-		// TODO Auto-generated method stub
-		return null;
+	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
+		String file = Config.getCurrentInputFilePath();
+		ProvenanceIndex index = ProvenanceIndex.getInstance();
+		String provenanceIdentifier = index.getProvenanceIdentifier(quad,level,file,tuple);
+		return provenanceIdentifier;
 	}
 
 	private String createSubject(String level) {
@@ -61,7 +68,8 @@ public class TripleContainer {
 	}
 
 	private String removePrefix(String level) {
-		return level.split(":")[1];
+		String[] split =level.split("/");
+		return split[split.length-1];
 	}
 
 	private String replacelastUnderscoreWithSlash(String str) {
@@ -77,7 +85,7 @@ public class TripleContainer {
 		level = cs.transformPrefixIntoFullURL(level);
 		Set<Quad> quads = new HashSet<Quad>();
 		
-		if (level.equals("schema:value")) { //Handel Observations
+		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
 			Quad quad1 = new Quad(subject, RDFS.Datatype.toString() , "http://purl.org/linked-data/cube#Observation",Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			Quad quad2 = new Quad(subject, RDFS.Datatype.toString() , "http://purl.org/linked-data/cube#dataSet",Config.getMetadataGraphLabel());
@@ -86,12 +94,25 @@ public class TripleContainer {
 			Quad quad1 = new Quad(subject, "http://purl.org/qb4olap/cubes#memberOf" , level,Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			for (HierarchyStep hs : cs.getHierarchyStepByParentLevel(level)) {
-				Quad quad2 = new Quad(subject, hs.getRollup() , "http://purl.org/linked-data/cube#dataSet",Config.getMetadataGraphLabel());
+				String childLevel = createSubject(hs.getChildLevel());
+				Quad quad2 = new Quad(childLevel, hs.getRollup() , subject ,Config.getMetadataGraphLabel());
 				quads.add(quad2);
 			}
 		}
-		
 		return quads;
 	}
 
+	
+	public Set<Quad> getInformationTriples() {
+		return informationTriples;
+	}
+	
+	public Set<Quad> getMetadataTriples() {
+		return metadataTriples;
+	}
+	
+	public Set<Quad> getProvenanceTriples() {
+		ProvenanceIndex index = ProvenanceIndex.getInstance();
+		return index.getProvenanceTriples();
+	}
 }

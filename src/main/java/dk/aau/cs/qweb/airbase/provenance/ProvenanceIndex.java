@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
+import dk.aau.cs.qweb.airbase.types.Tuple;
 
 public class ProvenanceIndex {
 
@@ -23,21 +24,20 @@ public class ProvenanceIndex {
 		return instance;
 	}
 
-	public String getProvenanceIdentifier(Quad quad, String level, String file) {
-		ProvenanceSignature signature = new ProvenanceSignature(quad,level,file,LocalDate.now());
+	public String getProvenanceIdentifier(Quad quad, String level, String file, Tuple tuple) {
+		ProvenanceSignature signature = new ProvenanceSignature(quad,level,file,LocalDate.now(),tuple);
 		if (provenanceMap.containsKey(signature)) {
 			return provenanceMap.get(signature);
 		} else {
-			String provenanceIdentifier = createProvenanceGraph(quad,level,file,LocalDate.now());
+			String provenanceIdentifier = createProvenanceGraph(signature);
 			provenanceMap.put(signature, provenanceIdentifier);
 			return provenanceIdentifier;
 		}
 	}
 
-	private String createProvenanceGraph(Quad quad, String level, String file, LocalDate now) {
-		ProvenanceGraph provenanceGraph = new ProvenanceGraph(quad,level,file,now);
+	private String createProvenanceGraph(ProvenanceSignature signature) {
+		ProvenanceGraph provenanceGraph = new ProvenanceGraph(signature);
 		provenanceGraphMap.put(provenanceGraph.getProvenanceIdentifier(), provenanceGraph);
-		ProvenanceSignature signature = new ProvenanceSignature (quad,level,file,now);
 		provenanceMap.put(signature, provenanceGraph.getProvenanceIdentifier());
 		return provenanceGraph.getProvenanceIdentifier();
 	}
@@ -47,6 +47,12 @@ public class ProvenanceIndex {
 		for (ProvenanceGraph provenanceGraph : provenanceGraphMap.values()) {
 			 provenanceQuads.addAll(provenanceGraph.getQuads());
 		}
+		return provenanceQuads;
+	}
+	
+	public Set<Quad> getProvenanceGraph(String provenanceIdentifier) {
+		Set<Quad> provenanceQuads = new HashSet<Quad>();
+		provenanceQuads.addAll(provenanceGraphMap.get(provenanceIdentifier).getQuads());
 		return provenanceQuads;
 	}
 }
