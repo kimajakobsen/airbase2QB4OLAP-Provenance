@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.jena.atlas.lib.tuple.Tuple;
 import org.apache.jena.sparql.vocabulary.FOAF;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -55,7 +56,9 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		file.wasAttributedTo(countryOrganizations);
 		file.wasAttributedTo(owner);
 		file.setCustomProperty(Config.getNamespace()+"copyrightURL/", "http://www.eea.europa.eu/legal/copyright");
-		file.setCustomProperty(Config.getNamespace()+"qualityApproved/", "True or false"); //TODO get the year somehow
+		if (isQualityApproved(signature)) {
+			file.setCustomProperty(Config.getNamespace()+"qualityApproved/", "True"); 
+		}
 		
 		Agent thisSoftware = thisSoftware();
 				
@@ -94,6 +97,20 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		quad.setCustomProperty(Config.getNamespace()+"copyrightURL/", "http://www.eea.europa.eu/legal/copyright");
 		provenanceIdentifierEntity = quad;
 		
+	}
+
+	private boolean isQualityApproved(ProvenanceSignature signature) {
+		String[] split = signature.getFilePath().split("/");
+		String fileName = split[split.length];
+		
+		if (fileName.equals("AirBase_v8_statistics")) {
+			dk.aau.cs.qweb.airbase.types.Tuple tuple = signature.getTuple();
+			int year = Integer.parseInt(tuple.getValue("statistics_period"));
+			if (year >= 2002) {
+				return true;
+			}	
+		}
+		return false;
 	}
 
 	private String getCallbackClassName(ProvenanceSignature signature) {
