@@ -1,0 +1,3 @@
+station_european_code	station_local_code	country_iso_code	country_name	station_name	station_start_date	station_end_date	type_of_station	station_ozone_classification	station_type_of_area	station_subcat_rural_back	street_type	station_longitude_deg	station_latitude_deg	station_altitude	station_city	lau_level1_code	lau_level2_code	lau_level2_name	EMEP_station
+AL0201A	AL360A01	AL	Albania	Tirana Center	2010-01-06		Traffic	urban	urban		Canyon street: L/H < 1.5	19.821772	41.330269	162	TIRANA				no
+AL0202A	AL360A02	AL	Albania	Tirana IPH	2010-06-15		Traffic	suburban	suburban		Wide street: L/H > 1.5	19.851667	41.345600	207	TIRANA				no

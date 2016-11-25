@@ -1,0 +1,277 @@
+station_european_code	component_code	component_name	component_caption	measurement_unit	measurement_european_group_code	statistics_period	statistics_year	statistics_average_group	statistic_shortname	statistic_name	statistic_value	statistics_percentage_valid	statistics_number_valid	statistics_calculated
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	P50	50 percentile	44.557	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Mean	annual mean	52.371	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	P95	95 percentile	106.668	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	P98	98 percentile	134.149	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Max	maximum	172.513	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Max36	36th highest value	87.575	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Max8	8th highest value	134.149	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Days(c > 50)	days with c > 50 ug/m3	153.000	99.178	362	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	40.350	98.470	8626	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	52.369	98.470	8626	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	130.680	98.470	8626	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	176.340	98.470	8626	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	Max	maximum	429.710	98.470	8626	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	P50	50 percentile	31.171	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Mean	annual mean	34.039	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	P95	95 percentile	60.850	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	P98	98 percentile	71.546	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Max	maximum	110.958	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Max36	36th highest value	53.096	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Max8	8th highest value	71.546	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Days(c > 50)	days with c > 50 ug/m3	48.000	98.634	361	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	28.700	98.338	8638	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	33.995	98.338	8638	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	78.800	98.338	8638	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	100.300	98.338	8638	Y
+AL0201A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	Max	maximum	245.700	98.338	8638	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	Mean	annual mean	44.011	94.262	345	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	P50	50 percentile	44.487	94.262	345	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	P95	95 percentile	73.152	94.262	345	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	P98	98 percentile	77.665	94.262	345	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	Max	maximum	91.561	94.262	345	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Mean	annual mean	65.364	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	P50	50 percentile	65.671	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	P95	95 percentile	108.762	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	P98	98 percentile	114.614	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Max	maximum	126.950	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Max26	26th highest value	106.357	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Days(c > 120)	days with c > 120 ug/m3	4.000	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	SOMO35	SOMO35 (c > 70 ug/m3, year,corrected)	3626.000	93.443	342	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	40.600	90.175	7921	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	44.141	90.175	7921	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	99.700	90.175	7921	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	110.400	90.175	7921	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	Max	maximum	141.100	90.175	7921	Y
+AL0201A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	AOT40	AOT40 (c > 80 ug/m3,3 months,corrected)	10281.000	76.449	844	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	P50	50 percentile	39.998	90.137	329	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	Mean	annual mean	41.331	90.137	329	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	P95	95 percentile	59.739	90.137	329	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	P98	98 percentile	64.056	90.137	329	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	Max	maximum	71.919	90.137	329	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	37.560	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	41.298	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	87.040	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	98.870	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Max	maximum	180.030	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Max19	19th highest value	125.400	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Hours(c > 200)	hours with c > 200 ug/m3	0.000	86.450	7573	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	day	P50	50 percentile	40.987	95.355	349	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	day	Mean	annual mean	41.411	95.355	349	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	day	P95	95 percentile	59.243	95.355	349	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	day	P98	98 percentile	62.017	95.355	349	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	day	Max	maximum	76.300	95.355	349	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	38.500	91.872	8070	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	41.366	91.872	8070	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	83.300	91.872	8070	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	95.600	91.872	8070	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	Max	maximum	179.200	91.872	8070	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	Max19	19th highest value	122.100	91.872	8070	Y
+AL0201A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2012	hour	Hours(c > 200)	hours with c > 200 ug/m3	0.000	91.872	8070	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	P50	50 percentile	71.208	89.041	325	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	Mean	annual mean	79.383	89.041	325	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	P95	95 percentile	148.915	89.041	325	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	P98	98 percentile	191.587	89.041	325	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	Max	maximum	233.976	89.041	325	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	P50	50 percentile	58.901	83.984	7357	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	Mean	annual mean	79.300	83.984	7357	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	P95	95 percentile	207.833	83.984	7357	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	P98	98 percentile	286.000	83.984	7357	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	Max	maximum	666.393	83.984	7357	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	day	P50	50 percentile	70.387	84.699	310	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	day	Mean	annual mean	79.212	84.699	310	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	day	P95	95 percentile	149.223	84.699	310	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	day	P98	98 percentile	172.886	84.699	310	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	day	Max	maximum	272.177	84.699	310	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	hour	P50	50 percentile	61.660	83.185	7307	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	hour	Mean	annual mean	80.181	83.185	7307	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	hour	P95	95 percentile	203.920	83.185	7307	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	hour	P98	98 percentile	283.693	83.185	7307	Y
+AL0201A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2012	hour	Max	maximum	894.160	83.185	7307	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	P50	50 percentile	0.832	94.795	346	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	Mean	annual mean	0.903	94.795	346	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	P95	95 percentile	1.433	94.795	346	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	P98	98 percentile	1.614	94.795	346	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	Max	maximum	2.065	94.795	346	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	P50	50 percentile	1.020	94.247	344	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	Mean	annual mean	1.197	94.247	344	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	P95	95 percentile	2.239	94.247	344	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	P98	98 percentile	2.529	94.247	344	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	Max	maximum	3.969	94.247	344	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	P50	50 percentile	0.800	91.358	8003	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	Mean	annual mean	0.907	91.358	8003	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	P95	95 percentile	1.710	91.358	8003	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	P98	98 percentile	2.210	91.358	8003	Y
+AL0201A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	Max	maximum	5.230	91.358	8003	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	P50	50 percentile	5.971	21.644	79	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	Mean	annual mean	6.797	21.644	79	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	P95	95 percentile	13.794	21.644	79	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	P98	98 percentile	15.473	21.644	79	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	Max	maximum	18.857	21.644	79	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	5.330	21.484	1882	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	6.799	21.484	1882	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	17.420	21.484	1882	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	21.790	21.484	1882	Y
+AL0201A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	Max	maximum	35.660	21.484	1882	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	P50	50 percentile	17.608	89.041	325	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	Mean	annual mean	24.169	89.041	325	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	P95	95 percentile	60.686	89.041	325	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	P98	98 percentile	85.613	89.041	325	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	Max	maximum	105.232	89.041	325	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	12.650	84.167	7373	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	24.229	84.167	7373	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	86.030	84.167	7373	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	130.590	84.167	7373	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	Max	maximum	341.480	84.167	7373	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	day	P50	50 percentile	17.340	87.432	320	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	day	Mean	annual mean	22.908	87.432	320	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	day	P95	95 percentile	59.022	87.432	320	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	day	P98	98 percentile	72.948	87.432	320	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	day	Max	maximum	122.383	87.432	320	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	12.400	85.394	7501	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	23.335	85.394	7501	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	83.300	85.394	7501	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	130.900	85.394	7501	Y
+AL0201A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2012	hour	Max	maximum	480.300	85.394	7501	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	P50	50 percentile	22.615	99.178	362	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	Mean	annual mean	27.443	99.178	362	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	P95	95 percentile	58.961	99.178	362	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	P98	98 percentile	70.730	99.178	362	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	Max	maximum	90.911	99.178	362	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	20.600	97.991	8584	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	27.530	97.991	8584	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	73.450	97.991	8584	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	98.550	97.991	8584	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	Max	maximum	261.550	97.991	8584	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	P50	50 percentile	16.783	98.087	359	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	Mean	annual mean	20.239	98.087	359	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	P95	95 percentile	42.558	98.087	359	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	P98	98 percentile	54.129	98.087	359	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	Max	maximum	81.704	98.087	359	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	15.200	97.359	8552	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	20.207	97.359	8552	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	54.500	97.359	8552	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	71.400	97.359	8552	Y
+AL0201A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	Max	maximum	203.400	97.359	8552	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	P50	50 percentile	106.203	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Mean	annual mean	112.033	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	P95	95 percentile	194.631	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	P98	98 percentile	215.142	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Max	maximum	266.458	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Max36	36th highest value	175.172	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Max8	8th highest value	215.142	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	day	Days(c > 50)	days with c > 50 ug/m3	301.000	91.781	335	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	83.270	91.724	8035	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	112.444	91.724	8035	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	304.450	91.724	8035	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	358.830	91.724	8035	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2011	hour	Max	maximum	576.380	91.724	8035	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	P50	50 percentile	36.154	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Mean	annual mean	37.701	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	P95	95 percentile	68.171	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	P98	98 percentile	80.950	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Max	maximum	137.646	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Max36	36th highest value	61.358	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Max8	8th highest value	80.950	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	day	Days(c > 50)	days with c > 50 ug/m3	79.000	97.268	356	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	30.800	97.883	8598	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	37.859	97.883	8598	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	93.200	97.883	8598	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	126.000	97.883	8598	Y
+AL0202A	5	Particulate matter < 10 µm (aerosol)	PM10	µg/m3	100	Calendar year	2012	hour	Max	maximum	439.100	97.883	8598	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	Mean	annual mean	65.327	97.268	356	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	P50	50 percentile	65.404	97.268	356	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	P95	95 percentile	99.565	97.268	356	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	P98	98 percentile	105.341	97.268	356	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	day	Max	maximum	111.813	97.268	356	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Mean	annual mean	93.503	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	P50	50 percentile	93.575	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	P95	95 percentile	140.025	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	P98	98 percentile	146.337	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Max	maximum	158.825	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Max26	26th highest value	137.525	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	Days(c > 120)	days with c > 120 ug/m3	78.000	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	dymax	SOMO35	SOMO35 (c > 70 ug/m3, year,corrected)	9949.000	96.175	352	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	62.600	93.750	8235	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	65.301	93.750	8235	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	128.400	93.750	8235	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	141.200	93.750	8235	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	Max	maximum	184.000	93.750	8235	Y
+AL0202A	7	Ozone (air)	O3	µg/m3	100	Calendar year	2012	hour	AOT40	AOT40 (c > 80 ug/m3,3 months,corrected)	32706.000	94.746	1046	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	P50	50 percentile	27.908	93.425	341	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	Mean	annual mean	28.422	93.425	341	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	P95	95 percentile	41.567	93.425	341	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	P98	98 percentile	43.343	93.425	341	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	day	Max	maximum	48.475	93.425	341	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	26.620	90.057	7889	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	28.406	90.057	7889	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	56.680	90.057	7889	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	64.630	90.057	7889	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Max	maximum	101.630	90.057	7889	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Max19	19th highest value	80.430	90.057	7889	Y
+AL0202A	8	Nitrogen dioxide (air)	NO2	µg/m3	100	Calendar year	2011	hour	Hours(c > 200)	hours with c > 200 ug/m3	0.000	90.057	7889	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	P50	50 percentile	45.602	93.151	340	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	Mean	annual mean	48.286	93.151	340	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	P95	95 percentile	79.201	93.151	340	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	P98	98 percentile	84.648	93.151	340	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	day	Max	maximum	106.069	93.151	340	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	P50	50 percentile	40.174	89.852	7871	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	Mean	annual mean	48.255	89.852	7871	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	P95	95 percentile	114.394	89.852	7871	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	P98	98 percentile	145.246	89.852	7871	Y
+AL0202A	9	Nitrogen oxides (air)	NOX	µg NO2/m3	100	Calendar year	2011	hour	Max	maximum	353.323	89.852	7871	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	P50	50 percentile	0.305	68.767	251	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	Mean	annual mean	0.322	68.767	251	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	P95	95 percentile	0.607	68.767	251	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	P98	98 percentile	0.803	68.767	251	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	day	Max	maximum	1.007	68.767	251	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	P50	50 percentile	0.460	63.562	232	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	Mean	annual mean	0.518	63.562	232	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	P95	95 percentile	1.014	63.562	232	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	P98	98 percentile	1.296	63.562	232	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	dymax	Max	maximum	1.691	63.562	232	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	P50	50 percentile	0.230	73.790	6464	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	Mean	annual mean	0.299	73.790	6464	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	P95	95 percentile	0.840	73.790	6464	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	P98	98 percentile	1.100	73.790	6464	Y
+AL0202A	10	Carbon monoxide (air)	CO	mg/m3	100	Calendar year	2011	hour	Max	maximum	2.730	73.790	6464	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	P50	50 percentile	3.774	20.274	74	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	Mean	annual mean	4.008	20.274	74	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	P95	95 percentile	6.008	20.274	74	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	P98	98 percentile	9.776	20.274	74	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	day	Max	maximum	10.452	20.274	74	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	3.380	20.320	1780	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	4.016	20.320	1780	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	8.900	20.320	1780	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	11.040	20.320	1780	Y
+AL0202A	20	Benzene (air)	C6H6	µg/m3	100	Calendar year	2011	hour	Max	maximum	26.510	20.320	1780	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	P50	50 percentile	11.224	93.699	342	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	Mean	annual mean	12.922	93.699	342	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	P95	95 percentile	27.881	93.699	342	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	P98	98 percentile	30.490	93.699	342	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	day	Max	maximum	40.908	93.699	342	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	8.430	90.251	7906	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	12.985	90.251	7906	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	39.320	90.251	7906	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	57.950	90.251	7906	Y
+AL0202A	38	Nitrogen monoxide (air)	NO	µg/m3	100	Calendar year	2011	hour	Max	maximum	165.250	90.251	7906	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	P50	50 percentile	35.557	93.973	343	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	Mean	annual mean	37.493	93.973	343	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	P95	95 percentile	67.387	93.973	343	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	P98	98 percentile	76.935	93.973	343	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	day	Max	maximum	98.569	93.973	343	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	P50	50 percentile	30.870	94.475	8276	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	Mean	annual mean	37.494	94.475	8276	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	P95	95 percentile	88.000	94.475	8276	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	P98	98 percentile	108.190	94.475	8276	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2011	hour	Max	maximum	267.390	94.475	8276	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	P50	50 percentile	21.379	97.268	356	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	Mean	annual mean	24.414	97.268	356	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	P95	95 percentile	48.608	97.268	356	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	P98	98 percentile	58.913	97.268	356	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	day	Max	maximum	86.321	97.268	356	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	P50	50 percentile	20.100	97.848	8595	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	Mean	annual mean	24.529	97.848	8595	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	P95	95 percentile	61.100	97.848	8595	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	P98	98 percentile	80.500	97.848	8595	Y
+AL0202A	6001	Particulate matter < 2.5 µm (aerosol)	PM2.5	µg/m3	100	Calendar year	2012	hour	Max	maximum	214.100	97.848	8595	Y
