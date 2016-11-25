@@ -7,6 +7,7 @@ public class Config {
 	private static String metadataGraphLabel = namespace+"metadata/";
 	private static String provenanceGraphLabel = namespace+"provenance/";
 	private static String file;
+	private static String xmlFile;
 
 	public static String getNamespace() {
 		return namespace;
@@ -37,8 +38,10 @@ public class Config {
 	}
 
 	public static String getXMLfilePath() {
-		return null;
-		// TODO Auto-generated method stub
-		
+		return xmlFile;
+	}
+
+	public static void setXMLfilePath(String path) {
+		xmlFile = path;
 	}
 }
