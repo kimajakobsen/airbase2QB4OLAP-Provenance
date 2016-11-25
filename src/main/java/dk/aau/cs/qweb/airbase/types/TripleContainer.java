@@ -12,6 +12,7 @@ import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.CubeStructure;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.HierarchyStep;
+import dk.aau.cs.qweb.airbase.callback.CallBack;
 import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
 
 public class TripleContainer {
@@ -33,7 +34,14 @@ public class TripleContainer {
 				List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
 				for (String level : levels) {
 					String subject = createSubject(level);
-					Quad quad =  new Quad(subject,predicate,object);
+					
+					CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunction(predicateString);
+					if (cleanFunction != null) {
+						object = cleanFunction.callBackMethod(object);
+					}
+					 
+					Quad quad =  new Quad(subject,predicate,(object));
+					
 					String graphLabel = getGraphLabel(quad,level,tuple);
 					quad.setGraphLabel(graphLabel);
 					
