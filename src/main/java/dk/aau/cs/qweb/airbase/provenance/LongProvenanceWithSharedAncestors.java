@@ -10,7 +10,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.jena.atlas.lib.tuple.Tuple;
 import org.apache.jena.sparql.vocabulary.FOAF;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -29,6 +28,7 @@ import dk.aau.cs.qweb.airbase.provenance.provo.Person;
 import dk.aau.cs.qweb.airbase.provenance.provo.ProvenanceIdentifierEntity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Software;
 import dk.aau.cs.qweb.airbase.types.Quad;
+import dk.aau.cs.qweb.airbase.types.Tuple;
 
 public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	
@@ -101,11 +101,13 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private boolean isQualityApproved(ProvenanceSignature signature) {
 		String[] split = signature.getFilePath().split("/");
-		String fileName = split[split.length];
+		String fileName = split[split.length-1];
+		String[] words = fileName.split("_");
 		
-		if (fileName.equals("AirBase_v8_statistics")) {
-			dk.aau.cs.qweb.airbase.types.Tuple tuple = signature.getTuple();
-			int year = Integer.parseInt(tuple.getValue("statistics_period"));
+		
+		if (words[words.length-1].equals("statistics.csv")) {
+			Tuple tuple = signature.getTuple();
+			int year = Integer.parseInt(tuple.getValue("statistics_year"));
 			if (year >= 2002) {
 				return true;
 			}	
@@ -169,7 +171,6 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					
 					agents.add(agent);
 				}
-				
 			}
 			
 			NodeList person = doc.getElementsByTagName("person");
@@ -189,8 +190,6 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					agents.add(agent);
 				}
 			}
-			
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {
@@ -202,7 +201,6 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		return agents;
 	}
 	
-
 	@Override
 	public Set<Quad> getQuads() {
 		return provenanceIdentifierEntity.getQuads();
@@ -212,5 +210,4 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	public String getProvenanceIdentifier() {
 		return provenanceIdentifierEntity.getSubject();
 	}
-
 }
