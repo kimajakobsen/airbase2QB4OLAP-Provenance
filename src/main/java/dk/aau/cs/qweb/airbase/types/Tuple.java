@@ -27,6 +27,7 @@ public class Tuple {
 		for (String string : this.header) {
 			if (header.equals(string)) {
 				result = data.get(index);
+				return result;
 			}
 			index++;
 		}
