@@ -47,6 +47,8 @@ public class App {
 						}
 						else if (fileLine.startsWith("input-file")) {
 							files.add(fileLine.split(" ")[1]);
+						} else if (fileLine.startsWith("xml-file")) {
+							Config.setXMLfilePath(fileLine.split(" ")[1]);
 						}
 					}
 				}
