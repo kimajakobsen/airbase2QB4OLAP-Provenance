@@ -1,0 +1,43 @@
+station_european_code	station_local_code	country_iso_code	country_name	station_name	station_start_date	station_end_date	type_of_station	station_ozone_classification	station_type_of_area	station_subcat_rural_back	street_type	station_longitude_deg	station_latitude_deg	station_altitude	station_city	lau_level1_code	lau_level2_code	lau_level2_name	EMEP_station
+DK0002A		DK	Denmark	1102-Stom-20 Stormgade	1976-01-01	1983-01-01	Traffic		urban		Unknown	12.573895	55.676113	0	COPENHAGEN	101		Helligånds	no
+DK0004A		DK	Denmark	1215 Bela-133 Hulgardsv	1976-01-01	1981-01-01	Traffic		urban		Unknown	12.367228	55.731113	0	COPENHAGEN	151		Ballerup	no
+DK0008A		DK	Denmark	1331 Glos-2 Florasv-Glostrup	1976-01-01	1982-01-01	Traffic		urban		Unknown	12.411955	55.666111	0	COPENHAGEN	161		Glostrup	no
+DK0009A		DK	Denmark	1334 Glad-42 Sydmarken-Soborg	1976-01-01	1983-01-01	Traffic		urban		Unknown	12.473894	55.733055	0	COPENHAGEN	159		Mørkhøj	no
+DK0010A		DK	Denmark	1335 Lyng-1 Torvet-Lyngby	1976-01-01	1983-01-01	Traffic		urban		Unknown	12.503892	55.771111	0	COPENHAGEN	173		Lyngby	no
+DK0021A	8151	DK	Denmark	Aalborg/8151	1982-10-01		Traffic		urban		Canyon street: L/H < 1.5	9.917509	57.052223	5	AALBORG	851		Budolfi (Domsogn) *	no
+DK0053A	8158	DK	Denmark	Aalborg/8158	2004-09-01		Background	urban	urban			9.930847	57.046665	30	AALBORG	851		Vor Frue *	no
+DK0047A	8159	DK	Denmark	Aalborg/8159	1993-01-01	2005-12-31	Background	suburban	urban			9.915013	57.045277	25	AALBORG	851		Ansgars *	no
+DK0037A	6155	DK	Denmark	Aboulevarden	1987-01-01	1987-12-31	Traffic		urban		Unknown	10.207228	56.156944	10	ARHUS	751		Vor Frue *	no
+DK0008R	6001	DK	Denmark	Anholt	1987-01-01		Background		rural			11.533614	56.711666	10		707		Anholt	yes
+DK0034A	1103	DK	Denmark	Copenhagen/1103	1987-01-01		Traffic	urban	urban		Wide street: L/H > 1.5	12.571114	55.669167	5	COPENHAGEN	101		Maria	no
+DK0030A	1257	DK	Denmark	Copenhagen/1257	1987-01-01		Traffic	urban	urban		Canyon street: L/H < 1.5	12.553336	55.698334	5	COPENHAGEN	101		Kingos	no
+DK0045A	1259	DK	Denmark	Copenhagen/1259	1992-01-01		Background	urban	urban			12.561400	55.700279	25	COPENHAGEN	101		Aldersro	no
+DK0016A	5151	DK	Denmark	Danmarksgade/Prinsessegade - Fredericia	1982-01-01	1987-01-01	Traffic		urban		Unknown	9.760286	55.564999	0	FREDERICIA	607		Trinitatis *	no
+DK0036A	5155	DK	Denmark	Fredericia(5155)	1987-01-01	1987-12-31	Traffic		urban		Unknown	9.750842	55.569443	5	FREDERICIA	607		Sankt Michaelis *	no
+DK0032R	2002	DK	Denmark	Frederiksborg	1985-01-01		Background		rural			12.322227	55.954445	25	HILLEROD	219		Nødebo	yes
+DK0007A		DK	Denmark	Hvid(Hovedstensv 21)-DK-2650 Hvidovre	1976-01-01	1983-01-01	Traffic		urban		Unknown	12.471113	55.643059	0	COPENHAGEN	167		Risbjerg	no
+DK0055A		DK	Denmark	Jyllinge	2010-03-01		Background		suburban			12.110634	55.763737	20	JYLLINGE				no
+DK0005R	9005	DK	Denmark	Keldsnor	1978-10-01		Background		rural			10.736392	54.746387	10		482		Magleby	yes
+DK0054A	9054	DK	Denmark	Keldsnor/9054	2004-11-10		Background	rural	rural	regional		10.736392	54.746387	3	KELDSNOR	482		Magleby	no
+DK0048A	9055	DK	Denmark	Keldsnor/9055	1993-01-01	2005-12-31	Background	rural	rural			10.735578	54.747780	10		482		Magleby	no
+DK0041A	2090	DK	Denmark	Lille Valby/2090	1991-06-01	2010-07-06	Background	rural	rural			12.118611	55.694447	10					no
+DK0003A	2103	DK	Denmark	Linde alle - Ballerup	1982-01-01	1987-01-01	Traffic		suburban		Unknown	12.367228	55.731113	0	COPENHAGEN	151		Ballerup	no
+DK0032A	4001	DK	Denmark	Lindet	1987-01-01		Background		rural			8.966666	55.205002	30	RIBE/TONDER	550		Arrild	no
+DK0017A	3351	DK	Denmark	Naestved-Havnegade	1982-01-01	1987-01-01	Traffic		urban		Unknown	11.757505	55.228611	0	NAESTVED	370		Sankt Mortens *	no
+DK0006A	1256	DK	Denmark	Obro-Osterbrogade	1987-01-01	1990-01-01	Traffic		urban		Unknown	12.579455	55.699444	0	COPENHAGEN	101		Rosenvængets	no
+DK0013A	9151	DK	Denmark	Odense-Rugaardsvej	1982-01-01	1988-01-01	Traffic		urban		Unknown	10.385859	55.401947	0	ODENSE	461		Sankt Hans *	no
+DK0022A	9154	DK	Denmark	Odense/9154	1982-01-01	2000-12-31	Traffic		urban		Wide street: L/H > 1.5	10.396122	55.381943	10	ODENSE	461		Munkebjerg *	no
+DK0031A	9155	DK	Denmark	Odense/9155	1987-01-01		Traffic		urban		Canyon street: L/H < 1.5	10.393897	55.394447	10	ODENSE	461		Sankt Knuds (Domsogn) *	no
+DK0046A	9159	DK	Denmark	Odense/9159	1992-01-01		Background	suburban	urban			10.389173	55.396389	25	ODENSE	461		Sankt Knuds (Domsogn) *	no
+DK0018A	6351	DK	Denmark	Randers-Randers Bro	1982-01-01	1987-01-01	Traffic		urban		Unknown	10.041117	56.459167	0	RANDERS	730		Sankt Mortens *	no
+DK0012R		DK	Denmark	Risoe	2010-07-01		Background		rural	regional		12.088669	55.694107	3		101		Vor Frelsers	yes
+DK0001A	2101	DK	Denmark	Roskildevej/Byparkvej - Glostrup	1982-01-01	1987-01-01	Traffic		suburban		Unknown	12.412233	55.669167	0	COPENHAGEN	161		Glostrup	no
+DK0012A	1348	DK	Denmark	Sigridsvej-Charlottenlund	1982-01-01	1987-01-01	Traffic		suburban		Unknown	12.586391	55.741669	0	COPENHAGEN				no
+DK0014A	5651	DK	Denmark	Storgade/Gormsgade-Esbjerg	1982-01-01	1988-01-01	Traffic		urban		Unknown	8.444175	55.468334	0	EBSJERG	561		Zions *	no
+DK0015A	5656	DK	Denmark	Stormgade	1988-01-01	1990-01-01	Traffic		urban		Unknown	8.450842	55.466667	0	EBSJERG	561		Vor Frelsers *	no
+DK0011A	1342	DK	Denmark	Taern Tommerup Stationsvej - Taernby	1982-01-01	1987-01-01	Traffic		suburban		Unknown	12.633333	55.616943	0	COPENHAGEN	185		Tårnby	no
+DK0003R	6003	DK	Denmark	Tange	1978-10-01		Background	rural	rural			9.603059	56.354443	8		791		Høbjerg	yes
+DK0031R	7001	DK	Denmark	Ulborg	1985-01-01		Background	rural background	rural			8.433333	56.283333	37		661		Ulfborg	yes
+DK0005A	1221	DK	Denmark	Vanl Bjernedevej 6 - Vanlose	1982-01-01	1987-01-01	Traffic		suburban		Unknown	12.481957	55.700558	0	COPENHAGEN	101		Husum	no
+DK0051A	6153	DK	Denmark	Århus/6153	2000-05-01		Traffic		urban		Canyon street: L/H < 1.5	10.200842	56.150558	10	ARHUS	751		Vor Frue *	no
+DK0052A	6159	DK	Denmark	Århus/6159	2000-10-01		Background	suburban	urban		Canyon street: L/H < 1.5	10.197236	56.151112	20	ARHUS	751		Vor Frue *	no

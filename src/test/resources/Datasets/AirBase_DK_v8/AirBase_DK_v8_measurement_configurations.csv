@@ -1,0 +1,600 @@
+station_european_code	component_code	component_caption	component_name	component_FWD	measurement_european_group_code	measurement_unit	measurement_group_start_date	measurement_group_end_date	measurement_latest_AIRBASE	measurement_european_code	measurement_start_date	measurement_end_date	measurement_automatic	measurement_technique_principle	measurement_equipment	integration_time_frequency	calibration_unit	height_sampling_point	length_sampling_line	location_sampling_point	sampling_time	sampling_time_unit	calibration_frequency	integration_time_unit	calibration_method	calibration_description
+DK0002A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Spectrophotometry	OECD			0	0		0					
+DK0002A	3	SA	Strong acidity (air)	no	100	µg SO2/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	UNKNOWN	HVS			0	0		0					
+DK0002A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	UNKNOWN	HVS			0	0		0					
+DK0002A	6	BS	Black smoke (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Reflectometry	OECD			0	0		0					
+DK0004A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	Spectrophotometry	OECD			0	0		0					
+DK0004A	3	SA	Strong acidity (air)	no	100	µg SO2/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	UNKNOWN	HVS			0	0		0					
+DK0004A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	UNKNOWN	HVS			0	0		0					
+DK0004A	6	BS	Black smoke (air)	yes	100	µg/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	Reflectometry	OECD			0	0		0					
+DK0008A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1976-01-01	1981-11-30	1981-11-30	100	1976-01-01	1981-11-30	no	Spectrophotometry	OECD			0	0		0					
+DK0008A	3	SA	Strong acidity (air)	no	100	µg SO2/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	UNKNOWN	HVS			0	0		0					
+DK0008A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1976-01-01	1981-11-30	1981-11-30	100	1976-01-01	1981-11-30	no	UNKNOWN	HVS			0	0		0					
+DK0008A	6	BS	Black smoke (air)	yes	100	µg/m3	1976-01-01	1981-11-30	1981-11-30	100	1976-01-01	1981-11-30	no	Reflectometry	OECD			0	0		0					
+DK0009A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Spectrophotometry	OECD			0	0		0					
+DK0009A	3	SA	Strong acidity (air)	no	100	µg SO2/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	UNKNOWN	HVS			0	0		0					
+DK0009A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	UNKNOWN	HVS			0	0		0					
+DK0009A	6	BS	Black smoke (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Reflectometry	OECD			0	0		0					
+DK0010A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Spectrophotometry	OECD			0	0		0					
+DK0010A	3	SA	Strong acidity (air)	no	100	µg SO2/m3	1976-01-01	1980-11-30	1980-11-30	100	1976-01-01	1980-11-30	no	UNKNOWN	HVS			0	0		0					
+DK0010A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	UNKNOWN	HVS			0	0		0					
+DK0010A	6	BS	Black smoke (air)	yes	100	µg/m3	1976-01-01	1982-03-31	1982-03-31	100	1976-01-01	1982-03-31	no	Reflectometry	OECD			0	0		0					
+DK0021A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1982-01-01		2012-12-31	100	1982-01-01		no	UNKNOWN	FILTER			0	0		0					
+DK0021A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-01-01	1996-12-31	1996-12-31	110	1982-01-01	1996-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0021A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1987-01-01		2008-12-31	120	1987-01-01		yes	UV fluorescence	Monitor Labs model 8850 SO2 analyser	30		3	3		0			minute	compressed gases	
+DK0021A	1	SO2	Sulphur dioxide (air)	yes	130	µg/m3	1983-01-01	1999-12-31	1999-12-31	130	1983-01-01	1999-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		0		1	day	reference measurement meth.	
+DK0021A	1	SO2	Sulphur dioxide (air)	yes	140	µg/m3	1982-01-01	1989-12-31	1989-12-31	140	1982-01-01	1989-12-31	no	UNKNOWN	UNKNOWN			0	0		0					
+DK0021A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-01-01		1999-12-31	100	1987-01-01		no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	3	0		1	natural day	1	day	reference measurement meth.	
+DK0021A	4	SPM	Total suspended particulates (aerosol)	yes	110	µg/m3	1982-01-01	1996-12-31	1996-12-31	110	1982-01-01	1996-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0021A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2005-12-31	100	2001-01-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	1983-01-01		2007-12-31	101	1983-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	kerbside	1	natural day		day		
+DK0021A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-01-01	1996-12-31	1996-12-31	100	1982-01-01	1996-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0021A	8	NO2	Nitrogen dioxide (air)	yes	110	µg/m3	1983-01-01		2012-12-31	110	1983-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	300	300		0		1	minute	compressed gases	
+DK0021A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1983-01-01		2007-12-31	100	1983-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	kerbside	0		1	minute	compressed gases	
+DK0021A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Non-dispersive infrared spectroscopy (NDIR)	FUJI ZRC	30	week	3	3		0		1	minute	compressed gases	
+DK0021A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1983-01-01	2003-12-31	1999-12-31	100	1983-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0021A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2001-01-01	2010-01-01	2001-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	12	Pb	Lead (aerosol)	yes	110	µg/m3	1982-01-01	1996-12-31	1996-12-31	110	1982-01-01	1996-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0021A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1983-01-01	2003-12-31	1999-12-31	100	1983-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1	month	3	0		1	natural day	1	day	calibration filter	
+DK0021A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	14	Cd	Cadmium (aerosol)	yes	110	ng/m3	1982-01-01	1996-12-31	1996-12-31	110	1982-01-01	1996-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0021A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1983-01-01	2003-12-31	1999-12-31	100	1983-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1	month	3	0		1	natural day	1	day	calibration filter	
+DK0021A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	16	Cr	Chromium (aerosol)	no	100	ng/m3	1983-01-01	2003-12-31	1999-12-31	100	1983-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1	month	3	0		1	natural day	1	day	calibration filter	
+DK0021A	16	Cr	Chromium (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	17	Mn	Manganese (aerosol)	no	100	ng/m3	1983-01-01	2003-12-31	1999-12-31	100	1983-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1	month	3	0		1	natural day	1	day	calibration filter	
+DK0021A	17	Mn	Manganese (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	18	As	Arsenic (aerosol)	yes	100	ng/m3	1983-01-01	2003-12-31	1999-12-31	100	1983-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0021A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0021A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-01-01	1996-12-31	1996-12-31	100	1982-01-01	1996-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0021A	38	NO	Nitrogen monoxide (air)	no	110	µg/m3	1983-01-01		2012-12-31	110	1983-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3		0		1	minute	compressed gases	
+DK0021A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1982-01-01			100	1982-01-01		no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0021A	48	Se	Selenium (aerosol)	no	100	ng/m3	1982-01-01	2010-01-01		100	1982-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	3	roof	1	natural day		day		
+DK0021A	48	Se	Selenium (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3		0			day		
+DK0021A	49	V	Vanadium (aerosol)	no	100	ng/m3	1982-01-01	2010-01-01		100	1982-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	3	roof	1	natural day		day		
+DK0021A	49	V	Vanadium (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	Gravimetric analysis	OPSIS SM200	1		3	3		0			day		
+DK0021A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2008-01-01		2012-12-31	100	2008-01-01		no	Beta ray attenuation	SM200 (ADAM)	1		3	2	kerbside	1	natural day		day		
+DK0053A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2004-09-01	2005-12-31	2005-12-31	100	2004-09-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01		2007-12-31	101	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	roof	1	natural day		day		
+DK0053A	7	O3	Ozone (air)	yes	100	µg/m3	2004-09-01		2012-12-31	100	2004-09-01		yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	3	3	roof	30	minute	1	day	O3 generator stopped	
+DK0053A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	2004-09-01		2012-12-31	100	2004-09-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0053A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	2004-09-01		2012-12-31	100	2004-09-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0053A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0053A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3		0			day		
+DK0053A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0053A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	2004-09-01		2012-12-31	100	2004-09-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0053A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2004-09-01			100	2004-09-01		no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	48	Se	Selenium (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	49	V	Vanadium (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0053A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2008-02-01		2012-12-31	100	2008-02-01		no	Beta ray attenuation	SM200 (ADAM)	1		3	2	roof	1	natural day		day		
+DK0047A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2004-06-30	2004-06-30	100	2001-01-01	2004-06-30	no	Gravimetric analysis	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	7	O3	Ozone (air)	yes	100	µg/m3	1994-01-01	2004-06-30	2004-12-31	100	1994-01-01	2004-06-30	yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	2	2		0		1	minute	uv lamp (ozone generator)	
+DK0047A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1995-01-01	2004-06-30	2004-12-31	100	1995-01-01	2004-06-30	yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0047A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1995-01-01	2004-06-30	2004-12-31	100	1995-01-01	2004-12-31	yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0047A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2001-12-31	100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1995-01-01	2004-06-30	2004-12-31	100	1995-01-01	2004-06-30	yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0047A	38	NO	Nitrogen monoxide (air)	no	101	µg/m3	2004-09-01	2005-12-31		101	2004-09-01	2005-12-31	yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0047A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	48	Se	Selenium (aerosol)	no	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0047A	49	V	Vanadium (aerosol)	no	100	ng/m3	2001-01-01	2005-12-31		100	2001-01-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0037A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0037A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0037A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1987-01-01	1987-12-31		120	1987-01-01	1987-12-31	yes	UV fluorescence	Monitor Labs model 8850 SO2 analyser	1		300	300		0			day	compressed gases	
+DK0037A	1	SO2	Sulphur dioxide (air)	yes	130	µg/m3	1987-01-01	1987-12-31		130	1987-01-01	1987-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	300	15		0		1	week	reference measurement meth.	
+DK0037A	1	SO2	Sulphur dioxide (air)	yes	140	µg/m3	1987-01-01	1987-12-31	1989-12-31	140	1987-01-01	1987-12-31						0	0		0					
+DK0037A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	300	10		0		1	week	reference measurement meth.	
+DK0037A	4	SPM	Total suspended particulates (aerosol)	yes	110	µg/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0037A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1987-01-01	1987-12-31	1989-12-31	100	1987-01-01	1987-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0037A	8	NO2	Nitrogen dioxide (air)	yes	110	µg/m3	1987-01-01	1987-12-31		110	1987-01-01	1987-12-31	yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	1	month	300	300		0		1	day	compressed gases	
+DK0037A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1987-01-01	1987-12-31	1989-12-31	100	1987-01-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0037A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		300	15		0			week	calibration filter	
+DK0037A	12	Pb	Lead (aerosol)	yes	110	µg/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0037A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		300	10		0			week	calibration filter	
+DK0037A	14	Cd	Cadmium (aerosol)	yes	110	ng/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0037A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1987-01-01	1987-12-31	1989-12-31	100	1987-01-01	1987-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0037A	38	NO	Nitrogen monoxide (air)	no	110	µg/m3	1987-01-01	1987-12-31		110	1987-01-01	1987-12-31	yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	1	month	300	300		0		1	day	compressed gases	
+DK0008R	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01	2010-01-01	2008-12-31	100	1987-01-01	2010-01-01	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1		2	0		0			day	reference measurement meth.	
+DK0008R	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	12	Pb	Lead (aerosol)	yes	101	µg/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0008R	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0008R	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0008R	16	Cr	Chromium (aerosol)	no	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	17	Mn	Manganese (aerosol)	no	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	18	As	Arsenic (aerosol)	yes	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	18	As	Arsenic (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0008R	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	48	Se	Selenium (aerosol)	no	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0008R	49	V	Vanadium (aerosol)	no	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0034A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01		2012-12-31	100	1987-01-01		no	UNKNOWN	FILTER			0	0		0					
+DK0034A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-01-01		2008-12-31	110	1987-01-01	2006-01-01	yes	UV fluorescence	Thermo model 43a SO2 analyser	1	month	3	3		0		1	hour	compressed gases	
+DK0034A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-01-01		2008-12-31	131	2006-01-01		yes	UV fluorescence	Teledyne API 100 UV Fluorescent SO2 Analyser	1	month	3	3		0		1	hour	compressed gases	
+DK0034A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1982-05-01	1987-04-30	1987-04-30	120	1982-05-01	1987-04-30	yes	coulometry	UNKNOWN			0	0		0					
+DK0034A	1	SO2	Sulphur dioxide (air)	yes	130	µg/m3	1982-04-01	1987-04-30	1987-04-30	130	1982-04-01	1987-04-30	no	UNKNOWN	UNKNOWN			0	0		0					
+DK0034A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-01-01	2005-12-31	2005-12-31	100	1987-01-01	2005-12-31	no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1		3	0		0			day	reference measurement meth.	
+DK0034A	4	SPM	Total suspended particulates (aerosol)	yes	110	µg/m3	1982-04-01	1987-04-30	1987-04-30	110	1982-04-01	1987-04-30	no	Gravimetric analysis	FILTER			0	0		0					
+DK0034A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2004-01-01		2012-12-31	100	2004-01-01		yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3	kerbside	30	minute		minute		
+DK0034A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01		2010-01-31	101	2006-01-01	2012-09-01	yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1	hour	3	3	kerbside	24	hour	1	day	flow rate check	
+DK0034A	7	O3	Ozone (air)	yes	100	µg/m3	1987-01-01		2012-12-31	100	1987-01-01		yes	Ultraviolet (UV) photometry	Monitor Labs model 8810 O3 analyser	1	month	3	2		0		1	hour	reference measurement meth.	
+DK0034A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-05-01	1987-04-30	1987-12-31	100	1982-05-01	1987-04-30	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0034A	8	NO2	Nitrogen dioxide (air)	yes	110	µg/m3	1987-01-01		2012-12-31	110	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	1	month	3	3		0		1	hour	compressed gases	
+DK0034A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1987-01-01		2007-12-31	100	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	kerbside	30	minute	1	minute	compressed gases	
+DK0034A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	1987-01-01		2012-12-31	100	1987-01-01	2006-01-01	yes	Non-dispersive infrared spectroscopy (NDIR)	THERMO ELECTRON INSTRUMENTS	1	day	3	3		0		1	hour	compressed gases	
+DK0034A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	1987-01-01		2012-12-31	101	2006-01-01		yes	Non-dispersive infrared spectroscopy (NDIR)	Teledyne API undertermined	1	day	3	3		0		1	hour	compressed gases	
+DK0034A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-01-01	2005-12-31	2001-12-31	100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	12	Pb	Lead (aerosol)	yes	110	µg/m3	1982-04-01	1987-04-30	1987-04-30	110	1982-04-01	1987-04-30	no	UNKNOWN	FILTER			0	0		0					
+DK0034A	12	Pb	Lead (aerosol)	yes	111	µg/m3	2006-01-01	2010-01-01	2009-12-31	111	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	12	Pb	Lead (aerosol)	yes	112	µg/m3	2010-01-01		2012-12-31	112	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0034A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	14	Cd	Cadmium (aerosol)	yes	110	ng/m3	1982-07-01	1987-02-28	1987-02-28	110	1982-07-01	1987-02-28	no	UNKNOWN	FILTER			0	0		0					
+DK0034A	14	Cd	Cadmium (aerosol)	yes	111	ng/m3	2006-01-01	2010-01-01	2009-12-31	111	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	14	Cd	Cadmium (aerosol)	yes	112	ng/m3	2010-01-01		2012-12-31	112	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0034A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2006-01-01	2010-01-01	2009-12-31	101	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	15	Ni	Nickel (aerosol)	yes	102	ng/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0034A	16	Cr	Chromium (aerosol)	no	100	ng/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	16	Cr	Chromium (aerosol)	no	101	ng/m3	2006-01-01		2009-12-31	101	2006-01-01		no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	17	Mn	Manganese (aerosol)	no	100	ng/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	17	Mn	Manganese (aerosol)	no	101	ng/m3	2006-01-01	2010-01-01	2009-12-31	101	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	18	As	Arsenic (aerosol)	yes	100	ng/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2006-01-01	2010-01-01	2009-12-31	101	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	18	As	Arsenic (aerosol)	yes	102	ng/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0034A	20	C6H6	Benzene (air)	yes	100	µg/m3	2006-01-01		2012-12-28	100	2006-01-01		yes	chromatography	AIRMOTEC AirmoSCAN2000	30	week	3	3	kerbside	30	minute	1	minute	compressed gases	
+DK0034A	20	C6H6	Benzene (air)	yes	101	µg/m3	2008-07-01		2010-12-27	101	2008-07-01		no	Gas chromatography + mass spectrometry (GC-MS)	UNKNOWN	5		4	0	kerbside	5	natural day		day		
+DK0034A	21	C6H5-CH3	Toluene (air)	no	100	µg/m3	2006-01-01		2012-12-28	100	2006-01-01		yes	Gas chromatography with photo ionization detector	Airmotec	30	week	3	3	kerbside	30	minute	1	minute	compressed gases	
+DK0034A	21	C6H5-CH3	Toluene (air)	no	101	µg/m3	2008-07-01		2010-12-20	101	2008-07-01		no	Gas chromatography + mass spectrometry (GC-MS)	UNKNOWN	5		4	0	kerbside	5	natural day		day		
+DK0034A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-05-01	1987-04-30	1987-12-31	100	1982-05-01	1987-04-30	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0034A	38	NO	Nitrogen monoxide (air)	no	110	µg/m3	1987-01-01		2012-12-31	110	1987-01-01		yes	Chemiluminescence	Thermo model 14B chemiluminescence NO-NO2-Nox	1	month	3	3		0		1	hour	compressed gases	
+DK0034A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	101	µg/m3	2006-01-01		2009-12-31	101	2006-01-01		no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	48	Se	Selenium (aerosol)	no	100	ng/m3	1987-01-01	2010-01-01	2009-12-31	100	1987-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	48	Se	Selenium (aerosol)	no	101	ng/m3	2006-01-01	2010-01-01		101	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	49	V	Vanadium (aerosol)	no	100	ng/m3	1987-01-01	2005-12-31		100	1987-01-01	2005-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0034A	49	V	Vanadium (aerosol)	no	101	ng/m3	2006-01-01	2010-01-01	2009-12-31	101	2006-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	kerbside	1	natural day		day		
+DK0034A	1045	NH4+ in PM2.5	Ammonium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1046	NO3- in PM2.5	Nitrate in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1047	SO42- in PM2.5	sulphate in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2012-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1629	Ca2+ in PM2.5	calcium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	DIONEX 2010I	1		3	2	kerbside	1	natural day		day		
+DK0034A	1631	Cl- in PM2.5	chloride in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1657	K+ in PM2.5	potassium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1659	Mg2+ in PM2.5	magnesium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1668	Na+  in PM2.5	sodium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	kerbside	1	natural day		day		
+DK0034A	1771	EC in PM2.5	Elemental carbon in PM2.5 (aerosol)	no	100	µg/m3	2010-01-01		2012-12-31	100	2010-01-01		no	Thermal-optical carbon analysis	Sunset Laboratory	1	month	3	0		24	hour	3	day	flow rate check	
+DK0034A	1772	OC in PM2.5	Organic carbon in PM2.5 (aerosol)	no	100	µg/m3	2010-01-01		2012-12-31	100	2010-01-01		no	Thermal-optical carbon analysis	Sunset Laboratory	1	month	3	0		24	hour	3	day	flow rate check	
+DK0034A	5029	BaP in PM10	Benzo(a)pyrene in PM10 (aerosol)	no	100	ng/m3	2007-06-01		2012-12-28	100	2007-06-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		0	3	kerbside	1	natural day		month		
+DK0034A	5419	Dibenzo(ah)anthracene in PM10	Dibenzo(ah)anthracene in PM10 (aerosol)	no	100	ng/m3	2007-06-01		2012-12-28	100	2007-06-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	kerbside	1	natural day		month		
+DK0034A	5610	Benzo(a)anthracene in PM10	Benzo(a)anthracene in PM10 (aerosol)	no	100	ng/m3	2007-06-01		2012-12-28	100	2007-06-01		no	UNKNOWN	UNKNOWN	1		3	2	kerbside	1	natural day		month		
+DK0034A	5626	Benzo(k)fluoranthene in PM10	Benzo(k)fluoranthene in PM10 (aerosol)	no	100	ng/m3	2007-06-01		2012-12-28	100	2007-06-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	kerbside	1	natural day		month		
+DK0034A	5655	Indeno-(1,2,3-cd)pyrene in PM	indeno_123cd_pyrene in PM10 (aerosol)	no	100	ng/m3	2007-06-01		2012-12-28	100	2007-06-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2		1	natural day		month		
+DK0034A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2004-01-01		2012-12-31	100	2004-01-01		yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3	kerbside	30	minute		minute		
+DK0034A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2007-02-20		2010-01-31	101	2007-02-20	2012-09-01	yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1	month	3	3	kerbside	24	hour	3	day	flow rate check	
+DK0030A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01			100	1987-01-01		no	UNKNOWN	FILTER			0	0		0					
+DK0030A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-01-01	1996-12-31	1996-12-31	110	1987-01-01	1996-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0030A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1987-01-01	1999-12-31		120	1987-01-01	1999-12-31	yes	UV fluorescence	Monitor Labs model 8850 SO2 analyser	30	week	3	3		30	minute	1	minute	compressed gases	
+DK0030A	1	SO2	Sulphur dioxide (air)	yes	130	µg/m3	1987-01-01	1999-12-31	2000-12-31	130	1987-01-01	1999-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		0		1	day	reference measurement meth.	
+DK0030A	1	SO2	Sulphur dioxide (air)	yes	140	µg/m3	1987-01-01	1989-12-31	1989-12-31	140	1987-01-01	1989-12-31	no	UNKNOWN	UNKNOWN			0	0		0					
+DK0030A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-01-01	1999-12-31	2000-12-31	100	1987-01-01	1999-12-31	no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	3	0		1	natural day	1	day	reference measurement meth.	
+DK0030A	4	SPM	Total suspended particulates (aerosol)	yes	110	µg/m3	1987-01-01	1996-12-31	1996-12-31	110	1987-01-01	1996-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0030A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2005-12-31	100	2001-01-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	102	µg/m3	2004-01-01	2011-01-01	2011-12-31	102	2004-01-01	2011-01-01	yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3	kerbside	30	minute		minute		
+DK0030A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	103	µg/m3	2006-01-01		2012-08-31	103	2006-01-01	2012-08-28	yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1	month	3	0	kerbside	1	hour	3	day	flow rate check	
+DK0030A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	103	µg/m3	2006-01-01		2012-08-31	104	2012-08-28		no	Gravimetric analysis	LVS	1	month	3	0	kerbside	1	hour	3	day	flow rate check	
+DK0030A	7	O3	Ozone (air)	yes	100	µg/m3	1998-01-01	2011-01-15	2011-12-31	100	1998-01-01	2011-01-15	yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	2	2		0		1	minute	uv lamp (ozone generator)	
+DK0030A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1987-01-01	1996-08-31	1996-12-31	100	1987-01-01	1996-08-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0030A	8	NO2	Nitrogen dioxide (air)	yes	110	µg/m3	1990-01-01		2012-12-31	110	1990-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3		0		1	minute	compressed gases	
+DK0030A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1987-01-01		2007-12-31	100	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	day	3	3	kerbside	30	minute	7	minute	compressed gases	
+DK0030A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	1994-01-01	2010-01-01	2010-12-31	100	1994-01-01	2010-01-01	yes	Non-dispersive infrared spectroscopy (NDIR)	FUJI ZRC	30	week	3	3		0		1	minute	compressed gases	
+DK0030A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-01-01	2000-12-31	2000-12-31	100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	12	Pb	Lead (aerosol)	yes	110	µg/m3	1987-01-01	1996-12-31	1996-12-31	110	1987-01-01	1996-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0030A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-01-01	2000-12-31	2000-12-31	100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	14	Cd	Cadmium (aerosol)	yes	110	ng/m3	1987-01-01	1996-12-31	1996-12-31	110	1987-01-01	1996-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0030A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1987-01-01	2000-12-31	2000-12-31	100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	16	Cr	Chromium (aerosol)	no	100	ng/m3	1987-01-01	2000-12-31	2000-12-31	100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1	month	3	0		1	natural day	1	day	calibration filter	
+DK0030A	16	Cr	Chromium (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	17	Mn	Manganese (aerosol)	no	100	ng/m3	1987-01-01	2000-12-31	2000-12-31	100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	17	Mn	Manganese (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	18	As	Arsenic (aerosol)	yes	100	ng/m3	1987-01-01	2000-12-31	2000-12-31	100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	20	C6H6	Benzene (air)	yes	100	µg/m3	2002-01-01		2012-12-28	100	2002-01-01		yes	chromatography	AIRMOTEC AirmoSCAN2000	30	day	4	4	kerbside	30	minute	6	minute	compressed gases	
+DK0030A	20	C6H6	Benzene (air)	yes	101	µg/m3	2008-07-01		2010-12-27	101	2008-07-01		no	Gas chromatography + mass spectrometry (GC-MS)	UNKNOWN	1		4	0	kerbside	1	week		week		
+DK0030A	21	C6H5-CH3	Toluene (air)	no	100	µg/m3	2002-01-01		2012-12-28	100	2002-01-01		yes	chromatography	UNKNOWN	30	day	4	4	kerbside	30	minute	6	minute	compressed gases	
+DK0030A	21	C6H5-CH3	Toluene (air)	no	102	µg/m3	2008-07-01		2010-12-20	102	2008-07-01		no	Gas chromatography + mass spectrometry (GC-MS)	UNKNOWN	1		4	0	kerbside	1	week		week		
+DK0030A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1987-01-01	1996-08-31	1996-12-31	100	1987-01-01	1996-08-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0030A	38	NO	Nitrogen monoxide (air)	no	110	µg/m3	1987-01-01		2012-12-31	110	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3		0		1	minute	compressed gases	
+DK0030A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1987-01-01	2000-12-31		100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	101	µg/m3	2001-01-01		2009-12-31	101	2001-01-01		no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	48	Se	Selenium (aerosol)	no	100	ng/m3	1987-01-01	2000-12-31		100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	48	Se	Selenium (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	49	V	Vanadium (aerosol)	no	100	ng/m3	1987-01-01	2000-12-31		100	1987-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0030A	49	V	Vanadium (aerosol)	no	101	ng/m3	2001-01-01	2010-01-01	2009-12-31	101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0030A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2006-01-01	2009-01-01	2008-12-31	100	2006-01-01	2009-01-01	yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3	kerbside	30	minute		minute		
+DK0030A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2010-01-01		2012-05-31	101	2010-01-01	2012-06-01	yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1	month	3	3	kerbside	24	hour	3	day	flow rate check	
+DK0030A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2010-01-01		2012-05-31	102	2012-06-01	2012-08-27	no	Gravimetric analysis	LVS	1	month	3	3	kerbside	24	hour	3	day	flow rate check	
+DK0030A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2010-01-01		2012-05-31	103	2012-08-27		yes	Beta ray attenuation	SM 200	1	month	3	3	kerbside	24	hour	3	day	flow rate check	
+DK0045A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2005-12-31	100	2001-01-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	102	µg/m3	2004-01-01	2011-01-01	2010-12-31	102	2004-01-01	2011-01-01	yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3	kerbside	30	minute		minute		
+DK0045A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	103	µg/m3	2006-01-01		2012-12-31	103	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	roof	1	natural day		day		
+DK0045A	7	O3	Ozone (air)	yes	100	µg/m3	1994-01-01	1999-07-20	1999-12-31	100	1994-01-01	1999-07-20	yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	2	2		0		1	minute	uv lamp (ozone generator)	
+DK0045A	7	O3	Ozone (air)	yes	101	µg/m3	2003-07-01		2012-12-31	101	2003-07-01		yes	Ultraviolet (UV) photometry	Teledyne API 400 UV photometric O3 analyser	30	day	20	3	roof	30	minute	1	minute	uv lamp (ozone generator)	
+DK0045A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0045A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0045A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	1998-01-01		2012-12-31	100	1998-01-01		yes	Non-dispersive infrared spectroscopy (NDIR)	FUJI ZRC	30	week	2	2		0		1	minute	compressed gases	
+DK0045A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0045A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0045A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0045A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0045A	20	C6H6	Benzene (air)	yes	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	21	C6H5-CH3	Toluene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0045A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	48	Se	Selenium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	49	V	Vanadium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0045A	316	(CH3)2-CH-CH2-CH2-CH3	i-Hexane (2-methylpentane) (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	431	C6H5-C2H5	Ethyl benzene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	441	C7H16	n-Heptane (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	443	C6H14	n-Hexane (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	449	(CH3)3-C-CH2-CH-(CH3)2	i-Octane (2,2,4-trimethylpentane) (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	451	CH2=CH-C(CH3)=CH2	Isoprene (2-methyl-1,3-butadiene) (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	464	m,p-C6H4(CH3)2	m,p-Xylene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	0	0		1	natural day	1	month	compressed gases	
+DK0045A	475	C8H18	n-Octane (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	hour	1	day	compressed gases	
+DK0045A	482	o-C6H4-(CH3)2	o-Xylene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	486	H3C-(CH2)3-CH3	n-Pentane (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2004-01-01		2012-12-31	100	2004-01-01		yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3	kerbside	30	minute		minute		
+DK0045A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2008-01-01		2010-01-31	101	2008-01-01	2012-08-01	no	Beta ray attenuation	SM200 (ADAM)	1	month	3	2	kerbside	24	hour	3	day	flow rate check	
+DK0045A	6008	H2C=CH-CH2-CH2-CH3	1-Pentene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0	roof	1	natural day	1	day	compressed gases	
+DK0045A	6009	H3C-HC=CH-CH2-CH3	2-Pentenes (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	6011	1,2,4-C6H3(CH3)3	1,2,4-Trimethylbenzene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	6012	1,2,3-C6H3(CH3)3	1,2,3-Trimethylbenzene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0045A	6013	1,3,5-C6H3(CH3)3	1,3,5-Trimethylbenzene (air)	no	100	µg/m3	2009-01-21		2012-12-31	100	2009-01-21		no	Gas chromatography + mass spectrometry GC-MS after solvent o	Markes Thermal Desorber + Agilent gas Chromatograph Mass Spectrometer	1	month	20	0		1	natural day	1	day	compressed gases	
+DK0016A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1983-03-01	1986-09-30	1986-09-30	110	1983-03-01	1986-09-30	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0016A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1982-02-01	1986-12-31	1986-12-31	120	1982-02-01	1986-12-31						0	0		0					
+DK0016A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-02-01	1986-10-31	1986-10-31	100	1982-02-01	1986-10-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0016A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-02-01	1986-09-30	1986-12-31	100	1982-02-01	1986-09-30	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0016A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1982-02-01	1986-09-30	1986-12-31	100	1982-01-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0016A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-02-01	1986-03-31	1986-03-31	100	1982-02-01	1986-03-31	no	UNKNOWN	FILTER			0	0		0					
+DK0016A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-03-01	1986-03-31	1986-03-31	100	1982-03-01	1986-03-31	no	UNKNOWN	FILTER			0	0		0					
+DK0016A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-02-01	1986-09-30	1986-12-31	100	1982-02-01	1986-09-30	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0036A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0036A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0036A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1987-01-01	1987-12-31		120	1987-01-01	1987-12-31	yes	UV fluorescence	Monitor Labs model 8850 SO2 analyser	1		300	300		0			day	compressed gases	
+DK0036A	1	SO2	Sulphur dioxide (air)	yes	130	µg/m3	1987-01-01	1987-12-31		130	1987-01-01	1987-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	300	15		0		1	week	reference measurement meth.	
+DK0036A	1	SO2	Sulphur dioxide (air)	yes	140	µg/m3	1987-01-01	1987-12-31	1989-12-31	140	1987-01-01	1987-12-31						0	0		0					
+DK0036A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	300	10		0		1	week	reference measurement meth.	
+DK0036A	4	SPM	Total suspended particulates (aerosol)	yes	110	µg/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0036A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1987-01-01	1987-12-31	1989-12-31	100	1987-01-01	1987-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0036A	8	NO2	Nitrogen dioxide (air)	yes	110	µg/m3	1987-01-01	1987-12-31		110	1987-01-01	1987-12-31	yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	1	month	300	300		0		1	day	compressed gases	
+DK0036A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1987-01-01	1987-12-31	1989-12-31	100	1987-01-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0036A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		300	15		0			week	calibration filter	
+DK0036A	12	Pb	Lead (aerosol)	yes	110	µg/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0036A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-01-01	1987-12-31		100	1987-01-01	1987-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		300	10		0			week	calibration filter	
+DK0036A	14	Cd	Cadmium (aerosol)	yes	110	ng/m3	1987-01-01	1987-12-31	1989-12-31	110	1987-01-01	1987-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0036A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1987-01-01	1987-12-31	1989-12-31	100	1987-01-01	1987-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0036A	38	NO	Nitrogen monoxide (air)	no	110	µg/m3	1987-01-01	1987-12-31		110	1987-01-01	1987-12-31	yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	1	month	300	300		0		1	day	compressed gases	
+DK0032R	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1985-01-01		2003-12-31	100	1985-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1		18	0		0			day	reference measurement meth.	
+DK0032R	7	O3	Ozone (air)	yes	100	µg/m3	1988-01-01	2002-06-30	2001-12-31	100	1988-01-01	2002-06-30	yes	Ultraviolet (UV) photometry	Monitor Labs model 8810 O3 analyser	30	day	18	2		0		1	minute	uv lamp (ozone generator)	
+DK0007A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Spectrophotometry	OECD			0	0		0					
+DK0007A	3	SA	Strong acidity (air)	no	100	µg SO2/m3	1976-01-01	1980-12-31	1980-12-31	100	1976-01-01	1980-12-31	no	UNKNOWN	HVS			0	0		0					
+DK0007A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	UNKNOWN	HVS			0	0		0					
+DK0007A	6	BS	Black smoke (air)	yes	100	µg/m3	1976-01-01	1982-04-30	1982-04-30	100	1976-01-01	1982-04-30	no	Reflectometry	OECD			0	0		0					
+DK0055A	5029	BaP in PM10	Benzo(a)pyrene in PM10 (aerosol)	no	100	ng/m3	2010-01-01		2011-04-29	100	2010-01-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	pavement	1	natural day		day		
+DK0055A	5419	Dibenzo(ah)anthracene in PM10	Dibenzo(ah)anthracene in PM10 (aerosol)	no	100	ng/m3	2010-01-01		2010-12-31	100	2010-01-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	pavement	1	natural day		day		
+DK0055A	5610	Benzo(a)anthracene in PM10	Benzo(a)anthracene in PM10 (aerosol)	no	100	ng/m3	2010-01-01		2010-12-31	100	2010-01-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	pavement	1	natural day		day		
+DK0055A	5626	Benzo(k)fluoranthene in PM10	Benzo(k)fluoranthene in PM10 (aerosol)	no	100	ng/m3	2010-01-01		2010-12-31	100	2010-01-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	pavement	1	natural day		day		
+DK0055A	5655	Indeno-(1,2,3-cd)pyrene in PM	indeno_123cd_pyrene in PM10 (aerosol)	no	100	ng/m3	2010-01-01		2010-12-31	100	2010-01-01		no	Gas chromatography + mass spectrometry (GC-MS)	HVS	1		3	2	pavement	1	natural day		day		
+DK0005R	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1979-01-01		2003-12-31	100	1979-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1		2	0		0			day	reference measurement meth.	
+DK0005R	12	Pb	Lead (aerosol)	yes	100	µg/m3	1979-01-01		2001-12-31	100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	16	Cr	Chromium (aerosol)	no	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	17	Mn	Manganese (aerosol)	no	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	18	As	Arsenic (aerosol)	yes	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	35	NH3	Ammonia (air)	no	100	µg/m3	1985-01-01			100	1985-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		0		1	day	standard solution	
+DK0005R	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	48	Se	Selenium (aerosol)	no	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0005R	49	V	Vanadium (aerosol)	no	100	ng/m3	1979-01-01			100	1979-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0054A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2004-11-10		2012-12-31	100	2004-11-10		no	Gravimetric analysis	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0054A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01		2010-01-31	101	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	free air flow	1	natural day		day		
+DK0054A	7	O3	Ozone (air)	yes	100	µg/m3	2004-11-10		2012-12-31	100	2004-11-10		yes	Chemiluminescence	Teledyne API undertermined	30	day	3	3	roof	30	minute	1	day	O3 generator stopped	
+DK0054A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	2004-11-10		2012-12-31	100	2004-11-10		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0054A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	2004-11-10		2012-12-31	100	2004-11-10		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	free air flow	30	minute	1	minute	compressed gases	
+DK0054A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0054A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2010-01-01	2010-08-01	2010-07-31	101	2010-01-01	2010-08-01	no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0054A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200			0	0		0					
+DK0054A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2010-01-01	2010-08-01	2010-07-31	101	2010-01-01	2010-08-01	no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0054A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0054A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2010-01-01	2010-08-01	2010-07-31	101	2010-01-01	2010-08-01	no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0054A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0054A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0054A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0054A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2010-01-01	2010-08-01	2010-07-31	101	2010-01-01	2010-08-01	no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0054A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	2004-11-10		2012-12-31	100	2004-11-10		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	30	minute	1	minute	compressed gases	
+DK0054A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0054A	48	Se	Selenium (aerosol)	no	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0054A	49	V	Vanadium (aerosol)	no	100	ng/m3	2004-11-10	2010-01-01		100	2004-11-10	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0048A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-10-01	2004-12-31	2004-12-31	100	2001-10-01	2004-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	7	O3	Ozone (air)	yes	100	µg/m3	1993-01-01	2004-10-11	2004-12-31	100	1993-01-01	2004-10-11	yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	2	2		0		1	minute	uv lamp (ozone generator)	
+DK0048A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1993-01-01	2004-10-11	2004-12-31	100	1993-01-01	2004-10-11	yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0048A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1993-01-01	2004-10-11	2004-12-31	100	1993-01-01	2004-12-31	yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0048A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1993-01-01	2004-10-11	2004-12-31	100	1993-01-01	2004-10-11	yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0048A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	48	Se	Selenium (aerosol)	no	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0048A	49	V	Vanadium (aerosol)	no	100	ng/m3	2001-10-01	2005-12-31		100	2001-10-01	2005-12-31	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1990-01-01	2010-07-06	2000-12-31	100	1990-01-01	2010-07-06	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		0		1	day	reference measurement meth.	
+DK0041A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1990-01-01	2010-07-06	2000-12-31	100	1990-01-01	2010-07-06	no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	3	0		1	natural day	1	day	reference measurement meth.	
+DK0041A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2005-12-31	100	2001-01-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01	2010-07-06	2010-06-30	101	2006-01-01	2010-07-06	yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	free air flow	1	natural day		day		
+DK0041A	7	O3	Ozone (air)	yes	100	µg/m3	1991-01-01	2010-07-06	2010-12-31	100	1991-01-01	2010-07-06	yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	3	2		0		1	minute	O3 generator stopped	
+DK0041A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1990-01-01	2010-07-06	2010-12-31	100	1990-01-01	2010-07-06	yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	30	week	3	3		0		1	minute	compressed gases	
+DK0041A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1990-01-01	2010-07-06	2010-12-31	100	1990-01-01	2010-07-06	yes	Chemiluminescence	Teledyne API undertermined	303	week	3	3	free air flow	30	minute	1	minute	compressed gases	
+DK0041A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	2005-01-01	2010-07-06	2010-12-31	100	2005-01-01	2010-07-06	yes	Non-dispersive infrared spectroscopy (NDIR)	Teledyne API 300 gas filter correlation CO analyser	30	week	3	3		0		1	minute	compressed gases	
+DK0041A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1990-01-01	2003-12-31	2000-12-31	100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1990-01-01	2003-12-31	2000-12-31	100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1990-01-01	2003-12-31	2000-12-31	100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	16	Cr	Chromium (aerosol)	no	100	ng/m3	1990-01-01	2003-12-31	2000-12-31	100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	16	Cr	Chromium (aerosol)	no	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	17	Mn	Manganese (aerosol)	no	100	ng/m3	1990-01-01	2003-12-31	2000-12-31	100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	17	Mn	Manganese (aerosol)	no	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	18	As	Arsenic (aerosol)	yes	100	ng/m3	1990-01-01	2000-12-31	2000-12-31	100	1990-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1990-01-01	2010-07-06	2010-12-31	100	1990-01-01	2010-07-06	yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	30	week	3	3		0		1	minute	compressed gases	
+DK0041A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1990-01-01	2010-07-06	2009-12-31	100	1990-01-01	2010-07-06	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	101	µg/m3	2001-01-01	2010-07-06	2008-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	48	Se	Selenium (aerosol)	no	100	ng/m3	1990-01-01	2003-12-31		100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	48	Se	Selenium (aerosol)	no	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	49	V	Vanadium (aerosol)	no	100	ng/m3	1990-01-01	2003-12-31		100	1990-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0041A	49	V	Vanadium (aerosol)	no	101	ng/m3	2001-01-01	2010-07-06	2009-12-31	101	2001-01-01	2010-07-06	no	x-ray emission	OPSIS SM200	1		3	2	free air flow	1	natural day		day		
+DK0041A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2005-01-01	2010-07-06	2010-12-31	100	2005-01-01	2010-07-06	yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3		0			minute		
+DK0041A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2008-01-01	2010-07-06	2010-01-31	101	2008-01-01	2010-07-06	no	Beta ray attenuation	SM200 (ADAM)	1		3	2	free air flow	1	natural day		day		
+DK0003A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-06-01	1986-12-31	1986-12-31	110	1982-06-01	1986-12-31						0	0		0					
+DK0003A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-06-01	1986-12-31	1986-12-31	100	1982-06-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0003A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-06-01	1986-12-31	1986-12-31	100	1982-06-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0003A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-07-01	1986-10-31	1986-10-31	100	1982-07-01	1986-10-31	no	UNKNOWN	FILTER			0	0		0					
+DK0032A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01		2003-12-31	100	1987-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1		10	0		0			day	reference measurement meth.	
+DK0017A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-01-01	1986-12-31	1986-12-31	110	1982-01-01	1986-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0017A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1982-02-01	1986-12-31	1986-12-31	120	1982-02-01	1986-12-31						0	0		0					
+DK0017A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0017A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-01-01	1986-12-31	1986-12-31	100	1982-01-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0017A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1982-01-01	1986-12-31	1986-12-31	100	1982-01-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0017A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0017A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0017A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-01-01	1986-12-31	1986-12-31	100	1982-01-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0006A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-10-01	1989-12-31	1989-12-31	110	1987-10-01	1989-12-31						0	0		0					
+DK0006A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-09-01	1989-12-31	1989-12-31	100	1987-09-01	1989-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0006A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1987-09-01	1989-12-31	1989-12-31	100	1987-09-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0006A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1987-09-01	1989-12-31	1989-12-31	100	1987-01-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0006A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-09-01	1989-12-31	1989-12-31	100	1987-09-01	1989-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0006A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-09-01	1989-12-31	1989-12-31	100	1987-09-01	1989-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0006A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1987-09-01	1989-12-31	1989-12-31	100	1987-09-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0013A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-02-01	1987-11-30	1987-11-30	110	1982-02-01	1987-11-30	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0013A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1982-02-01	1987-11-30	1987-11-30	120	1982-02-01	1987-11-30						0	0		0					
+DK0013A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-02-01	1987-11-30	1987-11-30	100	1982-02-01	1987-11-30	no	Gravimetric analysis	FILTER			0	0		0					
+DK0013A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-02-01	1987-11-30	1987-12-31	100	1982-02-01	1987-11-30	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0013A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1982-02-01	1987-11-30	1987-12-31	100	1982-01-01	1987-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0013A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-02-01	1987-11-30	1987-11-30	100	1982-02-01	1987-11-30	no	UNKNOWN	FILTER			0	0		0					
+DK0013A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-05-01	1987-11-30	1987-11-30	100	1982-05-01	1987-11-30	no	UNKNOWN	FILTER			0	0		0					
+DK0013A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-02-01	1987-11-30	1987-12-31	100	1982-02-01	1987-11-30	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0022A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		0		1	day	reference measurement meth.	
+DK0022A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	3	0		0		1	day	reference measurement meth.	
+DK0022A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0022A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0022A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	1		0			day	calibration filter	
+DK0022A	16	Cr	Chromium (aerosol)	no	100	ng/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0022A	17	Mn	Manganese (aerosol)	no	100	ng/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0022A	18	As	Arsenic (aerosol)	yes	100	ng/m3	1983-01-01	2000-12-31		100	1983-01-01	2000-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0031A	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1987-01-01			100	1987-01-01		no	UNKNOWN	FILTER			0	0		0					
+DK0031A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1987-01-01	1992-12-31	1992-12-31	110	1987-01-01	1992-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0031A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1987-01-01	2000-12-31		120	1987-01-01	2000-12-31	yes	UV fluorescence	Monitor Labs model 8850 SO2 analyser	30	week	3	3		30	minute	1	minute	compressed gases	
+DK0031A	1	SO2	Sulphur dioxide (air)	yes	130	µg/m3	1987-01-01	2000-12-31	2000-12-31	130	1987-01-01	2000-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		1	natural day	1	day	reference measurement meth.	
+DK0031A	1	SO2	Sulphur dioxide (air)	yes	140	µg/m3	1987-01-01	1989-12-31	1989-12-31	140	1987-01-01	1989-12-31	no	UNKNOWN	UNKNOWN			0	0		0					
+DK0031A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1987-01-01		2000-12-31	100	1987-01-01		no	Gravimetric analysis	DANISH LMP FILTERPACK SPM COLLECTOR	1	month	3	0		1	natural day	1	day	reference measurement meth.	
+DK0031A	4	SPM	Total suspended particulates (aerosol)	yes	110	µg/m3	1987-01-01	1989-12-31	1989-12-31	110	1987-01-01	1989-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0031A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-02-01	2005-12-31	2005-12-31	100	2001-02-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01		2012-12-31	101	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	kerbside	0			day		
+DK0031A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1987-01-01	1992-12-31	1992-12-31	100	1987-01-01	1992-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0031A	8	NO2	Nitrogen dioxide (air)	yes	110	µg/m3	1987-01-01		2012-12-31	110	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	month	3	3		0		1	minute	compressed gases	
+DK0031A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1987-01-01		2007-12-31	100	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	kerbside	30	minute	1	minute	compressed gases	
+DK0031A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Non-dispersive infrared spectroscopy (NDIR)	FUJI ZRC	30	week	3	3		0		1	minute	compressed gases	
+DK0031A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1987-01-01	2003-12-31	2000-12-31	100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2001-02-01	2010-01-01	2001-12-31	101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	12	Pb	Lead (aerosol)	yes	110	µg/m3	1987-01-01	1989-12-31	1989-12-31	110	1987-01-01	1989-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0031A	12	Pb	Lead (aerosol)	yes	111	µg/m3	2010-01-01		2012-12-31	111	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0031A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1987-01-01	2003-12-31	2000-12-31	100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2001-02-01	2010-01-01		101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	14	Cd	Cadmium (aerosol)	yes	110	ng/m3	1987-01-01	1989-12-31	1989-12-31	110	1987-01-01	1989-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0031A	14	Cd	Cadmium (aerosol)	yes	111	ng/m3	2010-01-01		2012-12-31	111	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0031A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1987-01-01	2003-12-31	2000-12-31	100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2001-02-01	2010-01-01		101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	15	Ni	Nickel (aerosol)	yes	102	ng/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0031A	16	Cr	Chromium (aerosol)	no	100	ng/m3	1987-01-01	2003-12-31	2000-12-31	100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	16	Cr	Chromium (aerosol)	no	101	ng/m3	2001-02-01	2010-01-01		101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	17	Mn	Manganese (aerosol)	no	100	ng/m3	1987-01-01	2003-12-31	2000-12-31	100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	17	Mn	Manganese (aerosol)	no	101	ng/m3	2001-02-01			101	2001-02-01		no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	18	As	Arsenic (aerosol)	yes	100	ng/m3	1987-01-01	2003-12-31	2000-12-31	100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2001-02-01	2010-01-01		101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	18	As	Arsenic (aerosol)	yes	102	ng/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0031A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1987-01-01	1992-12-31	1992-12-31	100	1987-01-01	1992-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0031A	38	NO	Nitrogen monoxide (air)	no	110	µg/m3	1987-01-01		2012-12-31	110	1987-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	month	3	3		0		1	minute	compressed gases	
+DK0031A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1987-01-01			100	1987-01-01		no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	101	µg/m3	2001-02-01			101	2001-02-01		no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	48	Se	Selenium (aerosol)	no	100	ng/m3	1987-01-01	2003-12-31		100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	48	Se	Selenium (aerosol)	no	101	ng/m3	2001-02-01	2010-01-01		101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0031A	49	V	Vanadium (aerosol)	no	100	ng/m3	1987-01-01	2003-12-31		100	1987-01-01	2003-12-31	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day	calibration filter	
+DK0031A	49	V	Vanadium (aerosol)	no	101	ng/m3	2001-02-01	2010-01-01		101	2001-02-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	kerbside	1	natural day		day		
+DK0046A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2004-09-01	2005-12-31	2005-12-31	100	2004-09-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0046A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01		2007-03-31	101	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	roof	1	natural day		day		
+DK0046A	7	O3	Ozone (air)	yes	100	µg/m3	1994-01-01		2012-12-31	100	1994-01-01		yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	2	2		0		1	minute	uv lamp (ozone generator)	
+DK0046A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser		week	0	0		0		1		compressed gases	
+DK0046A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	roof	1	second	1	minute	compressed gases	
+DK0046A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0046A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3		0			day		
+DK0046A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0046A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0046A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0046A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0046A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1995-01-01		2012-12-31	100	1995-01-01		yes	Chemiluminescence	Teledyne API 200A chemiluminescent NOx analyser	30	week	2	2		0		1	minute	compressed gases	
+DK0046A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2004-09-01			100	2004-09-01		no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0046A	48	Se	Selenium (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0046A	49	V	Vanadium (aerosol)	no	100	ng/m3	2004-09-01	2010-01-01		100	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0018A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1983-03-01	1986-12-31	1986-12-31	110	1983-03-01	1986-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0018A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1982-03-01	1986-11-30	1986-11-30	120	1982-03-01	1986-11-30						0	0		0					
+DK0018A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-03-01	1986-11-30	1986-11-30	100	1982-03-01	1986-11-30	no	Gravimetric analysis	FILTER			0	0		0					
+DK0018A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0018A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-01-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0018A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-03-01	1986-11-30	1986-11-30	100	1982-03-01	1986-11-30	no	UNKNOWN	FILTER			0	0		0					
+DK0018A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-03-01	1986-08-31	1986-08-31	100	1982-03-01	1986-08-31	no	UNKNOWN	FILTER			0	0		0					
+DK0018A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0012R	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2010-07-06		2012-12-31	100	2010-07-06		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	2		0			day		
+DK0012R	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2010-07-06		2011-12-31	101	2010-07-06		yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3		30	minute		minute		
+DK0012R	5	PM10	Particulate matter < 10 µm (aerosol)	yes	102	µg/m3	2011-01-01		2011-11-30	102	2011-01-01		no	LVS - automatic filter change 2,3 m3/h	Leckel Sequential LVS	1		3	2	free air flow	1	natural day		day		
+DK0012R	7	O3	Ozone (air)	yes	100	µg/m3	2010-07-06		2012-12-31	100	2010-07-06		yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	3	2		0		1	minute	O3 generator stopped	
+DK0012R	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	2010-07-06		2012-12-31	100	2010-07-06		yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	30	week	3	3		0		1	minute	compressed gases	
+DK0012R	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	2010-07-06		2012-12-31	100	2010-01-01		yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	30	week	3	3		0		1	minute	compressed gases	
+DK0012R	10	CO	Carbon monoxide (air)	yes	100	mg/m3	2010-07-06		2012-12-31	100	2010-07-06		yes	Non-dispersive infrared spectroscopy (NDIR)	Teledyne API 300 gas filter correlation CO analyser	3	week	3	3		0		1	minute	compressed gases	
+DK0012R	12	Pb	Lead (aerosol)	yes	100	µg/m3	2010-07-06		2012-12-31	100	2010-07-06		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0012R	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2010-07-06		2012-12-31	100	2010-07-06		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	hour		day		
+DK0012R	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2010-07-06		2012-12-31	100	2010-07-06		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	hour		day		
+DK0012R	18	As	Arsenic (aerosol)	yes	100	ng/m3	2010-07-06		2012-12-31	100	2010-07-06		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		1	natural day		day		
+DK0012R	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	2010-07-06		2012-12-31	100	2010-07-06		yes	Chemiluminescence	Monitor Labs model 8840 NOx analyser	30	week	3	3		0		1	minute	compressed gases	
+DK0012R	1045	NH4+ in PM2.5	Ammonium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1046	NO3- in PM2.5	Nitrate in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1047	SO42- in PM2.5	sulphate in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2012-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1629	Ca2+ in PM2.5	calcium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1631	Cl- in PM2.5	chloride in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1657	K+ in PM2.5	potassium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1659	Mg2+ in PM2.5	magnesium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1668	Na+  in PM2.5	sodium in PM2.5 (aerosol)	no	100	µg/m3	2011-01-01		2011-12-31	100	2011-01-01		no	Ion chromatography	Dionex 3000	1		3	2	free air flow	1	natural day		day		
+DK0012R	1771	EC in PM2.5	Elemental carbon in PM2.5 (aerosol)	no	100	µg/m3	2010-01-01		2012-12-31	100	2010-01-01		no	Thermal-optical carbon analysis	Sunset Laboratory	1	month	3	0		24	hour	3	day	flow rate check	
+DK0012R	1772	OC in PM2.5	Organic carbon in PM2.5 (aerosol)	no	100	µg/m3	2010-01-01		2012-12-31	100	2010-01-01		no	Thermal-optical carbon analysis	Sunset Laboratory	1	month	3	0		24	hour	3	day	flow rate check	
+DK0012R	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2010-07-06		2012-08-31	100	2010-07-06	2012-08-25	yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1	month	3	2		24	hour	3	day	flow rate check	
+DK0012R	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2010-07-06		2012-08-31	102	2012-08-25		no	Gravimetric analysis	LVS	1	month	3	2		24	hour	3	day	flow rate check	
+DK0012R	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	101	µg/m3	2010-07-06		2010-12-31	101	2010-07-06		yes	Tapered Element Oscillating Microbalance (TEOM)	TEOM 1400A	30		3	3		30	minute		minute		
+DK0001A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-04-01	1986-12-31	1986-12-31	110	1982-04-01	1986-12-31						0	0		0					
+DK0001A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-04-01	1986-12-31	1986-12-31	100	1982-04-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0001A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-04-01	1986-12-31	1986-12-31	100	1982-04-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0001A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-05-01	1986-12-31	1986-12-31	100	1982-05-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0012A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-09-01	1986-12-31	1986-12-31	110	1982-09-01	1986-12-31						0	0		0					
+DK0012A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-09-01	1986-12-31	1986-12-31	100	1982-09-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0012A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-09-01	1986-12-31	1986-12-31	100	1982-09-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0012A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-10-01	1986-05-31	1986-05-31	100	1982-10-01	1986-05-31	no	UNKNOWN	FILTER			0	0		0					
+DK0014A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-02-01	1987-01-31	1987-01-31	110	1982-02-01	1987-01-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0014A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1982-02-01	1986-12-31	1986-12-31	120	1982-02-01	1986-12-31						0	0		0					
+DK0014A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0014A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1982-02-01	1987-01-31	1987-12-31	100	1982-02-01	1987-01-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0014A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1982-02-01	1987-01-31	1987-12-31	100	1982-01-01	1987-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0014A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-02-01	1986-12-31	1986-12-31	100	1982-02-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0014A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-03-01	1986-12-31	1986-12-31	100	1982-03-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0014A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1982-02-01	1987-01-31	1987-12-31	100	1982-02-01	1987-01-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0015A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1988-05-01	1989-12-31	1989-12-31	110	1988-05-01	1989-12-31	yes	UV fluorescence	UNKNOWN			0	0		0					
+DK0015A	1	SO2	Sulphur dioxide (air)	yes	120	µg/m3	1988-05-01	1989-12-31	1989-12-31	120	1988-05-01	1989-12-31						0	0		0					
+DK0015A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1988-05-01	1989-12-31	1989-12-31	100	1988-05-01	1989-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0015A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1988-05-01	1989-12-31	1989-12-31	100	1988-05-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0015A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1988-05-01	1989-12-31	1989-12-31	100	1988-01-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0015A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1988-05-01	1989-12-31	1989-12-31	100	1988-05-01	1989-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0015A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1988-05-01	1989-12-31	1989-12-31	100	1988-05-01	1989-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0015A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1988-05-01	1989-12-31	1989-12-31	100	1988-05-01	1989-12-31	yes	Chemiluminescence	UNKNOWN			0	0		0					
+DK0011A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-04-01	1986-12-31	1986-12-31	110	1982-04-01	1986-12-31						0	0		0					
+DK0011A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-04-01	1986-12-31	1986-12-31	100	1982-04-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0011A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-04-01	1986-12-31	1986-12-31	100	1982-04-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0011A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-05-01	1986-12-31	1986-12-31	100	1982-05-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0003R	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1979-01-01		2008-12-31	100	1979-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1		2	0		0			day	reference measurement meth.	
+DK0003R	12	Pb	Lead (aerosol)	yes	100	µg/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			week	calibration filter	
+DK0003R	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	16	Cr	Chromium (aerosol)	no	100	ng/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	17	Mn	Manganese (aerosol)	no	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	18	As	Arsenic (aerosol)	yes	100	ng/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	35	NH3	Ammonia (air)	no	100	µg/m3	1987-01-01			100	1987-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	3	0		0		1	day	standard solution	
+DK0003R	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	48	Se	Selenium (aerosol)	no	100	ng/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		2	0		0			day	calibration filter	
+DK0003R	49	V	Vanadium (aerosol)	no	100	ng/m3	1979-01-01	2010-01-01	2009-12-31	100	1979-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		3	0		0			day	calibration filter	
+DK0031R	1	SO2	Sulphur dioxide (air)	yes	100	µg/m3	1985-01-01		2008-12-31	100	1985-01-01		no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1		18	0		0			day	reference measurement meth.	
+DK0031R	7	O3	Ozone (air)	yes	100	µg/m3	1988-01-01		2012-12-31	100	1988-01-01		yes	Ultraviolet (UV) photometry	Monitor Labs model 8810 O3 analyser	30	day	18	2		0		1	minute	uv lamp (ozone generator)	
+DK0031R	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	1989-01-01	2003-12-31	2003-12-31	100	1989-01-01	2003-12-31	no	Ion chromatography	DANISH LMP FILTERPACK POLL. COLLECTOR	1	month	18	0		0		1	day	standard solution	
+DK0031R	8	NO2	Nitrogen dioxide (air)	yes	101	µg/m3	1989-01-01		2012-12-31	101	1989-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	day	18	3	free air flow	30	minute	7	minute	reference measurement meth.	
+DK0031R	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	1989-01-01		2007-12-31	100	1989-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	18	18	free air flow	30	minute	1	minute	compressed gases	
+DK0031R	12	Pb	Lead (aerosol)	yes	100	µg/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	15	Ni	Nickel (aerosol)	yes	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	16	Cr	Chromium (aerosol)	no	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	17	Mn	Manganese (aerosol)	no	100	ng/m3	1982-01-01	2010-01-01	2009-12-31	100	1982-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	18	As	Arsenic (aerosol)	yes	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	unknown	1	natural day		day		
+DK0031R	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	1989-01-01		2012-12-31	100	1989-01-01		yes	Chemiluminescence	Teledyne API undertermined	30	day	18	3	free air flow	30	minute	7	minute	reference measurement meth.	
+DK0031R	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	48	Se	Selenium (aerosol)	no	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0031R	49	V	Vanadium (aerosol)	no	100	ng/m3	1985-01-01	2010-01-01	2009-12-31	100	1985-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		18	3	park	1	natural day		day		
+DK0005A	1	SO2	Sulphur dioxide (air)	yes	110	µg/m3	1982-04-01	1986-12-31	1986-12-31	110	1982-04-01	1986-12-31						0	0		0					
+DK0005A	4	SPM	Total suspended particulates (aerosol)	yes	100	µg/m3	1982-04-01	1986-12-31	1986-12-31	100	1982-04-01	1986-12-31	no	Gravimetric analysis	FILTER			0	0		0					
+DK0005A	12	Pb	Lead (aerosol)	yes	100	µg/m3	1982-04-01	1986-12-31	1986-12-31	100	1982-04-01	1986-12-31	no	UNKNOWN	FILTER			0	0		0					
+DK0005A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	1982-04-01	1986-11-30	1986-11-30	100	1982-04-01	1986-11-30	no	UNKNOWN	FILTER			0	0		0					
+DK0051A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2005-12-31	100	2001-01-01	2005-12-31	no	Gravimetric analysis	UNKNOWN	1		4	4	kerbside	1	natural day		day		
+DK0051A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2004-09-01		2012-12-31	101	2004-09-01		no	Gravimetric analysis	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	102	µg/m3	2006-01-01		2010-01-31	102	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	kerbside	1	natural day		day		
+DK0051A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	2000-06-01		2012-12-31	100	2000-06-01		yes	Chemiluminescence	Teledyne API undertermined			0	0		0					
+DK0051A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	2000-06-01		2012-12-31	100	2000-06-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	kerbside	30	minute	1	minute	compressed gases	
+DK0051A	10	CO	Carbon monoxide (air)	yes	100	mg/m3	2000-06-01		2012-12-31	100	2000-06-01		yes	Non-dispersive infrared spectroscopy (NDIR)	Teledyne API 300 gas filter correlation CO analyser	30	day	3	2	kerbside	30	minute	7	minute	compressed gases	
+DK0051A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		4	4	kerbside	1	natural day		day		
+DK0051A	12	Pb	Lead (aerosol)	yes	101	µg/m3	2004-09-01	2010-01-01	2008-12-31	101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0051A	12	Pb	Lead (aerosol)	yes	102	µg/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0051A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		4	4	kerbside	1	natural day		day		
+DK0051A	14	Cd	Cadmium (aerosol)	yes	101	ng/m3	2010-01-01		2012-12-31	101	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0051A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		4	4	kerbside	1	natural day		day		
+DK0051A	15	Ni	Nickel (aerosol)	yes	101	ng/m3	2004-09-01	2010-01-01		101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	15	Ni	Nickel (aerosol)	yes	102	ng/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0051A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		4	4	kerbside	1	natural day		day		
+DK0051A	16	Cr	Chromium (aerosol)	no	101	ng/m3	2004-09-01	2010-01-01		101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		4	4	kerbside	1	natural day		day		
+DK0051A	17	Mn	Manganese (aerosol)	no	101	ng/m3	2004-09-01	2010-01-01		101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		4	4	kerbside	1	natural day		day		
+DK0051A	18	As	Arsenic (aerosol)	yes	101	ng/m3	2001-01-01	2010-01-01		101	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0051A	18	As	Arsenic (aerosol)	yes	102	ng/m3	2010-01-01		2012-12-31	102	2010-01-01		no	Inductive coupled plasma mass spectrometryscopy (ICP-MS)	OPSIS SM200	1		3	3		1	natural day		day		
+DK0051A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	2000-06-01		2012-12-31	100	2000-06-01		yes	Chemiluminescence	Teledyne API undertermined	30	day	3	2	kerbside	30	minute	7	minute	compressed gases	
+DK0051A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2001-01-01		2009-12-31	100	2001-01-01		no	x-ray emission	UNKNOWN	1		4	4	kerbside	1	natural day		day		
+DK0051A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	101	µg/m3	2004-09-01	2010-01-01	2008-12-31	101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	48	Se	Selenium (aerosol)	no	100	ng/m3	2001-01-01	2006-01-01		100	2001-01-01	2006-01-01	no	x-ray emission	UNKNOWN	1		4	4	kerbside	1	natural day		day		
+DK0051A	48	Se	Selenium (aerosol)	no	101	ng/m3	2004-09-01	2010-01-01	2009-12-31	101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	49	V	Vanadium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01	2009-12-31	100	2001-01-01	2010-01-01	no	x-ray emission	DANISH LMP FILTERPACK ELEMENT COLLECTOR	1		4	4	kerbside	1	natural day		day		
+DK0051A	49	V	Vanadium (aerosol)	no	101	ng/m3	2004-09-01	2010-01-01		101	2004-09-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	3	roof	1	natural day		day		
+DK0051A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2008-01-01		2012-12-31	100	2008-01-01		no	Beta ray attenuation	SM200 (ADAM)	1		3	2	kerbside	1	natural day		day		
+DK0052A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	100	µg/m3	2001-01-01	2005-12-31	2005-12-31	100	2001-01-01	2005-12-31	no	Gravimetric analysis	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	5	PM10	Particulate matter < 10 µm (aerosol)	yes	101	µg/m3	2006-01-01		2007-12-31	101	2006-01-01		yes	Beta ray attenuation	SM 200 (Air Dust Automatic Monitor)	1		3	3	courtyard	0			day		
+DK0052A	7	O3	Ozone (air)	yes	100	µg/m3	2000-10-01		2012-12-31	100	2000-10-01		yes	Ultraviolet (UV) photometry	Teledyne API 400A UV photometric O3 analyser	30	day	3	2	courtyard	30	minute	1	minute	uv lamp (ozone generator)	
+DK0052A	8	NO2	Nitrogen dioxide (air)	yes	100	µg/m3	2000-10-01		2012-12-31	100	2000-10-01		yes	Chemiluminescence	Teledyne API undertermined	30	day	3	2	courtyard	30	minute	7	minute	compressed gases	
+DK0052A	9	NOX	Nitrogen oxides (air)	yes	100	µg NO2/m3	2000-10-01		2012-12-31	100	2000-10-01		yes	Chemiluminescence	Teledyne API undertermined	30	week	3	3	courtyard	0		1	minute	compressed gases	
+DK0052A	12	Pb	Lead (aerosol)	yes	100	µg/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	14	Cd	Cadmium (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	15	Ni	Nickel (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	16	Cr	Chromium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	17	Mn	Manganese (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	18	As	Arsenic (aerosol)	yes	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	38	NO	Nitrogen monoxide (air)	no	100	µg/m3	2000-10-01		2012-12-31	100	2000-10-01		yes	Chemiluminescence	Teledyne API undertermined	30	day	3	2	courtyard	30	minute	7	minute	compressed gases	
+DK0052A	47	SO4 (H2SO4 aerosols) (SO4--)	Particulate sulphate (aerosol)	no	100	µg/m3	2001-01-01			100	2001-01-01		no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	48	Se	Selenium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	49	V	Vanadium (aerosol)	no	100	ng/m3	2001-01-01	2010-01-01		100	2001-01-01	2010-01-01	no	x-ray emission	OPSIS SM200	1		3	2	roof	1	natural day		day		
+DK0052A	6001	PM2.5	Particulate matter < 2.5 µm (aerosol)	yes	100	µg/m3	2008-01-01		2012-12-31	100	2008-01-01		no	Beta ray attenuation	SM200 (ADAM)	1		3	2	roof	1	natural day		day		
