@@ -31,6 +31,7 @@ public class ProvenanceIndex {
 		} else {
 			String provenanceIdentifier = createProvenanceGraph(signature);
 			provenanceMap.put(signature, provenanceIdentifier);
+			
 			return provenanceIdentifier;
 		}
 	}
@@ -38,7 +39,6 @@ public class ProvenanceIndex {
 	private String createProvenanceGraph(ProvenanceSignature signature) {
 		ProvenanceGraph provenanceGraph = new ProvenanceGraph(signature);
 		provenanceGraphMap.put(provenanceGraph.getProvenanceIdentifier(), provenanceGraph);
-		provenanceMap.put(signature, provenanceGraph.getProvenanceIdentifier());
 		return provenanceGraph.getProvenanceIdentifier();
 	}
 
