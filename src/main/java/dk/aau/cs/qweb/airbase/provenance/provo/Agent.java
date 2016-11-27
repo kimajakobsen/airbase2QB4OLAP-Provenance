@@ -17,7 +17,7 @@ import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 public class Agent implements PROV {
 	protected String subject = "";
 	private Map<String,String> customProperties = new HashMap<String,String>();
-	private String atLocation;
+	private String atLocation = "";
 	
 	public Agent(String string) {
 		subject = Config.getProvenanceGraphLabel()+"agent/"+string;
@@ -34,7 +34,7 @@ public class Agent implements PROV {
 			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
 		}
 		
-		if (!atLocation.isEmpty()) {
+		if (atLocation.isEmpty()) {
 			quads.add(getAtLocation());
 		}
 		
