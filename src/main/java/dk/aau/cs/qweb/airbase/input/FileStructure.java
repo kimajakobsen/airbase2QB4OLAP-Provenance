@@ -2,6 +2,7 @@ package dk.aau.cs.qweb.airbase.input;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -32,7 +33,10 @@ public class FileStructure implements Iterator<Tuple> {
 	@Override
 	public Tuple next() {
 		String line = it.next();
-		List<String> data = Arrays.asList(line.split("\\s*\t\\s*"));
+		List<String> data = new ArrayList<String>();
+		for (String string : line.split("\t",-1)) {
+			data.add(string);
+		}
 		return new Tuple(data,header);
 	}
 }
