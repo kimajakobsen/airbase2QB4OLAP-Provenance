@@ -24,37 +24,53 @@ public class TripleContainer {
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
 		
-		
-		int index = 0;
-		for (String predicateString : this.tuple.getHeader()) {
+		if (tupleIsAllowed()) {
+			int index = 0;
 			
-			if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
-				String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
-				String object = tuple.getData().get(index);
-				List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
-				for (String level : levels) {
-					String subject = createSubject(level);
+			for (String predicateString : this.tuple.getHeader()) {
+				
+				if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
+					String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
 					
-					CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunction(predicateString);
-					if (cleanFunction != null) {
-						object = cleanFunction.callBackMethod(object);
+					List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
+					
+					for (String level : levels) {
+						String object = tuple.getData().get(index);
+						String subject = createSubject(level);
+						CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunctionRawPredicate(predicateString);
+						
+						if (cleanFunction != null) {
+							object = cleanFunction.callBackMethod(object,tuple);
+						}
+						
+						if (!object.isEmpty()) {
+							Quad quad =  new Quad(subject,predicate,(object));
+							
+							String graphLabel = getGraphLabel(quad,level,tuple);
+							quad.setGraphLabel(graphLabel);
+							
+							metadataTriples.addAll(createMetadata(subject, level));
+							System.out.println("");
+							System.out.println(level);
+							System.out.println(quad);
+							informationTriples.add(quad);
+						}
 					}
-					 
-					Quad quad =  new Quad(subject,predicate,(object));
-					
-					String graphLabel = getGraphLabel(quad,level,tuple);
-					quad.setGraphLabel(graphLabel);
-					
-					metadataTriples.addAll(createMetadata(subject, level));
-					System.out.println("");
-					System.out.println(level);
-					System.out.println(predicateString);
-					System.out.println(quad);
-					informationTriples.add(quad);
 				}
+				index++;
 			}
-			index++;
+			
 		}
+	}
+
+	private boolean tupleIsAllowed() {
+		
+		if (Config.getCurrentInputFilePath().contains("statistics")) {
+			if (!tuple.getValue("statistic_shortname").equals("Mean")) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
