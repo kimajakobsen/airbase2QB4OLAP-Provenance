@@ -14,7 +14,7 @@ public class ColumnMetadata {
 
 	class CallBackDefault implements CallBack {
 		@Override
-		public String callBackMethod(String string) {
+		public String callBackMethod(String string, Tuple tuple) {
 			return string;
 		}
 	}
