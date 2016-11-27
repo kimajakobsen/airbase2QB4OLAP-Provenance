@@ -1,6 +1,7 @@
 package dk.aau.cs.qweb.airbase;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.commons.io.FilenameUtils;
 
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
@@ -23,7 +25,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		CommandLineParser parser = new DefaultParser();
-		List<String> files = new ArrayList<String>();
+		List<File> files = new ArrayList<File>();
 		// create the Options
 		Options options = new Options();
 		options.addOption("h", "help", false, "Display this message." );
@@ -45,11 +47,14 @@ public class App {
 						if (fileLine.startsWith("cube-structure")) {
 							Config.setCubeStructurePath(fileLine.split(" ")[1]);
 						}
-						else if (fileLine.startsWith("input-file")) {
-							files.add(fileLine.split(" ")[1]);
-						} else if (fileLine.startsWith("xml-file")) {
-							Config.setXMLfilePath(fileLine.split(" ")[1]);
-						}
+						else if (fileLine.startsWith("datafolder")) {
+							File folder = new File(fileLine.split(" ")[1]);
+							for (final File fileEntry : folder.listFiles()) {
+						        if (fileEntry.isDirectory()) {
+						        	files.add(fileEntry);
+						        } 
+						    }
+						} 
 					}
 				}
 		    }
@@ -63,22 +68,33 @@ public class App {
 		
 		Database dbConnection = new Database();
 		
-		for (String file : files) {
-			System.out.println(file);
-			Config.setCurrentInputFilePath(file);
-			FileStructure fileStructure;
-			try {
-				fileStructure = new FileStructure(file);
-				while (fileStructure.hasNext()) {
-					Tuple tuple = (Tuple) fileStructure.next();
-					TripleContainer triples = new TripleContainer(tuple);
-					
-					dbConnection.writeToDisk(triples);
-					
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
+		for (File folder : files) {
+			List<String> csvFiles = new ArrayList<String>();
+			for (final File fileEntry : folder.listFiles()) {
+				if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
+					Config.setXMLfilePath(fileEntry.toString());
+				} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
+					csvFiles.add(fileEntry.toString());
+				} 
 			}
+			
+			for (String file : csvFiles) {
+				FileStructure fileStructure;
+				try {
+					fileStructure = new FileStructure(file);
+					while (fileStructure.hasNext()) {
+						Config.setCurrentInputFilePath(file);
+						Tuple tuple = (Tuple) fileStructure.next();
+						TripleContainer triples = new TripleContainer(tuple);
+						
+						dbConnection.writeToDisk(triples);
+						
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
 		}
 	}
 	
