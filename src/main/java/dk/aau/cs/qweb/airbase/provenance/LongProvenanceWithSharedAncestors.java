@@ -29,6 +29,7 @@ import dk.aau.cs.qweb.airbase.provenance.provo.ProvenanceIdentifierEntity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Software;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.Tuple;
+import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
 public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	
@@ -55,9 +56,9 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		file.atLocation(signature.getFilePath());
 		file.wasAttributedTo(countryOrganizations);
 		file.wasAttributedTo(owner);
-		file.setCustomProperty(Config.getNamespace()+"copyrightURL/", "http://www.eea.europa.eu/legal/copyright");
+		file.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
 		if (isQualityApproved(signature)) {
-			file.setCustomProperty(Config.getNamespace()+"qualityApproved/", "True"); 
+			file.setCustomProperty(Config.getNamespace()+"qualityApproved", "True"+XSD.booleanType); 
 		}
 		
 		Agent thisSoftware = thisSoftware();
@@ -94,7 +95,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		Entity quad = new ProvenanceIdentifierEntity();
 		quad.wasGeneratedBy(setGraphLabel);
-		quad.setCustomProperty(Config.getNamespace()+"copyrightURL/", "http://www.eea.europa.eu/legal/copyright");
+		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
 		provenanceIdentifierEntity = quad;
 		
 	}
@@ -145,10 +146,12 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		List<Agent> agents = new ArrayList<Agent>();
 		try {
 			File xmlFile = new File(Config.getXMLfilePath());
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			//DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			//DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document doc = dBuilder.parse(xmlFile);
-			
+			doc.getDocumentElement().normalize();
+
 			NodeList organization = doc.getElementsByTagName("organization");
 			for (int temp = 0; temp < organization.getLength(); temp++) {
 				Node nNode = organization.item(temp);
@@ -156,18 +159,14 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 					Element eElement = (Element) nNode;
-					Agent agent = new Organization(eElement.getAttribute("organization_name"));;
-					
+					Agent agent = new Organization(stringify(eElement.getElementsByTagName("organization_name").item(0).getTextContent()));;
 					
 					agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-					agent.setCustomProperty(FOAF.name.toString(), eElement.getAttribute("organization_name"));
-					agent.setCustomProperty(FOAF.name.toString(), eElement.getAttribute("organization_name"));
-					agent.setCustomProperty(FOAF.name.toString(), eElement.getAttribute("organization_name"));
-					agent.setCustomProperty(Config.getNamespace()+"address", eElement.getAttribute("organization_address"));
-					agent.setCustomProperty(Config.getNamespace()+"city", eElement.getAttribute("organization_city"));
-					agent.setCustomProperty(FOAF.mbox.toString(), eElement.getAttribute("organization_website_address"));
-					agent.setCustomProperty(FOAF.phone.toString(), eElement.getAttribute("organization_phone_number"));
-					agent.setCustomProperty(Config.getNamespace()+"fax", eElement.getAttribute("organization_fax_number"));
+					agent.setCustomProperty(FOAF.name.toString(), eElement.getElementsByTagName("organization_name").item(0).getTextContent());
+					agent.setCustomProperty(Config.getNamespace()+"address", eElement.getElementsByTagName("organization_address").item(0).getTextContent());
+					agent.setCustomProperty(Config.getNamespace()+"city", eElement.getElementsByTagName("organization_city").item(0).getTextContent());
+					agent.setCustomProperty(FOAF.phone.toString(), eElement.getElementsByTagName("organization_phone_number").item(0).getTextContent());
+					agent.setCustomProperty(Config.getNamespace()+"fax", eElement.getElementsByTagName("organization_fax_number").item(0).getTextContent());
 					
 					agents.add(agent);
 				}
@@ -180,12 +179,12 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 					Element eElement = (Element) nNode;
-					Agent agent = new Person(eElement.getAttribute("person_first_name")+eElement.getAttribute("person_last_name"));;
+					Agent agent = new Person(stringify(eElement.getElementsByTagName("person_first_name").item(0).getTextContent()+eElement.getElementsByTagName("person_last_name").item(0).getTextContent()));;
 					
 					agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-					agent.setCustomProperty(FOAF.firstName.toString(), eElement.getAttribute("person_first_name"));
-					agent.setCustomProperty(FOAF.family_name.toString(), eElement.getAttribute("person_last_name"));
-					agent.setCustomProperty(FOAF.mbox.toString(), eElement.getAttribute("person_email_address"));
+					agent.setCustomProperty(FOAF.firstName.toString(), eElement.getElementsByTagName("person_first_name").item(0).getTextContent());
+					agent.setCustomProperty(FOAF.family_name.toString(), eElement.getElementsByTagName("person_last_name").item(0).getTextContent());
+					agent.setCustomProperty(FOAF.mbox.toString(), eElement.getElementsByTagName("person_email_address").item(0).getTextContent());
 					
 					agents.add(agent);
 				}
@@ -201,6 +200,10 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		return agents;
 	}
 	
+	private String stringify(String textContent) {
+		return textContent.replaceAll(" ", "_");
+	}
+
 	@Override
 	public Set<Quad> getQuads() {
 		return provenanceIdentifierEntity.getQuads();
