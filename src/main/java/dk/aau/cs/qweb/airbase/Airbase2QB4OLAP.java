@@ -21,7 +21,7 @@ public class Airbase2QB4OLAP {
 	private static Map<String,ColumnMetadata> columns = new HashMap<String,ColumnMetadata>() {
 		private static final long serialVersionUID = 4261847242888256230L;
 		{
-			put("component_code",					new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/code", level("http://qweb.cs.aau.dk/airbase/schema/component",true,"http://qweb.cs.aau.dk/airbase/schema/sensor",true),new String2String()));
+			put("component_code",					new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/code", level("http://qweb.cs.aau.dk/airbase/schema/component",true,"http://qweb.cs.aau.dk/airbase/schema/sensor",true),new Integer2Integer()));
 			put("component_caption",				new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/caption",level("http://qweb.cs.aau.dk/airbase/schema/component",false),new String2String()));
 			put("component_name",					new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/name",level("http://qweb.cs.aau.dk/airbase/schema/component",false),new String2String()));
 			put("component_FWD",					new ColumnMetadata());
