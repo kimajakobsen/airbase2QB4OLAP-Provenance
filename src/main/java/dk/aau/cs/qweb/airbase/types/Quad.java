@@ -5,7 +5,7 @@ public class Quad {
 	private String subject;
 	private String predicate;
 	private Object object;
-	private String graphLabel;
+	private String graphLabel = "";
 
 	public Quad(String subject, String predicate, Object object, String graphLabel) {
 		this.subject = subject;
@@ -18,7 +18,7 @@ public class Quad {
 		this.subject = subject;
 		this.predicate = predicate;
 		this.object = object;
-		this.graphLabel = null;
+		this.graphLabel = "";
 	}
 
 	public void setGraphLabel(String graphLabel2) {
