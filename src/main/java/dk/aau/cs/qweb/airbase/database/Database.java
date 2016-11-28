@@ -1,9 +1,9 @@
 package dk.aau.cs.qweb.airbase.database;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.Model;
@@ -48,7 +48,7 @@ public class Database {
 				} else if (quad.getObject().getType().equals(XSD.booleanType)) {
 					object = model.createTypedLiteral(new Boolean(quad.getObject().getliteral()));
 				} else if (quad.getObject().getType().equals(XSD.dateType)) {
-					object = model.createTypedLiteral(new Date(quad.getObject().getliteral()));
+					object = model.createTypedLiteral(quad.getObject().getliteral(),XSDDatatype.XSDdate);
 				} else {
 					object = model.createTypedLiteral(new String(quad.getObject().getliteral()));
 				}
@@ -59,13 +59,8 @@ public class Database {
 			model.add(statement);
 			dataset.addNamedModel(quad.getGraphLabel(), model);
 		}
-		
-		
 		model.close();
-		
 		dataset.commit();
 		dataset.end();
-		
 	}
-
 }
