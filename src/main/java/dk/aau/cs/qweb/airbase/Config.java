@@ -46,7 +46,6 @@ public class Config {
 	}
 
 	public static String getDBLocation() {
-		// TODO Auto-generated method stub
-		return null;
+		return "src/test/resources/databases/test/";
 	}
 }
