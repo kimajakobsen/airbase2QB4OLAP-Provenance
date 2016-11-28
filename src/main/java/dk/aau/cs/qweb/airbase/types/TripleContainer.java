@@ -51,9 +51,6 @@ public class TripleContainer {
 							quad.setGraphLabel(graphLabel);
 							
 							metadataTriples.addAll(createMetadata(subject, level));
-							System.out.println("");
-							System.out.println(level);
-							System.out.println(quad);
 							informationTriples.add(quad);
 						}
 					}
@@ -107,7 +104,7 @@ public class TripleContainer {
 	
 	private Set<Quad> createMetadata(String subject, String level) throws FileNotFoundException, IOException {
 		CubeStructure cs = CubeStructure.getInstance();
-		level = cs.transformPrefixIntoFullURL(level);
+		//level = cs.transformPrefixIntoFullURL(level);
 		Set<Quad> quads = new HashSet<Quad>();
 		
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
@@ -126,7 +123,6 @@ public class TripleContainer {
 		}
 		return quads;
 	}
-
 	
 	public Set<Quad> getInformationTriples() {
 		return informationTriples;
