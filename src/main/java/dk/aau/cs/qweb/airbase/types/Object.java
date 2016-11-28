@@ -14,7 +14,8 @@ public class Object {
 	}
 
 	public Object(int i, String integerType) {
-		// TODO Auto-generated constructor stub
+		object = String.valueOf(i);
+		this.type = integerType;
 	}
 
 	public String getliteral() {
@@ -34,11 +35,18 @@ public class Object {
 	}
 
 	public boolean isEmpty() {
-		return object.isEmpty();
+		return this.object.isEmpty();
 	}
 
 	public boolean hasType() {
-		// TODO Auto-generated method stub
+		if (!type.isEmpty()) {
+			return true;
+		}
 		return false;
+	}
+	
+	@Override
+	public String toString() {
+		return object+type;
 	}
 }
