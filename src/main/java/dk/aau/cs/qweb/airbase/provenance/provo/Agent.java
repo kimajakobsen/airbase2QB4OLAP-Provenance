@@ -1,6 +1,7 @@
 package dk.aau.cs.qweb.airbase.provenance.provo;
 
 import java.util.ArrayList;
+import dk.aau.cs.qweb.airbase.types.Object;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -31,7 +32,7 @@ public class Agent implements PROV {
 		quads.addAll(getType());
 		
 		for (Entry<String, String> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
+			quads.add(new Quad(subject, entry.getKey(),new Object(entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
 		if (atLocation.isEmpty()) {
@@ -42,7 +43,7 @@ public class Agent implements PROV {
 	}
 	
 	private Quad getAtLocation() {
-		return new Quad(subject,PROVvocabulary.atLocation,Config.getProvenanceGraphLabel());
+		return new Quad(subject,PROVvocabulary.atLocation,new Object(Config.getProvenanceGraphLabel()));
 	}
 
 	@Override
@@ -53,7 +54,7 @@ public class Agent implements PROV {
 	@Override
 	public List<Quad> getType() {
 		List<Quad> list = new ArrayList<Quad>();
-		Quad agent = new Quad(subject, RDF.type.toString(),PROVvocabulary.Agent,Config.getProvenanceGraphLabel());
+		Quad agent = new Quad(subject, RDF.type.toString(),new Object(PROVvocabulary.Agent),Config.getProvenanceGraphLabel());
 		list.add(agent);
 		return list;
 	}

@@ -44,4 +44,9 @@ public class Config {
 	public static void setXMLfilePath(String path) {
 		xmlFile = path;
 	}
+
+	public static String getDBLocation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -35,12 +35,13 @@ public class TripleContainer {
 					List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
 					
 					for (String level : levels) {
-						String object = tuple.getData().get(index);
+						String literal = tuple.getData().get(index);
 						String subject = createSubject(level);
 						CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunctionRawPredicate(predicateString);
+						Object object = new Object(literal);
 						
 						if (cleanFunction != null) {
-							object = cleanFunction.callBackMethod(object,tuple);
+							object = cleanFunction.callBackMethod(literal,tuple);
 						}
 						
 						if (!object.isEmpty()) {
@@ -110,16 +111,16 @@ public class TripleContainer {
 		Set<Quad> quads = new HashSet<Quad>();
 		
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
-			Quad quad1 = new Quad(subject, RDFS.Datatype.toString() , "http://purl.org/linked-data/cube#Observation",Config.getMetadataGraphLabel());
+			Quad quad1 = new Quad(subject, RDFS.Datatype.toString() , new Object("http://purl.org/linked-data/cube#Observation"),Config.getMetadataGraphLabel());
 			quads.add(quad1);
-			Quad quad2 = new Quad(subject, RDFS.Datatype.toString() , "http://purl.org/linked-data/cube#dataSet",Config.getMetadataGraphLabel());
+			Quad quad2 = new Quad(subject, RDFS.Datatype.toString() , new Object("http://purl.org/linked-data/cube#dataSet"),Config.getMetadataGraphLabel());
 			quads.add(quad2);
 		} else {
-			Quad quad1 = new Quad(subject, "http://purl.org/qb4olap/cubes#memberOf" , level,Config.getMetadataGraphLabel());
+			Quad quad1 = new Quad(subject, "http://purl.org/qb4olap/cubes#memberOf" , new Object(level),Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			for (HierarchyStep hs : cs.getHierarchyStepByParentLevel(level)) {
 				String childLevel = createSubject(hs.getChildLevel());
-				Quad quad2 = new Quad(childLevel, hs.getRollup() , subject ,Config.getMetadataGraphLabel());
+				Quad quad2 = new Quad(childLevel, hs.getRollup() , new Object(subject) ,Config.getMetadataGraphLabel());
 				quads.add(quad2);
 			}
 		}

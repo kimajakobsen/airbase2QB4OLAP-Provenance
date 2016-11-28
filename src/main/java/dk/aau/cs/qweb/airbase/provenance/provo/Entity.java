@@ -1,6 +1,7 @@
 package dk.aau.cs.qweb.airbase.provenance.provo;
 
 import java.util.ArrayList;
+import dk.aau.cs.qweb.airbase.types.Object;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -46,7 +47,7 @@ public class Entity implements PROV {
 		quads.addAll(getType());
 		
 		for (Entry<String, String> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
+			quads.add(new Quad(subject, entry.getKey(),new Object(entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
 		if (!atLocation.isEmpty()) {
@@ -69,11 +70,11 @@ public class Entity implements PROV {
 	}
 
 	private Quad getGeneratedAtTime() {
-		return  new Quad(subject,PROVvocabulary.generatedAtTime,generatedAtTime,Config.getProvenanceGraphLabel());
+		return  new Quad(subject,PROVvocabulary.generatedAtTime,new Object(generatedAtTime),Config.getProvenanceGraphLabel());
 	}
 
 	private Quad getAtLocation() {
-		return new Quad(subject,PROVvocabulary.atLocation,atLocation,Config.getProvenanceGraphLabel());
+		return new Quad(subject,PROVvocabulary.atLocation,new Object(atLocation),Config.getProvenanceGraphLabel());
 	}
 
 	public void setCustomProperty(String key, String value) {
@@ -101,7 +102,7 @@ public class Entity implements PROV {
 	@Override
 	public List<Quad> getType() {
 		List<Quad> list = new ArrayList<Quad>();
-		Quad agent = new Quad(subject, RDF.type.toString(),PROVvocabulary.Entity,Config.getProvenanceGraphLabel());
+		Quad agent = new Quad(subject, RDF.type.toString(),new Object(PROVvocabulary.Entity),Config.getProvenanceGraphLabel());
 		list.add(agent);
 		return list;
 	}

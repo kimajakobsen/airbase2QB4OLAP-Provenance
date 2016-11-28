@@ -4,17 +4,17 @@ public class Quad {
 
 	private String subject;
 	private String predicate;
-	private String object;
+	private Object object;
 	private String graphLabel;
 
-	public Quad(String subject, String predicate, String object, String graphLabel) {
+	public Quad(String subject, String predicate, Object object, String graphLabel) {
 		this.subject = subject;
 		this.predicate = predicate;
 		this.object = object;
 		this.graphLabel = graphLabel;
 	}
 	
-	public Quad(String subject, String predicate, String object) {
+	public Quad(String subject, String predicate, Object object) {
 		this.subject = subject;
 		this.predicate = predicate;
 		this.object = object;
@@ -41,11 +41,11 @@ public class Quad {
 		this.predicate = predicate;
 	}
 
-	public String getObject() {
+	public Object getObject() {
 		return object;
 	}
 
-	public void setObject(String object) {
+	public void setObject(Object object) {
 		this.object = object;
 	}
 

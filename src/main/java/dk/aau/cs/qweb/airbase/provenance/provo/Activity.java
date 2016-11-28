@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
+import dk.aau.cs.qweb.airbase.types.Object;
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
@@ -19,6 +19,7 @@ public class Activity implements PROV {
 	private List<Entity> used = new ArrayList<Entity>();
 	private List<Agent> wasAssociatedWith = new ArrayList<Agent>();
 	private Map<String,String> customProperties = new HashMap<String,String>();
+	
 	
 	public Activity(String name) {
 		subject = Config.getNamespace()+name;
@@ -38,7 +39,7 @@ public class Activity implements PROV {
 		quads.addAll(getType());
 		
 		for (Entry<String, String> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
+			quads.add(new Quad(subject, entry.getKey(),new Object(entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
 		for (Entity entity : used) {
@@ -55,7 +56,7 @@ public class Activity implements PROV {
 	@Override
 	public List<Quad> getType() {
 		List<Quad> list = new ArrayList<Quad>();
-		Quad agent = new Quad(subject, RDF.type.toString(),PROVvocabulary.Activity,Config.getProvenanceGraphLabel());
+		Quad agent = new Quad(subject, RDF.type.toString(),new Object(PROVvocabulary.Activity),Config.getProvenanceGraphLabel());
 		list.add(agent);
 		return list;
 	}
