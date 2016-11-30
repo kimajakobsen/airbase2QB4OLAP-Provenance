@@ -173,7 +173,13 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 	private String getCallbackClassName(ProvenanceSignature signature) {
-		CallBack callback = Airbase2QB4OLAP.getCallBackFunctionPredicate(signature.getQuad().getPredicate());
+		CallBack callback = null;
+		if (signature.getLevel().equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
+			//If measure
+			callback = Airbase2QB4OLAP.getCallBackFunctionPredicate("measure");
+		} else {
+			callback = Airbase2QB4OLAP.getCallBackFunctionPredicate(signature.getQuad().getPredicate());
+		}
 		return callback.getClass().getName();
 	}
 

@@ -72,7 +72,7 @@ public class Airbase2QB4OLAP {
 			put("statistics_average_group",			new ColumnMetadata());
 			put("statistic_shortname",				new ColumnMetadata());
 			put("statistic_name",					new ColumnMetadata());
-			put("statistic_value",					new ColumnMetadata("http://purl.org/linked-data/cube#Observation",level("http://qweb.cs.aau.dk/airbase/schema/value",true), new Decimal2Decimal()));
+			put("statistic_value",					new ColumnMetadata("measure",level("http://qweb.cs.aau.dk/airbase/schema/value",true), new Decimal2Decimal()));
 			put("statistics_percentage_valid",		new ColumnMetadata());
 			put("statistics_number_valid",			new ColumnMetadata());
 			put("statistics_calculated",			new ColumnMetadata());

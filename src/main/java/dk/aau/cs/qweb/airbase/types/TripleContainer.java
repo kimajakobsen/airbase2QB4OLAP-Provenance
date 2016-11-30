@@ -31,6 +31,10 @@ public class TripleContainer {
 				
 				if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
 					String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
+					if (predicate.equals("measure")) {
+						predicate = "http://qweb.cs.aau.dk/airbase/schema/"+tuple.getValue("component_caption");
+					}
+					
 					
 					List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
 					
