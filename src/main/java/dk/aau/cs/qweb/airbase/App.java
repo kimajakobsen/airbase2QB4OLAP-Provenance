@@ -71,8 +71,6 @@ public class App {
 			exp.printStackTrace();
 		}
 		
-		
-		
 		for (File folder : files) {
 			List<String> csvFiles = new ArrayList<String>();
 			for (final File fileEntry : folder.listFiles()) {
