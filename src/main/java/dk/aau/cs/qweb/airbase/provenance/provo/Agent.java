@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
+import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 
@@ -29,6 +30,14 @@ public class Agent implements PROV {
 	@Override
 	public Set<Quad> getQuads() {
 		Set<Quad> quads = new HashSet<Quad>();
+		if (ProvenanceIndex.contains(subject)) {
+			return quads;
+		} else {
+			ProvenanceIndex.add(subject);
+		}
+		
+		
+		
 		quads.addAll(getType());
 		
 		for (Entry<String, String> entry : customProperties.entrySet()) {
