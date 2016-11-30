@@ -20,7 +20,8 @@ public class TripleContainer {
 	private Tuple tuple;
 	private Set<Quad> informationTriples = new HashSet<Quad>();
 	private Set<Quad> metadataTriples = new HashSet<Quad>();
-
+	private static int measureCounter = 1;
+	
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
 		
@@ -34,7 +35,6 @@ public class TripleContainer {
 					if (predicate.equals("measure")) {
 						predicate = "http://qweb.cs.aau.dk/airbase/schema/"+tuple.getValue("component_caption");
 					}
-					
 					
 					List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
 					
@@ -55,6 +55,7 @@ public class TripleContainer {
 							quad.setGraphLabel(graphLabel);
 							
 							metadataTriples.addAll(createMetadata(subject, level));
+							System.out.println(quad);
 							informationTriples.add(quad);
 						}
 					}
@@ -82,13 +83,20 @@ public class TripleContainer {
 	}
 
 	private String createSubject(String level) {
-		List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
 		String subject = Config.getNamespace();
-		subject += removePrefix(level)+"/";
-		for (String index : attributes) {
-			subject += tuple.getValue(index)+"_";
+		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
+			subject+="observation/"+measureCounter;
+			measureCounter++;
+		} else {
+			List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
+			
+			subject += removePrefix(level)+"/";
+			for (String index : attributes) {
+				subject += tuple.getValue(index)+"_";
+			}
+			subject = replacelastUnderscoreWithSlash(subject);
 		}
-		subject = replacelastUnderscoreWithSlash(subject);
+		
 		return subject;
 	}
 
