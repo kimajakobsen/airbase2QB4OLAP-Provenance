@@ -146,8 +146,6 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		List<Agent> agents = new ArrayList<Agent>();
 		try {
 			File xmlFile = new File(Config.getXMLfilePath());
-			//DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			//DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document doc = dBuilder.parse(xmlFile);
 			doc.getDocumentElement().normalize();
