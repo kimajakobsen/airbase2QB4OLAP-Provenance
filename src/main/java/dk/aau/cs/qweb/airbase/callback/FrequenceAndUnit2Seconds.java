@@ -18,7 +18,10 @@ public class FrequenceAndUnit2Seconds implements CallBack {
 			return new Object(value*60*60,XSD.integerType);
 		} else if (timeUnit.equals("second")) {
 			return new Object(string,XSD.integerType);
-		} else {
+		}  else if (timeUnit.equals("")) {
+			return new Object("");
+		}else {
+			System.out.println(tuple);
 			throw new IllegalArgumentException("unknown time unit: "+timeUnit);
 		}
 	}
