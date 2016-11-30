@@ -34,6 +34,10 @@ public class Entity implements PROV {
 	protected Entity() {
 	}
 
+	public Entity(String string, String rawDataFileName) {
+		subject = Config.getNamespace()+string+"/"+rawDataFileName;
+	}
+
 	public void atLocation(String string) {
 		this.atLocation = string;
 	}

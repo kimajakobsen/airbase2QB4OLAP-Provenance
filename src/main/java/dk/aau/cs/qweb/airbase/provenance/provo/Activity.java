@@ -19,10 +19,11 @@ public class Activity implements PROV {
 	private List<Entity> used = new ArrayList<Entity>();
 	private List<Agent> wasAssociatedWith = new ArrayList<Agent>();
 	private Map<String,String> customProperties = new HashMap<String,String>();
-	
+	private static int counter = 1;
 	
 	public Activity(String name) {
-		subject = Config.getNamespace()+name;
+		subject = Config.getNamespace()+name+"/"+counter;
+		counter++;
 	}
 
 	public void used(Entity entity) {
@@ -35,6 +36,7 @@ public class Activity implements PROV {
 
 	@Override
 	public Set<Quad> getQuads() {
+		
 		Set<Quad> quads = new HashSet<Quad>();
 		quads.addAll(getType());
 		

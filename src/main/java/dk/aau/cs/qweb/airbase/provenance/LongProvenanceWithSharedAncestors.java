@@ -34,70 +34,126 @@ import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	
 	Entity provenanceIdentifierEntity;
+	ProvenanceSignature signature;
 
 	public LongProvenanceWithSharedAncestors(ProvenanceSignature signature) {
-		Entity rawFile = new Entity("rawFile");
-		rawFile.atLocation("");
+		this.signature = signature;
+		Entity rawFile = rawFile();
 		
-		Activity aggregation = new Activity("aggregation");
-		aggregation.used(rawFile);
-		
-		Entity aggregatedData = new Entity("aggregatedData");
-		aggregatedData.atLocation("");
-		aggregatedData.wasGeneratedBy(aggregation);
-		
-		Activity download = new Activity("download");
-		download.used(aggregatedData);
+		Activity aggregation = aggregation(rawFile);
 		
 		List<Agent> countryOrganizations = extractAgentsFromXml();
 		Agent owner = getEuropeanEnvironmentAgency();
 		
-		Entity file = new Entity("file");
+		Entity file = file(aggregation, countryOrganizations, owner);
+		
+		Agent thisSoftware = thisSoftware();
+				
+		Activity extract = extract(file, thisSoftware);
+		
+		Entity tuple = tuple(extract);
+
+		Agent kim = getKim();
+		
+		Entity mapping = mapping(kim);
+		
+		Activity createSubject = createSubject(tuple, mapping);
+		
+		Entity raw = raw(createSubject);
+
+		Activity clean = clean(thisSoftware, raw);
+		
+		Entity informationTriple = informationTriple(clean);
+		
+		Activity setGraphLabel = setGraphLabel(informationTriple);
+		
+		Entity quad = quad(setGraphLabel);
+		provenanceIdentifierEntity = quad;
+		
+	}
+
+	private Entity quad(Activity setGraphLabel) {
+		Entity quad = new ProvenanceIdentifierEntity();
+		quad.wasGeneratedBy(setGraphLabel);
+		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
+		return quad;
+	}
+
+	private Activity setGraphLabel(Entity informationTriple) {
+		Activity setGraphLabel = new Activity("setGraphLabel");
+		setGraphLabel.used(informationTriple);
+		return setGraphLabel;
+	}
+
+	private Entity informationTriple(Activity clean) {
+		Entity informationTriple = new Entity("informationTriple");
+		informationTriple.wasGeneratedBy(clean);
+		return informationTriple;
+	}
+
+	private Activity clean(Agent thisSoftware, Entity raw) {
+		Activity clean = new Activity(getCallbackClassName(signature));
+		clean.used(raw);
+		clean.wasAssociatedWith(thisSoftware);
+		return clean;
+	}
+
+	private Entity raw(Activity createSubject) {
+		Entity raw = new Entity("raw");
+		raw.wasGeneratedBy(createSubject);
+		return raw;
+	}
+
+	private Activity createSubject(Entity tuple, Entity mapping) {
+		Activity createSubject = new Activity("createSubject");
+		createSubject.used(mapping);
+		createSubject.used(tuple);
+		return createSubject;
+	}
+
+	private Entity mapping(Agent kim) {
+		Entity mapping = new Entity("mapping");
+		mapping.wasAttributedTo(kim);
+		mapping.generatedAtTime("November182016");
+		return mapping;
+	}
+
+	private Entity tuple(Activity extract) {
+		Entity tuple = new Entity("tuple");
+		tuple.wasGeneratedBy(extract);
+		return tuple;
+	}
+
+	private Activity extract(Entity file, Agent thisSoftware) {
+		Activity extract = new Activity("extract");
+		extract.used(file);
+		extract.wasAssociatedWith(thisSoftware);
+		return extract;
+	}
+
+	private Entity file(Activity activity, List<Agent> countryOrganizations, Agent owner) {
+		Entity file = new Entity("file",signature.getFileName());
 		file.atLocation(signature.getFilePath());
 		file.wasAttributedTo(countryOrganizations);
 		file.wasAttributedTo(owner);
+		file.wasGeneratedBy(activity);
 		file.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
 		if (isQualityApproved(signature)) {
 			file.setCustomProperty(Config.getNamespace()+"qualityApproved", "True"+XSD.booleanType); 
 		}
-		
-		Agent thisSoftware = thisSoftware();
-				
-		Activity extract = new Activity("extract");
-		extract.used(file);
-		extract.wasAssociatedWith(thisSoftware);
-		
-		Entity tuple = new Entity("tuple");
-		tuple.wasGeneratedBy(extract);
+		return file;
+	}
 
-		Agent kim = getKim();
-		
-		Entity mapping = new Entity("mapping");
-		mapping.wasAttributedTo(kim);
-		mapping.generatedAtTime("November182016");
-		
-		Activity createSubject = new Activity("craeteSubject");
-		createSubject.used(mapping);
-		createSubject.used(tuple);
-		
-		Entity raw = new Entity("raw");
-		raw.wasGeneratedBy(createSubject);
+	private Activity aggregation(Entity rawFile) {
+		Activity aggregation = new Activity("aggregation");
+		aggregation.used(rawFile);
+		return aggregation;
+	}
 
-		Activity clean = new Activity(getCallbackClassName(signature));
-		clean.used(raw);
-		clean.wasAssociatedWith(thisSoftware);
-		
-		Entity informationTriple = new Entity("informationTriple");
-		informationTriple.wasGeneratedBy(clean);
-		
-		Activity setGraphLabel = new Activity("setGraphLabel");
-		setGraphLabel.used(informationTriple);
-		
-		Entity quad = new ProvenanceIdentifierEntity();
-		quad.wasGeneratedBy(setGraphLabel);
-		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
-		provenanceIdentifierEntity = quad;
-		
+	private Entity rawFile() {
+		Entity rawFile = new Entity("rawFile/",signature.getRawDataFileName());
+		rawFile.atLocation(signature.getRawDataFilePath());
+		return rawFile;
 	}
 
 	private boolean isQualityApproved(ProvenanceSignature signature) {
