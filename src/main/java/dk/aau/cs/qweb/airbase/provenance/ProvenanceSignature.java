@@ -57,4 +57,26 @@ public class ProvenanceSignature {
 		return tuple;
 	}
 
+	public String getRawDataFilePath() {
+		String[] split = file.split("/");
+		String path = "";
+		for (int i = 0; i < split.length-1; i++) {
+			path += split[i]+"/"; 
+		}
+		path += getRawDataFileName();
+		return path;
+	}
+
+	public String getRawDataFileName() {
+		String[] splitPath = file.split("/");
+		String[] splitName = splitPath[splitPath.length-1].split("_");
+		String name = "AirBase_"+splitName[1]+"_v8Vrawdata.zip";
+		return name;
+	}
+
+	public String getFileName() {
+		String[] split = file.split("/");
+		return split[split.length-1];
+	}
+
 }
