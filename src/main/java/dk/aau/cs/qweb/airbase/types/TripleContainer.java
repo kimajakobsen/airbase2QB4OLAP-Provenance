@@ -13,7 +13,7 @@ import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.CubeStructure;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.HierarchyStep;
 import dk.aau.cs.qweb.airbase.callback.CallBack;
-import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
 
 public class TripleContainer {
 
@@ -73,7 +73,7 @@ public class TripleContainer {
 
 	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
 		String file = Config.getCurrentInputFilePath();
-		ProvenanceIndex index = ProvenanceIndex.getInstance();
+		Provenance index = Provenance.getInstance();
 		String provenanceIdentifier = index.getProvenanceIdentifier(quad,level,file,tuple);
 		return provenanceIdentifier;
 	}
@@ -133,7 +133,7 @@ public class TripleContainer {
 	}
 	
 	public Set<Quad> getProvenanceTriples() {
-		ProvenanceIndex index = ProvenanceIndex.getInstance();
+		Provenance index = Provenance.getInstance();
 		return index.getProvenanceTriples();
 	}
 }

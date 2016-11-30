@@ -9,17 +9,17 @@ import java.util.Set;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
-public class ProvenanceIndex {
+public class Provenance {
 
-	private static ProvenanceIndex instance = null;
+	private static Provenance instance = null;
 	private Map<ProvenanceSignature,String> provenanceMap = new HashMap<ProvenanceSignature,String>();
 	private Map<String,ProvenanceGraph> provenanceGraphMap = new HashMap<String,ProvenanceGraph>();
 	
-	private ProvenanceIndex() { }
+	private Provenance() { }
 	
-	public static ProvenanceIndex getInstance() {
+	public static Provenance getInstance() {
 		if(instance == null) {
-			instance = new ProvenanceIndex();
+			instance = new Provenance();
 		}
 		return instance;
 	}
