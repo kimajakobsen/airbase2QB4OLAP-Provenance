@@ -26,6 +26,7 @@ public class App {
 		
 		CommandLineParser parser = new DefaultParser();
 		List<File> files = new ArrayList<File>();
+		Database dbConnection = new Database();
 		// create the Options
 		Options options = new Options();
 		options.addOption("h", "help", false, "Display this message." );
@@ -61,6 +62,7 @@ public class App {
 					}
 				}
 		    }
+			dbConnection.clearDB();
 		}
 		catch( ParseException exp ) {
 			printHelp(exp, options);
@@ -69,7 +71,7 @@ public class App {
 			exp.printStackTrace();
 		}
 		
-		Database dbConnection = new Database();
+		
 		
 		for (File folder : files) {
 			List<String> csvFiles = new ArrayList<String>();

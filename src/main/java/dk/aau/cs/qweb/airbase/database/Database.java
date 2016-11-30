@@ -1,8 +1,11 @@
 package dk.aau.cs.qweb.airbase.database;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.ReadWrite;
@@ -62,5 +65,9 @@ public class Database {
 		model.close();
 		dataset.commit();
 		dataset.end();
+	}
+
+	public void clearDB() throws IOException {
+		FileUtils.cleanDirectory(new File(Config.getDBLocation()));
 	}
 }
