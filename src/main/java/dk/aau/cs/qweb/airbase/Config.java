@@ -8,6 +8,7 @@ public class Config {
 	private static String provenanceGraphLabel = namespace+"provenance/";
 	private static String file;
 	private static String xmlFile;
+	private static String dbLocation;
 
 	public static String getNamespace() {
 		return namespace;
@@ -46,6 +47,10 @@ public class Config {
 	}
 
 	public static String getDBLocation() {
-		return "src/test/resources/databases/test/";
+		return dbLocation;
+	}
+
+	public static void setDBLocation(String dbLocation) {
+		Config.dbLocation = dbLocation;
 	}
 }

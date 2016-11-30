@@ -44,11 +44,14 @@ public class App {
 
 					String fileLine;
 					while ((fileLine = br.readLine()) != null) {
-						if (fileLine.startsWith("cube-structure")) {
+						if (fileLine.startsWith("cubeStructure")) {
 							Config.setCubeStructurePath(fileLine.split(" ")[1]);
+						} else if (fileLine.startsWith("dbLocation")) {
+							Config.setDBLocation(fileLine.split(" ")[1]);
 						}
 						else if (fileLine.startsWith("datafolder")) {
 							File folder = new File(fileLine.split(" ")[1]);
+							System.out.println(folder);
 							for (final File fileEntry : folder.listFiles()) {
 						        if (fileEntry.isDirectory()) {
 						        	files.add(fileEntry);
@@ -71,8 +74,10 @@ public class App {
 		for (File folder : files) {
 			List<String> csvFiles = new ArrayList<String>();
 			for (final File fileEntry : folder.listFiles()) {
-				if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
-					Config.setXMLfilePath(fileEntry.toString());
+				if (fileEntry.isDirectory()) {
+					for (final File XMLFile : fileEntry.listFiles()) {
+						Config.setXMLfilePath(XMLFile.toString());
+					}
 				} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
 					csvFiles.add(fileEntry.toString());
 				} 
@@ -82,6 +87,7 @@ public class App {
 				FileStructure fileStructure;
 				try {
 					fileStructure = new FileStructure(file);
+					System.out.println(file);
 					while (fileStructure.hasNext()) {
 						Config.setCurrentInputFilePath(file);
 						Tuple tuple = (Tuple) fileStructure.next();
@@ -94,7 +100,6 @@ public class App {
 					e.printStackTrace();
 				}
 			}
-			
 		}
 	}
 	
