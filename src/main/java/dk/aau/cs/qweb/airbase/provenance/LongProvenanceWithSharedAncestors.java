@@ -241,10 +241,29 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					Element eElement = (Element) nNode;
 					Agent agent = new Person(stringify(eElement.getElementsByTagName("person_first_name").item(0).getTextContent()+eElement.getElementsByTagName("person_last_name").item(0).getTextContent()));;
 					
+					NodeList firstname = eElement.getElementsByTagName("person_first_name");
+					NodeList lastname = eElement.getElementsByTagName("person_last_name");
+					NodeList email = eElement.getElementsByTagName("person_email_address");
+					NodeList title = eElement.getElementsByTagName("person_title");
+					
+					
 					agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-					agent.setCustomProperty(FOAF.firstName.toString(), eElement.getElementsByTagName("person_first_name").item(0).getTextContent());
-					agent.setCustomProperty(FOAF.family_name.toString(), eElement.getElementsByTagName("person_last_name").item(0).getTextContent());
-					agent.setCustomProperty(FOAF.mbox.toString(), eElement.getElementsByTagName("person_email_address").item(0).getTextContent());
+					if (firstname.getLength() > 0) {
+						agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
+					} 
+					
+					if (lastname.getLength() > 0){
+						agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
+					}
+					
+					if (title.getLength() > 0) {
+						agent.setCustomProperty(FOAF.title.toString(), title.item(0).getTextContent());
+					}
+					if (email.getLength() > 0 ) {
+						agent.setCustomProperty(FOAF.mbox.toString(), email.item(0).getTextContent());
+					}
+					
+					
 					
 					agents.add(agent);
 				}
