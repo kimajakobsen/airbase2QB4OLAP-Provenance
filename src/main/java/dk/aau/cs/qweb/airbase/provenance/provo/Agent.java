@@ -15,10 +15,11 @@ import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
+import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
 public class Agent implements PROV {
 	protected String subject = "";
-	private Map<String,String> customProperties = new HashMap<String,String>();
+	private Map<String,Object> customProperties = new HashMap<String,Object>();
 	private String atLocation = "";
 	
 	public Agent(String string) {
@@ -40,8 +41,8 @@ public class Agent implements PROV {
 		
 		quads.addAll(getType());
 		
-		for (Entry<String, String> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),new Object(entry.getValue()),Config.getProvenanceGraphLabel()));
+		for (Entry<String, Object> entry : customProperties.entrySet()) {
+			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
 		}
 		
 		if (atLocation.isEmpty()) {
@@ -56,7 +57,7 @@ public class Agent implements PROV {
 	}
 
 	@Override
-	public void setCustomProperty(String key, String value) {
+	public void setCustomProperty(String key, Object value) {
 		customProperties.put(key, value);
 	}
 
@@ -72,4 +73,8 @@ public class Agent implements PROV {
 		this.atLocation = string;
 	}
 
+	public void setCustomProperty(String key, String string2) {
+		Object object =  new Object(string2,XSD.stringType);
+		customProperties.put(key, object);
+	}
 }

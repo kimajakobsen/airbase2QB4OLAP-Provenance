@@ -19,7 +19,7 @@ public class Activity implements PROV {
 	private String subject = "";
 	private List<Entity> used = new ArrayList<Entity>();
 	private List<Agent> wasAssociatedWith = new ArrayList<Agent>();
-	private Map<String,String> customProperties = new HashMap<String,String>();
+	private Map<String,Object> customProperties = new HashMap<String,Object>();
 	private static int counter = 1;
 	
 	public Activity(String name) {
@@ -46,8 +46,8 @@ public class Activity implements PROV {
 		
 		quads.addAll(getType());
 		
-		for (Entry<String, String> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),new Object(entry.getValue()),Config.getProvenanceGraphLabel()));
+		for (Entry<String, Object> entry : customProperties.entrySet()) {
+			quads.add(new Quad(subject, entry.getKey(),(entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
 		for (Entity entity : used) {
@@ -70,7 +70,7 @@ public class Activity implements PROV {
 	}
 
 	@Override
-	public void setCustomProperty(String property, String value) {
+	public void setCustomProperty(String property, Object value) {
 		customProperties.put(property, value);
 	}
 

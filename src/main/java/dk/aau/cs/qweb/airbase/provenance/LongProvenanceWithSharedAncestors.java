@@ -17,6 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+
 import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.callback.CallBack;
@@ -28,6 +29,7 @@ import dk.aau.cs.qweb.airbase.provenance.provo.Person;
 import dk.aau.cs.qweb.airbase.provenance.provo.ProvenanceIdentifierEntity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Software;
 import dk.aau.cs.qweb.airbase.types.Quad;
+import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
@@ -75,7 +77,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	private Entity quad(Activity setGraphLabel) {
 		Entity quad = new ProvenanceIdentifierEntity();
 		quad.wasGeneratedBy(setGraphLabel);
-		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
+		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
 		return quad;
 	}
 
@@ -137,9 +139,9 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		file.wasAttributedTo(countryOrganizations);
 		file.wasAttributedTo(owner);
 		file.wasGeneratedBy(activity);
-		file.setCustomProperty(Config.getNamespace()+"copyrightURL", "http://www.eea.europa.eu/legal/copyright");
+		file.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
 		if (isQualityApproved(signature)) {
-			file.setCustomProperty(Config.getNamespace()+"qualityApproved", "True"+XSD.booleanType); 
+			file.setCustomProperty(Config.getNamespace()+"qualityApproved", new Object("True",XSD.booleanType)); 
 		}
 		return file;
 	}
@@ -185,7 +187,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private Agent getKim() {
 		Agent agent = new Person("kim");
-		agent.setCustomProperty(FOAF.name.toString(),"Kim Ahlstrøm");
+		agent.setCustomProperty(FOAF.name.toString(),new Object("Kim Ahlstrøm",XSD.stringType));
 		agent.setCustomProperty(FOAF.mbox.toString(),"kah@cs.aau.dk");
 		return agent;
 	}
@@ -197,7 +199,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 	private Agent getEuropeanEnvironmentAgency() {
-		Agent agent = new Organization("European Environment Agency");
+		Agent agent = new Organization("European_Environment_Agency");
 		agent.setCustomProperty(FOAF.name.toString(),"airbase2QB4OLAP-Provenance");
 		agent.setCustomProperty(FOAF.homepage.toString(),"http://www.eea.europa.eu");
 		agent.atLocation("Kongens Nytorv 6, 1050, Copenhagen, Denmark");

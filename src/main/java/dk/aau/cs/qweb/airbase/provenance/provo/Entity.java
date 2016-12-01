@@ -21,7 +21,7 @@ public class Entity implements PROV {
 	
 	private List<Activity> wasGeneratedBy = new ArrayList<Activity>();
 	private List<Agent> wasAttributedTo = new ArrayList<Agent>();
-	private Map<String,String> customProperties = new HashMap<String,String>();
+	private Map<String,Object> customProperties = new HashMap<String,Object>();
 	private String atLocation = "";
 	protected String subject = "";
 	private static int counter = 1;
@@ -57,8 +57,8 @@ public class Entity implements PROV {
 		
 		quads.addAll(getType());
 		
-		for (Entry<String, String> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),new Object(entry.getValue()),Config.getProvenanceGraphLabel()));
+		for (Entry<String, Object> entry : customProperties.entrySet()) {
+			quads.add(new Quad(subject, entry.getKey(),(entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
 		if (!atLocation.isEmpty()) {
@@ -88,7 +88,7 @@ public class Entity implements PROV {
 		return new Quad(subject,PROVvocabulary.atLocation,new Object(atLocation),Config.getProvenanceGraphLabel());
 	}
 
-	public void setCustomProperty(String key, String value) {
+	public void setCustomProperty(String key, Object value) {
 		customProperties.put(key, value);
 	}
 
@@ -107,7 +107,7 @@ public class Entity implements PROV {
 	}
 	
 	public String getSubject() {
-		return "";
+		return subject;
 	}
 
 	@Override
