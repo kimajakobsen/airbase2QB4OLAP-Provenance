@@ -26,7 +26,6 @@ public class App {
 		
 		CommandLineParser parser = new DefaultParser();
 		List<File> files = new ArrayList<File>();
-		Database dbConnection = new Database();
 		// create the Options
 		Options options = new Options();
 		options.addOption("h", "help", false, "Display this message." );
@@ -49,8 +48,11 @@ public class App {
 							Config.setCubeStructurePath(fileLine.split(" ")[1]);
 						} else if (fileLine.startsWith("dbLocation")) {
 							Config.setDBLocation(fileLine.split(" ")[1]);
-						}
-						else if (fileLine.startsWith("datafolder")) {
+						} else if (fileLine.startsWith("dbType")) {
+							Config.setDbType(fileLine.split(" ")[1]);
+						} else if (fileLine.startsWith("clean")) {
+							Config.setDbCleanWrite(fileLine.split(" ")[1]);
+						}else if (fileLine.startsWith("datafolder")) {
 							File folder = new File(fileLine.split(" ")[1]);
 							System.out.println(folder);
 							for (final File fileEntry : folder.listFiles()) {
@@ -62,13 +64,20 @@ public class App {
 					}
 				}
 		    }
-			dbConnection.clearDB();
 		}
 		catch( ParseException exp ) {
 			printHelp(exp, options);
 		} 
 		catch (Exception exp) {
 			exp.printStackTrace();
+		}
+		Database dbConnection = Database.build();
+		if (Config.isDbCleanWrite()) {
+			try {
+				dbConnection.cleanWrite();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		for (File folder : files) {

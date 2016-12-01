@@ -9,6 +9,8 @@ public class Config {
 	private static String file;
 	private static String xmlFile;
 	private static String dbLocation;
+	private static String dbType;
+	private static boolean dbCleanWrite;
 
 	public static String getNamespace() {
 		return namespace;
@@ -52,5 +54,25 @@ public class Config {
 
 	public static void setDBLocation(String dbLocation) {
 		Config.dbLocation = dbLocation;
+	}
+
+	public static String getDbType() {
+		return dbType;
+	}
+
+	public static void setDbType(String dbType) {
+		Config.dbType = dbType;
+	}
+
+	public static boolean isDbCleanWrite() {
+		return dbCleanWrite;
+	}
+
+	public static void setDbCleanWrite(String dbCleanWrite) {
+		if (dbCleanWrite.equals("true")) {
+			Config.dbCleanWrite = true;
+		} else {
+			Config.dbCleanWrite = false;
+		}
 	}
 }
