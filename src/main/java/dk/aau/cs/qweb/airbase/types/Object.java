@@ -47,6 +47,12 @@ public class Object {
 	
 	@Override
 	public String toString() {
+		String object = this.object;
+		if (!type.isEmpty()) {
+			object = "\""+this.object+"\"";
+		} else {
+			object = "<"+this.object+">";
+		}
 		return object+type;
 	}
 }
