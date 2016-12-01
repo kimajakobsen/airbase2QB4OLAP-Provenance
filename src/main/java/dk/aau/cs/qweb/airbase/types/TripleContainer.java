@@ -55,7 +55,6 @@ public class TripleContainer {
 							quad.setGraphLabel(graphLabel);
 							
 							metadataTriples.addAll(createMetadata(subject, level));
-							System.out.println(quad);
 							informationTriples.add(quad);
 						}
 					}
