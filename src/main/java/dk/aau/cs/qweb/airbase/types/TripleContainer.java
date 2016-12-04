@@ -68,6 +68,7 @@ public class TripleContainer {
 		value = value.replaceAll(",", "");
 		value = value.replaceAll("\\(", "");
 		value = value.replaceAll("\\)", "");
+		value = value.replaceAll(" ", "_");
 		return value;
 	}
 
@@ -91,7 +92,7 @@ public class TripleContainer {
 	private String createSubject(String level) {
 		String subject = Config.getNamespace();
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
-			subject+="observation/"+measureCounter;
+			subject+="observation/"+Config.getCountryCode()+measureCounter;
 			measureCounter++;
 		} else {
 			List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
@@ -101,6 +102,7 @@ public class TripleContainer {
 				subject += tuple.getValue(index)+"_";
 			}
 			subject = replacelastUnderscoreWithSlash(subject);
+			subject = subject.replaceAll(" ", "_");
 		}
 		
 		return subject;
@@ -127,8 +129,19 @@ public class TripleContainer {
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
 			Quad quad1 = new Quad(subject, RDFS.Datatype.toString() , new Object("http://purl.org/linked-data/cube#Observation"),Config.getMetadataGraphLabel());
 			quads.add(quad1);
+			
 			Quad quad2 = new Quad(subject, RDFS.Datatype.toString() , new Object("http://purl.org/linked-data/cube#dataSet"),Config.getMetadataGraphLabel());
 			quads.add(quad2);
+			
+			Quad year = new Quad(subject, "http://qweb.cs.aau.dk/airbase/schema/year", new Object (createSubject("http://qweb.cs.aau.dk/airbase/schema/year")),Config.getMetadataGraphLabel());
+			quads.add(year);
+			
+			Quad sensor = new Quad(subject, "http://qweb.cs.aau.dk/airbase/schema/sensor", new Object (createSubject("http://qweb.cs.aau.dk/airbase/schema/sensor")),Config.getMetadataGraphLabel());
+			quads.add(sensor);
+			
+			Quad station = new Quad(subject, "http://qweb.cs.aau.dk/airbase/schema/station", new Object (createSubject("http://qweb.cs.aau.dk/airbase/schema/station")),Config.getMetadataGraphLabel());
+			quads.add(station);
+			
 		} else {
 			Quad quad1 = new Quad(subject, "http://purl.org/qb4olap/cubes#memberOf" , new Object(level),Config.getMetadataGraphLabel());
 			quads.add(quad1);
