@@ -23,7 +23,7 @@ public class TurtleFile extends Database {
 		all.addAll(triples.getMetadataTriples());
 		all.addAll(triples.getProvenanceTriples());
 		
-		try(FileWriter fw = new FileWriter(Config.getDBLocation()+"/airbaseCube.ttl", true);
+		try(FileWriter fw = new FileWriter(Config.getDBLocation()+"/airbaseCube"+Config.getCurrentInputFilePath()+".ttl", true);
 			    BufferedWriter bw = new BufferedWriter(fw);
 			    PrintWriter out = new PrintWriter(bw))
 			{
@@ -37,7 +37,11 @@ public class TurtleFile extends Database {
 
 	@Override
 	public void cleanWrite() throws IOException {
-		FileUtils.forceDelete(new File(Config.getDBLocation()+"/airbaseCube.ttl"));
+		File file = new File(Config.getDBLocation()+"/airbaseCube"+Config.getCurrentInputFilePath()+".ttl");
+		if (file.exists()) {
+			FileUtils.forceDelete(file);
+		}
+		
 	}
 
 }

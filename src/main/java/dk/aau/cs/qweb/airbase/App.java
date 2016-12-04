@@ -29,6 +29,7 @@ public class App {
 		// create the Options
 		Options options = new Options();
 		options.addOption("h", "help", false, "Display this message." );
+		options.addOption("i", "input-folder", true, "path to folder");
 		options.addOption("c", "config", true, "path to config file");
 				
 		try {
@@ -37,6 +38,11 @@ public class App {
 		    if (line.hasOption( "help" )) {
 		    	printHelp(null,options);
 		    	System.exit(0);
+			} 
+		    
+		    if (line.hasOption( "input-folder" )) {
+		    	files.add(new File(line.getOptionValue("input-folder")));
+		    	System.out.println(line.getOptionValue("input-folder"));
 			} 
 			
 		    if (line.hasOption("config")) {
@@ -80,8 +86,10 @@ public class App {
 			}
 		}
 		
+		System.out.println(files);
 		for (File folder : files) {
 			List<String> csvFiles = new ArrayList<String>();
+			System.out.println(folder.listFiles());
 			for (final File fileEntry : folder.listFiles()) {
 				if (fileEntry.isDirectory()) {
 					for (final File XMLFile : fileEntry.listFiles()) {
