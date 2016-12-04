@@ -79,4 +79,8 @@ public class Config {
 	public static String getCountryCode() {
 		return file.split("_")[1];
 	}
+
+	public static String getDataNamespace() {
+		return namespace+"data/";
+	}
 }

@@ -77,6 +77,10 @@ public class TripleContainer {
 		if (Config.getCurrentInputFilePath().contains("statistics")) {
 			if (!tuple.getValue("statistic_shortname").equals("Mean")) {
 				return false;
+			} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_code"))) {
+				return true;
+			} else {
+				return false;
 			}
 		}
 		return true;
@@ -90,7 +94,7 @@ public class TripleContainer {
 	}
 
 	private String createSubject(String level) {
-		String subject = Config.getNamespace();
+		String subject = Config.getDataNamespace();
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
 			subject+="observation/"+Config.getCountryCode()+measureCounter;
 			measureCounter++;
