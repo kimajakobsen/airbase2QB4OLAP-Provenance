@@ -83,4 +83,10 @@ public class Config {
 	public static String getDataNamespace() {
 		return namespace+"data/";
 	}
+
+	public static String getCurrentInputFileName() {
+		String[] slashSplit = file.split("/");
+		String[] dotSplit = slashSplit[slashSplit.length-1].split("\\.");
+		return dotSplit[0];
+	}
 }
