@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import dk.aau.cs.qweb.airbase.types.Object;
+
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.ProvenanceSignature;
+import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 
@@ -26,6 +28,14 @@ public class Activity implements PROV {
 		subject = Config.getNamespace()+name+"/"+Config.getCountryCode()+counter;
 		counter++;
 	}
+	
+	public Activity(String name,ProvenanceSignature signature) {
+		subject = Config.getNamespace()+name+"/"+signature.getFileName()+signature.getTuple().getLineCount();
+	}
+
+	public Activity(String string, String rawDataFileName) {
+		subject = Config.getNamespace()+string+"/"+rawDataFileName;
+	}
 
 	public void used(Entity entity) {
 		used.add(entity);
@@ -37,6 +47,7 @@ public class Activity implements PROV {
 
 	@Override
 	public Set<Quad> getQuads() {
+
 		Set<Quad> quads = new HashSet<Quad>();
 		if (ProvenanceIndex.contains(subject)) {
 			return quads;
@@ -51,10 +62,12 @@ public class Activity implements PROV {
 		}
 		
 		for (Entity entity : used) {
+			quads.add(new Quad(subject, PROVvocabulary.used,new Object(entity.getSubject()),Config.getProvenanceGraphLabel()));
 			quads.addAll(entity.getQuads());
 		}
 		
 		for (Agent agent : wasAssociatedWith) {
+			quads.add(new Quad(subject, PROVvocabulary.wasAssociatedWith,new Object(agent.getSubject()),Config.getProvenanceGraphLabel()));
 			quads.addAll(agent.getQuads());
 		}
 		
@@ -72,6 +85,10 @@ public class Activity implements PROV {
 	@Override
 	public void setCustomProperty(String property, Object value) {
 		customProperties.put(property, value);
+	}
+
+	public String getSubject() {
+		return subject;
 	}
 
 }

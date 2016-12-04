@@ -13,6 +13,7 @@ import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.ProvenanceSignature;
 import dk.aau.cs.qweb.airbase.provenance.provo.PROV;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
@@ -37,6 +38,10 @@ public class Entity implements PROV {
 
 	public Entity(String string, String rawDataFileName) {
 		subject = Config.getNamespace()+string+"/"+rawDataFileName;
+	}
+
+	public Entity(String string, ProvenanceSignature signature) {
+		subject = Config.getNamespace()+string+"/"+Config.getCurrentInputFileName()+signature.getTuple().getLineCount();
 	}
 
 	public void atLocation(String string) {
@@ -70,10 +75,12 @@ public class Entity implements PROV {
 		}
 		
 		for (Activity activity : wasGeneratedBy) {
+			quads.add(new Quad(subject, PROVvocabulary.wasGeneratedBy,new Object(activity.getSubject()),Config.getProvenanceGraphLabel()));
 			quads.addAll(activity.getQuads());
 		}
 		
 		for (Agent agent : wasAttributedTo) {
+			quads.add(new Quad(subject, PROVvocabulary.wasAttributedTo,new Object(agent.getSubject()),Config.getProvenanceGraphLabel()));
 			quads.addAll(agent.getQuads());
 		}
 		

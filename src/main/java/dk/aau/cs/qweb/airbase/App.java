@@ -42,7 +42,6 @@ public class App {
 		    
 		    if (line.hasOption( "input-folder" )) {
 		    	files.add(new File(line.getOptionValue("input-folder")));
-		    	System.out.println(line.getOptionValue("input-folder"));
 			} 
 			
 		    if (line.hasOption("config")) {
@@ -58,7 +57,7 @@ public class App {
 							Config.setDbType(fileLine.split(" ")[1]);
 						} else if (fileLine.startsWith("clean")) {
 							Config.setDbCleanWrite(fileLine.split(" ")[1]);
-						}else if (fileLine.startsWith("datafolder")) {
+						} else if (fileLine.startsWith("datafolder")) {
 							File folder = new File(fileLine.split(" ")[1]);
 							System.out.println(folder);
 							for (final File fileEntry : folder.listFiles()) {
@@ -78,18 +77,9 @@ public class App {
 			exp.printStackTrace();
 		}
 		Database dbConnection = Database.build();
-		if (Config.isDbCleanWrite()) {
-			try {
-				dbConnection.cleanWrite();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 		
-		System.out.println(files);
 		for (File folder : files) {
 			List<String> csvFiles = new ArrayList<String>();
-			System.out.println(folder.listFiles());
 			for (final File fileEntry : folder.listFiles()) {
 				if (fileEntry.isDirectory()) {
 					for (final File XMLFile : fileEntry.listFiles()) {
@@ -103,15 +93,15 @@ public class App {
 			for (String file : csvFiles) {
 				FileStructure fileStructure;
 				try {
+					Config.setCurrentInputFilePath(file);
+					dbConnection.cleanWrite();
 					fileStructure = new FileStructure(file);
-					System.out.println(file);
 					while (fileStructure.hasNext()) {
-						Config.setCurrentInputFilePath(file);
+						
 						Tuple tuple = (Tuple) fileStructure.next();
 						TripleContainer triples = new TripleContainer(tuple);
 						
 						dbConnection.writeToDisk(triples);
-						
 					}
 				} catch (IOException e) {
 					e.printStackTrace();

@@ -73,11 +73,11 @@ public class TripleContainer {
 	}
 
 	private boolean tupleIsAllowed() {
-		
 		if (Config.getCurrentInputFilePath().contains("statistics")) {
+			
 			if (!tuple.getValue("statistic_shortname").equals("Mean")) {
 				return false;
-			} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_code"))) {
+			} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"))) {
 				return true;
 			} else {
 				return false;

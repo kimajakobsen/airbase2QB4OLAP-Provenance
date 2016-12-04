@@ -7,10 +7,12 @@ public class Tuple {
 
 	private List<String> data = new ArrayList<String>();
 	private List<String> header = new ArrayList<String>();
+	private int lineCount;
 
-	public Tuple(List<String> data, List<String> header) {
+	public Tuple(List<String> data, List<String> header, int lineCount) {
 		this.data = data;
 		this.header = header;
+		this.lineCount = lineCount;
 	}
 	
 	public List<String> getData() {
@@ -44,5 +46,9 @@ public class Tuple {
 			index++;
 		}
 		return string;
+	}
+
+	public int getLineCount() {
+		return lineCount;
 	}
 }

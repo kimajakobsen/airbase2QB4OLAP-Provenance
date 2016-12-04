@@ -16,6 +16,7 @@ public class FileStructure implements Iterator<Tuple> {
 	private File file;
 	private LineIterator it;
 	private List<String> header;
+	private int lineCount = 1;
 
 	public FileStructure(String file) throws IOException {
 		this.file = new File(file);
@@ -37,6 +38,12 @@ public class FileStructure implements Iterator<Tuple> {
 		for (String string : line.split("\t",-1)) {
 			data.add(string);
 		}
-		return new Tuple(data,header);
+		Tuple tuple = new Tuple(data,header,lineCount);
+		lineCount++;
+		return tuple;
+	}
+	
+	public int getLineCount() {
+		return lineCount;
 	}
 }

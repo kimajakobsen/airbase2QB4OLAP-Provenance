@@ -37,8 +37,6 @@ public class Agent implements PROV {
 			ProvenanceIndex.add(subject);
 		}
 		
-		
-		
 		quads.addAll(getType());
 		
 		for (Entry<String, Object> entry : customProperties.entrySet()) {
@@ -76,5 +74,9 @@ public class Agent implements PROV {
 	public void setCustomProperty(String key, String string2) {
 		Object object =  new Object(string2,XSD.stringType);
 		customProperties.put(key, object);
+	}
+
+	public String getSubject() {
+		return subject;
 	}
 }

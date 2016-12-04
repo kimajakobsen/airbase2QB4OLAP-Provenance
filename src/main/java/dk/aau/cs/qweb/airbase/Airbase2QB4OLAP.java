@@ -94,21 +94,21 @@ public class Airbase2QB4OLAP {
 	private static List<String> allowedComponents = new ArrayList<String>() {
 		private static final long serialVersionUID = -8808761432851313811L;
 		{
-			add("http://qweb.cs.aau.dk/airbase/schema/SO2");
-			add("http://qweb.cs.aau.dk/airbase/schema/SPM");
-			add("http://qweb.cs.aau.dk/airbase/schema/PM10");
-			add("http://qweb.cs.aau.dk/airbase/schema/BS");
-			add("http://qweb.cs.aau.dk/airbase/schema/O3");
-			add("http://qweb.cs.aau.dk/airbase/schema/NO2");
-			add("http://qweb.cs.aau.dk/airbase/schema/NOX");
-			add("http://qweb.cs.aau.dk/airbase/schema/CO");
-			add("http://qweb.cs.aau.dk/airbase/schema/Pb");
-			add("http://qweb.cs.aau.dk/airbase/schema/Hg");
-			add("http://qweb.cs.aau.dk/airbase/schema/Cd");
-			add("http://qweb.cs.aau.dk/airbase/schema/Ni");
-			add("http://qweb.cs.aau.dk/airbase/schema/As");
-			add("http://qweb.cs.aau.dk/airbase/schema/C6H6");
-			add("http://qweb.cs.aau.dk/airbase/schema/PM2.5");
+			add("SO2");
+			add("SPM");
+			add("PM10");
+			add("BS");
+			add("O3");
+			add("NO2");
+			add("NOX");
+			add("CO");
+			add("Pb");
+			add("Hg");
+			add("Cd");
+			add("Ni");
+			add("As");
+			add("C6H6");
+			add("PM2.5");
 		}
 	};
 	

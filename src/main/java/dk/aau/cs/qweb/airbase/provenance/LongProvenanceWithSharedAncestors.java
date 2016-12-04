@@ -101,7 +101,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 	private Entity raw(Activity createSubject) {
-		Entity raw = new Entity("raw");
+		Entity raw = new Entity("raw",getCallbackClassName(signature)+"/"+signature.getTuple().getLineCount());
 		raw.wasGeneratedBy(createSubject);
 		return raw;
 	}
@@ -121,7 +121,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 	private Entity tuple(Activity extract) {
-		Entity tuple = new Entity("tuple");
+		Entity tuple = new Entity("tuple",signature);
 		tuple.wasGeneratedBy(extract);
 		return tuple;
 	}
@@ -147,13 +147,13 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 	private Activity aggregation(Entity rawFile) {
-		Activity aggregation = new Activity("aggregation");
+		Activity aggregation = new Activity("aggregation",signature.getRawDataFileName());
 		aggregation.used(rawFile);
 		return aggregation;
 	}
 
 	private Entity rawFile() {
-		Entity rawFile = new Entity("rawFile/",signature.getRawDataFileName());
+		Entity rawFile = new Entity("rawFile",signature.getRawDataFileName());
 		rawFile.atLocation(signature.getRawDataFilePath());
 		return rawFile;
 	}
@@ -182,7 +182,8 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		} else {
 			callback = Airbase2QB4OLAP.getCallBackFunctionPredicate(signature.getQuad().getPredicate());
 		}
-		return callback.getClass().getName();
+		String[] dotSplit = callback.getClass().getName().split("\\.");
+		return dotSplit[dotSplit.length-1];
 	}
 
 	private Agent getKim() {
