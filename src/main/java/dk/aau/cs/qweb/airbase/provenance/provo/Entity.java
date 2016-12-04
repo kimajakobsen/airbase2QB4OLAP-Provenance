@@ -28,7 +28,7 @@ public class Entity implements PROV {
 	private String generatedAtTime = "";
 
 	public Entity(String string) {
-		subject = Config.getNamespace()+string+"/"+counter;
+		subject = Config.getNamespace()+string+"/"+Config.getCountryCode()+counter;
 		counter++;
 	}
 	

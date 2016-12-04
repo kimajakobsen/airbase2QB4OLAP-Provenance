@@ -23,7 +23,7 @@ public class Agent implements PROV {
 	private String atLocation = "";
 	
 	public Agent(String string) {
-		subject = Config.getProvenanceGraphLabel()+"agent/"+string;
+		subject = Config.getProvenanceGraphLabel()+"agent/"+Config.getCountryCode()+string;
 	}
 	
 	protected Agent() {}

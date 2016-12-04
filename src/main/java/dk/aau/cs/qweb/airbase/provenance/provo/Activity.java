@@ -23,7 +23,7 @@ public class Activity implements PROV {
 	private static int counter = 1;
 	
 	public Activity(String name) {
-		subject = Config.getNamespace()+name+"/"+counter;
+		subject = Config.getNamespace()+name+"/"+Config.getCountryCode()+counter;
 		counter++;
 	}
 
