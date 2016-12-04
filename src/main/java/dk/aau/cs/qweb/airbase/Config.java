@@ -75,4 +75,8 @@ public class Config {
 			Config.dbCleanWrite = false;
 		}
 	}
+
+	public static String getCountryCode() {
+		return file.split("_")[1];
+	}
 }
