@@ -19,7 +19,7 @@ import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
 public class Agent implements PROV {
 	protected String subject = "";
-	private Map<String,Object> customProperties = new HashMap<String,Object>();
+	protected Map<String,Object> customProperties = new HashMap<String,Object>();
 	private String atLocation = "";
 	
 	public Agent(String string) {
