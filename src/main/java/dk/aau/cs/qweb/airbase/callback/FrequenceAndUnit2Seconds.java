@@ -20,7 +20,9 @@ public class FrequenceAndUnit2Seconds implements CallBack {
 			return new Object(string,XSD.integerType);
 		}  else if (timeUnit.equals("")) {
 			return new Object("");
-		}else {
+		} else if (timeUnit.equals("week")) {
+			return new Object(value*7*24*60*60,XSD.integerType);
+		} else {
 			System.out.println(tuple);
 			throw new IllegalArgumentException("unknown time unit: "+timeUnit);
 		}
