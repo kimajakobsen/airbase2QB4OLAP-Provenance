@@ -12,7 +12,8 @@ public class YesNo2TrueFalse implements CallBack {
 			return new Object("True",XSD.booleanType);
 		} else if (string.equals("no")) {
 			return new Object("False",XSD.booleanType);
+		} else {
+			return new Object("");
 		}
-		throw new IllegalArgumentException("the parameter "+ string +" must be yes or no");
 	}
 }
