@@ -17,7 +17,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-
 import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.callback.CallBack;
@@ -26,10 +25,9 @@ import dk.aau.cs.qweb.airbase.provenance.provo.Agent;
 import dk.aau.cs.qweb.airbase.provenance.provo.Entity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Organization;
 import dk.aau.cs.qweb.airbase.provenance.provo.Person;
-import dk.aau.cs.qweb.airbase.provenance.provo.ProvenanceIdentifierEntity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Software;
-import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.Object;
+import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
@@ -62,43 +60,35 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		Activity createSubject = createSubject(tuple, mapping);
 		
 		Entity raw = raw(createSubject);
-
-		Activity clean = clean(thisSoftware, raw);
 		
-		Entity informationTriple = informationTriple(clean);
-		
-		Activity setGraphLabel = setGraphLabel(informationTriple);
-		
-		Entity quad = quad(setGraphLabel);
-		provenanceIdentifierEntity = quad;
-		
+		provenanceIdentifierEntity = raw;
 	}
 
-	private Entity quad(Activity setGraphLabel) {
-		Entity quad = new ProvenanceIdentifierEntity();
-		quad.wasGeneratedBy(setGraphLabel);
-		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
-		return quad;
-	}
-
-	private Activity setGraphLabel(Entity informationTriple) {
-		Activity setGraphLabel = new Activity("setGraphLabel");
-		setGraphLabel.used(informationTriple);
-		return setGraphLabel;
-	}
-
-	private Entity informationTriple(Activity clean) {
-		Entity informationTriple = new Entity("informationTriple");
-		informationTriple.wasGeneratedBy(clean);
-		return informationTriple;
-	}
-
-	private Activity clean(Agent thisSoftware, Entity raw) {
-		Activity clean = new Activity(getCallbackClassName(signature));
-		clean.used(raw);
-		clean.wasAssociatedWith(thisSoftware);
-		return clean;
-	}
+//	private Entity quad(Activity setGraphLabel) {
+//		Entity quad = new ProvenanceIdentifierEntity();
+//		quad.wasGeneratedBy(setGraphLabel);
+//		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
+//		return quad;
+//	}
+//
+//	private Activity setGraphLabel(Entity informationTriple) {
+//		Activity setGraphLabel = new Activity("setGraphLabel");
+//		setGraphLabel.used(informationTriple);
+//		return setGraphLabel;
+//	}
+//
+//	private Entity informationTriple(Activity clean) {
+//		Entity informationTriple = new Entity("informationTriple");
+//		informationTriple.wasGeneratedBy(clean);
+//		return informationTriple;
+//	}
+//
+//	private Activity clean(Agent thisSoftware, Entity raw) {
+//		Activity clean = new Activity(getCallbackClassName(signature));
+//		clean.used(raw);
+//		clean.wasAssociatedWith(thisSoftware);
+//		return clean;
+//	}
 
 	private Entity raw(Activity createSubject) {
 		Entity raw = new Entity("raw",getCallbackClassName(signature)+"/"+signature.getTuple().getLineCount());
@@ -239,36 +229,29 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 			for (int temp = 0; temp < person.getLength(); temp++) {
 				Node nNode = person.item(temp);
 
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
+				if (nNode.getNodeType() == Node.ELEMENT_NODE ) {
 					Element eElement = (Element) nNode;
-					Agent agent = new Person(stringify(eElement.getElementsByTagName("person_first_name").item(0).getTextContent()+eElement.getElementsByTagName("person_last_name").item(0).getTextContent()));;
 					
 					NodeList firstname = eElement.getElementsByTagName("person_first_name");
 					NodeList lastname = eElement.getElementsByTagName("person_last_name");
 					NodeList email = eElement.getElementsByTagName("person_email_address");
 					NodeList title = eElement.getElementsByTagName("person_title");
 					
-					
-					agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-					if (firstname.getLength() > 0) {
+					if (firstname.getLength() > 0 && lastname.getLength() > 0) {
+						Agent agent = new Person(stringify(firstname.toString()+"_"+lastname.toString()));;
+						
+						agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
 						agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
-					} 
-					
-					if (lastname.getLength() > 0){
 						agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
+						
+						if (title.getLength() > 0) {
+							agent.setCustomProperty(FOAF.title.toString(), title.item(0).getTextContent());
+						}
+						if (email.getLength() > 0 ) {
+							agent.setCustomProperty(FOAF.mbox.toString(), email.item(0).getTextContent());
+						}
+						agents.add(agent);
 					}
-					
-					if (title.getLength() > 0) {
-						agent.setCustomProperty(FOAF.title.toString(), title.item(0).getTextContent());
-					}
-					if (email.getLength() > 0 ) {
-						agent.setCustomProperty(FOAF.mbox.toString(), email.item(0).getTextContent());
-					}
-					
-					
-					
-					agents.add(agent);
 				}
 			}
 		} catch (IOException e) {
