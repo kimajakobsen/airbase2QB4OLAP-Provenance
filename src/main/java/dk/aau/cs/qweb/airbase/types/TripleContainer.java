@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.jena.vocabulary.RDFS;
+import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
@@ -89,7 +89,9 @@ public class TripleContainer {
 	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
 		String file = Config.getCurrentInputFilePath();
 		Provenance index = Provenance.getInstance();
+		System.out.println(quad);
 		String provenanceIdentifier = index.getProvenanceIdentifier(quad,level,file,tuple);
+		System.out.println(index.getProvenanceGraph(provenanceIdentifier));
 		return provenanceIdentifier;
 	}
 
@@ -131,10 +133,10 @@ public class TripleContainer {
 		Set<Quad> quads = new HashSet<Quad>();
 		
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
-			Quad quad1 = new Quad(subject, RDFS.Datatype.toString() , new Object("http://purl.org/linked-data/cube#Observation"),Config.getMetadataGraphLabel());
+			Quad quad1 = new Quad(subject, RDF.type.toString() , new Object("http://purl.org/linked-data/cube#Observation"),Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			
-			Quad quad2 = new Quad(subject, RDFS.Datatype.toString() , new Object("http://purl.org/linked-data/cube#dataSet"),Config.getMetadataGraphLabel());
+			Quad quad2 = new Quad(subject, RDF.type.toString() , new Object("http://purl.org/linked-data/cube#dataSet"),Config.getMetadataGraphLabel());
 			quads.add(quad2);
 			
 			Quad year = new Quad(subject, "http://qweb.cs.aau.dk/airbase/schema/year", new Object (createSubject("http://qweb.cs.aau.dk/airbase/schema/year")),Config.getMetadataGraphLabel());
