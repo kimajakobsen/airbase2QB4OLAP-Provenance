@@ -48,7 +48,9 @@ public class Object {
 	@Override
 	public String toString() {
 		String object = this.object;
-		if (!type.isEmpty()) {
+		if (!object.matches(".*[a-zA-Z]+.*")) {
+			object = this.object;
+		} else if (!type.isEmpty()) {
 			object = "\""+this.object+"\"";
 		} else {
 			object = "<"+this.object+">";
