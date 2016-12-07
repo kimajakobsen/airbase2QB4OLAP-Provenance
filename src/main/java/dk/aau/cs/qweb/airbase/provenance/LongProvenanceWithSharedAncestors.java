@@ -2,7 +2,9 @@ package dk.aau.cs.qweb.airbase.provenance;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
@@ -25,6 +27,7 @@ import dk.aau.cs.qweb.airbase.provenance.provo.Agent;
 import dk.aau.cs.qweb.airbase.provenance.provo.Entity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Organization;
 import dk.aau.cs.qweb.airbase.provenance.provo.Person;
+import dk.aau.cs.qweb.airbase.provenance.provo.ProvenanceIdentifierEntity;
 import dk.aau.cs.qweb.airbase.provenance.provo.Software;
 import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Quad;
@@ -91,8 +94,10 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 //	}
 
 	private Entity raw(Activity createSubject) {
-		Entity raw = new Entity("raw",getCallbackClassName(signature)+"/"+signature.getTuple().getLineCount());
+		ProvenanceIdentifierEntity raw = new ProvenanceIdentifierEntity("provenanceIdentifier",getCallbackClassName(signature)+"/"+signature.getTuple().getLineCount());
 		raw.wasGeneratedBy(createSubject);
+		String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+		raw.generatedAtTime(new Object(timeStamp,XSD.dateType));
 		return raw;
 	}
 
@@ -106,13 +111,16 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	private Entity mapping(Agent kim) {
 		Entity mapping = new Entity("mapping");
 		mapping.wasAttributedTo(kim);
-		mapping.generatedAtTime("November182016");
+		mapping.generatedAtTime(new Object("2016-11-18",XSD.dateType));
 		return mapping;
 	}
 
 	private Entity tuple(Activity extract) {
 		Entity tuple = new Entity("tuple",signature);
 		tuple.wasGeneratedBy(extract);
+		if (isQualityApproved(signature)) {
+			tuple.setCustomProperty(Config.getNamespace()+"qualityApproved", new Object("True",XSD.booleanType)); 
+		}
 		return tuple;
 	}
 
@@ -125,14 +133,11 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private Entity file(Activity activity, List<Agent> countryOrganizations, Agent owner) {
 		Entity file = new Entity("file",signature.getFileName());
-		file.atLocation(signature.getFilePath());
+		file.atLocation(new Object(signature.getFilePath(),XSD.stringType));
 		file.wasAttributedTo(countryOrganizations);
 		file.wasAttributedTo(owner);
 		file.wasGeneratedBy(activity);
 		file.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
-		if (isQualityApproved(signature)) {
-			file.setCustomProperty(Config.getNamespace()+"qualityApproved", new Object("True",XSD.booleanType)); 
-		}
 		return file;
 	}
 
@@ -144,7 +149,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private Entity rawFile() {
 		Entity rawFile = new Entity("rawFile",signature.getRawDataFileName());
-		rawFile.atLocation(signature.getRawDataFilePath());
+		rawFile.atLocation(new Object(signature.getRawDataFilePath(),XSD.stringType));
 		return rawFile;
 	}
 
@@ -193,7 +198,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		Agent agent = new Organization("European_Environment_Agency");
 		agent.setCustomProperty(FOAF.name.toString(),"airbase2QB4OLAP-Provenance");
 		agent.setCustomProperty(FOAF.homepage.toString(),"http://www.eea.europa.eu");
-		agent.atLocation("Kongens Nytorv 6, 1050, Copenhagen, Denmark");
+		agent.atLocation(new Object("Kongens Nytorv 6, 1050, Copenhagen, Denmark",XSD.stringType));
 		return agent;
 	}
 
@@ -238,7 +243,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					NodeList title = eElement.getElementsByTagName("person_title");
 					
 					if (firstname.getLength() > 0 && lastname.getLength() > 0) {
-						Agent agent = new Person(stringify(firstname.toString()+"_"+lastname.toString()));;
+						Agent agent = new Person(stringify(firstname.item(0).getTextContent()+"_"+lastname.item(0).getTextContent()));;
 						
 						agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
 						agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
