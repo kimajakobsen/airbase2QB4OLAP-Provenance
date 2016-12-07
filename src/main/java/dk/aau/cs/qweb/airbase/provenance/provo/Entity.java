@@ -23,10 +23,10 @@ public class Entity implements PROV {
 	private List<Activity> wasGeneratedBy = new ArrayList<Activity>();
 	private List<Agent> wasAttributedTo = new ArrayList<Agent>();
 	private Map<String,Object> customProperties = new HashMap<String,Object>();
-	private String atLocation = "";
+	private Object atLocation = null;
 	protected String subject = "";
 	private static int counter = 1;
-	private String generatedAtTime = "";
+	private Object generatedAtTime = null;
 
 	public Entity(String string) {
 		subject = Config.getNamespace()+string+"/"+Config.getCountryCode()+counter;
@@ -44,7 +44,7 @@ public class Entity implements PROV {
 		subject = Config.getNamespace()+string+"/"+Config.getCurrentInputFileName()+signature.getTuple().getLineCount();
 	}
 
-	public void atLocation(String string) {
+	public void atLocation(Object string) {
 		this.atLocation = string;
 	}
 
@@ -66,11 +66,11 @@ public class Entity implements PROV {
 			quads.add(new Quad(subject, entry.getKey(),(entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
-		if (!atLocation.isEmpty()) {
+		if (atLocation != null) {
 			quads.add(getAtLocation());
 		}
 		
-		if (!generatedAtTime.isEmpty()) {
+		if (generatedAtTime != null) {
 			quads.add(getGeneratedAtTime());
 		}
 		
@@ -88,11 +88,11 @@ public class Entity implements PROV {
 	}
 
 	private Quad getGeneratedAtTime() {
-		return  new Quad(subject,PROVvocabulary.generatedAtTime,new Object(generatedAtTime),Config.getProvenanceGraphLabel());
+		return  new Quad(subject,PROVvocabulary.generatedAtTime,generatedAtTime,Config.getProvenanceGraphLabel());
 	}
 
 	private Quad getAtLocation() {
-		return new Quad(subject,PROVvocabulary.atLocation,new Object(atLocation),Config.getProvenanceGraphLabel());
+		return new Quad(subject,PROVvocabulary.atLocation,atLocation,Config.getProvenanceGraphLabel());
 	}
 
 	public void setCustomProperty(String key, Object value) {
@@ -109,7 +109,7 @@ public class Entity implements PROV {
 		}
 	}
 
-	public void generatedAtTime(String string) {
+	public void generatedAtTime(Object string) {
 		generatedAtTime = string;
 	}
 	

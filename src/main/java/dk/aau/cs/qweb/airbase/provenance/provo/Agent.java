@@ -20,7 +20,7 @@ import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 public class Agent implements PROV {
 	protected String subject = "";
 	protected Map<String,Object> customProperties = new HashMap<String,Object>();
-	private String atLocation = "";
+	private Object atLocation = null;
 	
 	public Agent(String string) {
 		subject = Config.getProvenanceGraphLabel()+"agent/"+Config.getCountryCode()+string;
@@ -43,7 +43,7 @@ public class Agent implements PROV {
 			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
 		}
 		
-		if (atLocation.isEmpty()) {
+		if (atLocation != null) {
 			quads.add(getAtLocation());
 		}
 		
@@ -67,7 +67,7 @@ public class Agent implements PROV {
 		return list;
 	}
 
-	public void atLocation(String string) {
+	public void atLocation(Object string) {
 		this.atLocation = string;
 	}
 
@@ -77,6 +77,11 @@ public class Agent implements PROV {
 	}
 
 	public String getSubject() {
+		return subject;
+	}
+	
+	@Override
+	public String toString() {
 		return subject;
 	}
 }
