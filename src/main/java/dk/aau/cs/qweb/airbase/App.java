@@ -81,10 +81,8 @@ public class App {
 		for (File folder : files) {
 			List<String> csvFiles = new ArrayList<String>();
 			for (final File fileEntry : folder.listFiles()) {
-				if (fileEntry.isDirectory()) {
-					for (final File XMLFile : fileEntry.listFiles()) {
-						Config.setXMLfilePath(XMLFile.toString());
-					}
+				if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
+					Config.setXMLfilePath(fileEntry.toString());
 				} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
 					csvFiles.add(fileEntry.toString());
 				} 

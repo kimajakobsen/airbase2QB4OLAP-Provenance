@@ -89,9 +89,9 @@ public class TripleContainer {
 	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
 		String file = Config.getCurrentInputFilePath();
 		Provenance index = Provenance.getInstance();
-		System.out.println(quad);
+		//System.out.println(quad);
 		String provenanceIdentifier = index.getProvenanceIdentifier(quad,level,file,tuple);
-		System.out.println(index.getProvenanceGraph(provenanceIdentifier));
+		//System.out.println(index.getProvenanceGraph(provenanceIdentifier));
 		return provenanceIdentifier;
 	}
 
