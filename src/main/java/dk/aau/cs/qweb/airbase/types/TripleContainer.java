@@ -2,6 +2,7 @@ package dk.aau.cs.qweb.airbase.types;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -32,6 +33,7 @@ public class TripleContainer {
 				
 				if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
 					String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
+					List<String> files = Airbase2QB4OLAP.getFiles(predicateString);
 					if (predicate.equals("measure")) {
 						predicate = "http://qweb.cs.aau.dk/airbase/schema/"+removeIllegalChars(tuple.getValue("component_caption"));
 					}
@@ -51,7 +53,7 @@ public class TripleContainer {
 						if (!object.isEmpty()) {
 							Quad quad =  new Quad(subject,predicate,(object));
 							
-							String graphLabel = getGraphLabel(quad,level,tuple);
+							String graphLabel = getGraphLabel(quad, level, files, tuple);
 							quad.setGraphLabel(graphLabel);
 							
 							metadataTriples.addAll(createMetadata(subject, level));
@@ -86,11 +88,10 @@ public class TripleContainer {
 		return true;
 	}
 
-	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
-		String file = Config.getCurrentInputFilePath();
+	private String getGraphLabel(Quad quad, String level, Collection<String> files, Tuple tuple) {
 		Provenance index = Provenance.getInstance();
 		//System.out.println(quad);
-		String provenanceIdentifier = index.getProvenanceIdentifier(quad,level,file,tuple);
+		String provenanceIdentifier = index.getProvenanceIdentifier(quad, level, files, tuple);
 		//System.out.println(index.getProvenanceGraph(provenanceIdentifier));
 		return provenanceIdentifier;
 	}

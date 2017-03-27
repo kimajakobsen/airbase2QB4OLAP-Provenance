@@ -1,6 +1,7 @@
 package dk.aau.cs.qweb.airbase.provenance;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -24,8 +25,8 @@ public class Provenance {
 		return instance;
 	}
 
-	public String getProvenanceIdentifier(Quad quad, String level, String file, Tuple tuple) {
-		ProvenanceSignature signature = new ProvenanceSignature(quad,level,file,LocalDate.now(),tuple);
+	public String getProvenanceIdentifier(Quad quad, String level, Collection<String> files, Tuple tuple) {
+		ProvenanceSignature signature = new ProvenanceSignature(quad,level,LocalDate.now(), files, tuple);
 		if (provenanceMap.containsKey(signature)) {
 			return provenanceMap.get(signature);
 		} else {

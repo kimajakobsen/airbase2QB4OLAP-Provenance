@@ -29,7 +29,7 @@ public class Activity implements PROV {
 		counter++;
 	}
 	
-	public Activity(String name,ProvenanceSignature signature) {
+	public Activity(String name, ProvenanceSignature signature) {
 		subject = Config.getNamespace()+name+"/"+signature.getFileName()+signature.getTuple().getLineCount();
 	}
 

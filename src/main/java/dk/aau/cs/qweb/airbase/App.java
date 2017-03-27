@@ -23,7 +23,7 @@ import dk.aau.cs.qweb.airbase.types.Tuple;
 public class App {
 
 	public static void main(String[] args) {
-		
+		String singleDataFile = null;
 		CommandLineParser parser = new DefaultParser();
 		List<File> files = new ArrayList<File>();
 		// create the Options
@@ -65,7 +65,9 @@ public class App {
 						        	files.add(fileEntry);
 						        } 
 						    }
-						} 
+						} else if (fileLine.startsWith("datafile")) {
+							singleDataFile = fileLine.split(" ")[1];
+						}
 					}
 				}
 		    }
@@ -78,36 +80,60 @@ public class App {
 		}
 		Database dbConnection = Database.build();
 		
-		for (File folder : files) {
-			List<String> csvFiles = new ArrayList<String>();
-			for (final File fileEntry : folder.listFiles()) {
-				if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
-					Config.setXMLfilePath(fileEntry.toString());
-				} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
-					csvFiles.add(fileEntry.toString());
-				} 
-			}
-			
-			for (String file : csvFiles) {
-				FileStructure fileStructure;
-				try {
-					Config.setCurrentInputFilePath(file);
-					dbConnection.cleanWrite();
-					fileStructure = new FileStructure(file);
-					while (fileStructure.hasNext()) {
-						
-						Tuple tuple = (Tuple) fileStructure.next();
-						TripleContainer triples = new TripleContainer(tuple);
-						
-						dbConnection.writeToDisk(triples);
+		if (singleDataFile == null) {
+			for (File folder : files) {
+				List<String> csvFiles = new ArrayList<String>();
+				for (final File fileEntry : folder.listFiles()) {
+					if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
+						Config.setXMLfilePath(fileEntry.toString());
+					} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
+						csvFiles.add(fileEntry.toString());
+					} 
+				}
+				
+				for (String file : csvFiles) {
+					FileStructure fileStructure;
+					try {
+						Config.setCurrentInputFilePath(file);
+						dbConnection.cleanWrite();
+						fileStructure = new FileStructure(file);
+						while (fileStructure.hasNext()) {
+							
+							Tuple tuple = (Tuple) fileStructure.next();
+							TripleContainer triples = new TripleContainer(tuple);
+							
+							dbConnection.writeToDisk(triples);
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
-				} catch (IOException e) {
-					e.printStackTrace();
 				}
 			}
+		} else {
+			FileStructure fileStructure;
+			try {
+				Config.setCurrentInputFilePath(singleDataFile);
+				dbConnection.cleanWrite();
+				fileStructure = new FileStructure(singleDataFile);
+				while (fileStructure.hasNext()) {
+					Tuple tuple = (Tuple) fileStructure.next();
+					String countryCode = tuple.getValue("country_iso_code");
+					Config.setXMLfilePath(getXMLFile(countryCode));
+					TripleContainer triples = new TripleContainer(tuple);
+					
+					dbConnection.writeToDisk(triples);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 	
+	private static String getXMLFile(String countryCode) {
+		return Config.getDataNamespace() + "/" + "Airbase_" + countryCode + "_v8/" + countryCode + "_meta.xml";
+	}
+
 	private static void printHelp(ParseException exp, Options options) {
 		String header = "";
 		HelpFormatter formatter = new HelpFormatter();

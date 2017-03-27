@@ -154,18 +154,11 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 	private boolean isQualityApproved(ProvenanceSignature signature) {
-		String[] split = signature.getFilePath().split("/");
-		String fileName = split[split.length-1];
-		String[] words = fileName.split("_");
-		
-		
-		if (words[words.length-1].equals("statistics.csv")) {
-			Tuple tuple = signature.getTuple();
-			int year = Integer.parseInt(tuple.getValue("statistics_year"));
-			if (year >= 2002) {
-				return true;
-			}	
-		}
+		Tuple tuple = signature.getTuple();
+		int year = Integer.parseInt(tuple.getValue("statistics_year"));
+		if (year >= 2002) {
+			return true;
+		}	
 		return false;
 	}
 
