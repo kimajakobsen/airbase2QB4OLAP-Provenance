@@ -1,5 +1,7 @@
 package dk.aau.cs.qweb.airbase.types;
 
+import dk.aau.cs.qweb.airbase.vocabulary.XSD;
+
 public class Object {
 	private String object = "";
 	private String type = "";
@@ -48,7 +50,7 @@ public class Object {
 	@Override
 	public String toString() {
 		String object = this.object;
-		if (!object.matches(".*[a-zA-Z]+.*")) {
+		if (!object.matches(".*[a-zA-Z]+.*") && !type.equals(XSD.stringType)) {
 			object = this.object;
 		} else if (!type.isEmpty()) {
 			object = "\""+this.object+"\"";

@@ -6,11 +6,13 @@ public class Config {
 	private static String namespace = "http://qweb.cs.aau.dk/airbase/";
 	private static String metadataGraphLabel = namespace+"metadata/";
 	private static String provenanceGraphLabel = namespace+"provenance/";
+	private static String countryCode; 
 	private static String file;
 	private static String xmlFile;
 	private static String dbLocation;
 	private static String dbType;
 	private static boolean dbCleanWrite;
+	private static String dataFolder;
 
 	public static String getNamespace() {
 		return namespace;
@@ -75,9 +77,13 @@ public class Config {
 			Config.dbCleanWrite = false;
 		}
 	}
+	
+	public static void setCountryCode(String string) {
+		countryCode = string;
+	}
 
 	public static String getCountryCode() {
-		return file.split("_")[1];
+		return countryCode;
 	}
 
 	public static String getDataNamespace() {
@@ -88,5 +94,13 @@ public class Config {
 		String[] slashSplit = file.split("/");
 		String[] dotSplit = slashSplit[slashSplit.length-1].split("\\.");
 		return dotSplit[0];
+	}
+
+	public static void setDataFolder(String string) {
+		dataFolder = string;
+	}
+	
+	public static String getDataFolder() {
+		return dataFolder;
 	}
 }

@@ -21,4 +21,5 @@ public class PROVvocabulary {
 	public static String generatedAtTime = provNS+"generatedAtTime";
 	public static String atLocation = provNS+"atLocation";
 	public static String wasAssociatedWith = provNS+"wasAssociatedWith";
+	public static String wasDerivedFrom = provNS+"wasDerivedFrom";
 }

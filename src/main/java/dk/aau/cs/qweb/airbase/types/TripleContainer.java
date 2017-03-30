@@ -2,8 +2,8 @@ package dk.aau.cs.qweb.airbase.types;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -22,6 +22,7 @@ public class TripleContainer {
 	private Set<Quad> informationTriples = new HashSet<Quad>();
 	private Set<Quad> metadataTriples = new HashSet<Quad>();
 	private static int measureCounter = 1;
+	private static Set<String> dimensionEntities = new LinkedHashSet<>();
 	
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
@@ -43,6 +44,16 @@ public class TripleContainer {
 					for (String level : levels) {
 						String literal = tuple.getData().get(index);
 						String subject = createSubject(level);
+						
+						// If it is not a measure then check if we have already talked about this entity
+						if (!level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
+							if (dimensionEntities.contains(subject)) {
+								continue;
+							} else {
+								dimensionEntities.add(subject);
+							}
+						}						
+						
 						CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunctionRawPredicate(predicateString);
 						Object object = new Object(literal);
 						
@@ -88,11 +99,9 @@ public class TripleContainer {
 		return true;
 	}
 
-	private String getGraphLabel(Quad quad, String level, Collection<String> files, Tuple tuple) {
+	private String getGraphLabel(Quad quad, String level, List<String> files, Tuple tuple) {
 		Provenance index = Provenance.getInstance();
-		//System.out.println(quad);
 		String provenanceIdentifier = index.getProvenanceIdentifier(quad, level, files, tuple);
-		//System.out.println(index.getProvenanceGraph(provenanceIdentifier));
 		return provenanceIdentifier;
 	}
 
@@ -171,6 +180,6 @@ public class TripleContainer {
 	
 	public Set<Quad> getProvenanceTriples() {
 		Provenance index = Provenance.getInstance();
-		return index.getProvenanceTriples();
+		return index.getProvenanceQuads();
 	}
 }

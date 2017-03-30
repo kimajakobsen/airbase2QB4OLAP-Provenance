@@ -1,18 +1,18 @@
 package dk.aau.cs.qweb.airbase.provenance.provo;
 
 import java.util.ArrayList;
-import dk.aau.cs.qweb.airbase.types.Object;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
-import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
+import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;
@@ -31,10 +31,8 @@ public class Agent implements PROV {
 	@Override
 	public Set<Quad> getQuads() {
 		Set<Quad> quads = new HashSet<Quad>();
-		if (ProvenanceIndex.contains(subject)) {
+		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
-		} else {
-			ProvenanceIndex.add(subject);
 		}
 		
 		quads.addAll(getType());
@@ -46,6 +44,8 @@ public class Agent implements PROV {
 		if (atLocation != null) {
 			quads.add(getAtLocation());
 		}
+		
+		Provenance.getInstance().registerSubject(subject);
 		
 		return quads;
 	}

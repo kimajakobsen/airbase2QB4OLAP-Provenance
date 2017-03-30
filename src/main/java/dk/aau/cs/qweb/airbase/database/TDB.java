@@ -20,6 +20,7 @@ import org.apache.jena.rdf.model.impl.StatementImpl;
 import org.apache.jena.tdb.TDBFactory;
 
 import dk.aau.cs.qweb.airbase.Config;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;

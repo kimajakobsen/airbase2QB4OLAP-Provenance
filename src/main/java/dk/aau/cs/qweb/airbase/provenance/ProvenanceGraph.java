@@ -11,9 +11,6 @@ public class ProvenanceGraph {
 	public ProvenanceGraph(ProvenanceSignature signature) {
 		 provenanceFlow = new LongProvenanceWithSharedAncestors(signature);
 		 provenanceIdentifier = provenanceFlow.getProvenanceIdentifier();
-		 
-		 
-		 //Set provenance identifier;
 	}
 
 	public Set<Quad> getQuads() {

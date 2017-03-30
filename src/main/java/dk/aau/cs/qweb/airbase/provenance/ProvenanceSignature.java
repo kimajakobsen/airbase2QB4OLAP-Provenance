@@ -1,7 +1,7 @@
 package dk.aau.cs.qweb.airbase.provenance;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.List;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.Tuple;
@@ -11,10 +11,10 @@ public class ProvenanceSignature {
 	private Quad quad;
 	private String level;
 	private LocalDate now;
-	private Collection<String> files;
+	private List<String> files;
 	private Tuple tuple;
 
-	public ProvenanceSignature(Quad quad, String level, LocalDate now, Collection<String> files, Tuple tuple) {
+	public ProvenanceSignature(Quad quad, String level, LocalDate now, List<String> files, Tuple tuple) {
 		this.tuple = tuple;
 		this.setQuad(quad);
 		this.setLevel(level);
@@ -56,14 +56,27 @@ public class ProvenanceSignature {
 	}
 
 	public String getFileName() {
-		return "AirBase_"+tuple.getValue("country_iso_code")+"_v8Vrawdata.zip";
+		StringBuilder strBuilder = new StringBuilder();
+		for (String file : files) {
+			return "AirBase_"+tuple.getValue("country_iso_code")+"_v8_" + file + ".csv,";
+		}
+		strBuilder.deleteCharAt(strBuilder.length() - 1);
+		return strBuilder.toString();
+	}
+	
+	public String getFileName(String suffix) {
+		return "AirBase_"+tuple.getValue("country_iso_code")+"_v8_" + suffix + ".csv";
+	}
+	
+	public String getRemoteFileName(String suffix) {
+		return "http://ftp.eea.europa.eu/www/AirBase_v8/AirBase_" + tuple.getValue("country_iso_code")+ "_v8.zip";
 	}
 
-	public Collection<String> getFiles() {
+	public List<String> getFiles() {
 		return files;
 	}
 
-	public void setFiles(Collection<String> file) {
+	public void setFiles(List<String> file) {
 		this.files = file;
 	}
 

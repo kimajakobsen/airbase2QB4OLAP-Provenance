@@ -16,7 +16,7 @@ import dk.aau.cs.qweb.airbase.Config;
 public class CubeStructure {
 	private Map<String,String> prefix = new HashMap<String,String>();
 	private String dataStructureDefinition;
-	private List<Measure> meassures = new ArrayList<Measure>();
+	private List<Measure> measures = new ArrayList<Measure>();
 	private List<Dimension> dimensions = new ArrayList<Dimension>();
 	private List<Hierarchy> hierarchies = new ArrayList<Hierarchy>();
 	private List<HierarchyStep> hierarchySteps = new ArrayList<HierarchyStep>();
@@ -134,7 +134,7 @@ public class CubeStructure {
 			}
 		} else if (type.equals("http://purl.org/linked-data/cube#MeasureProperty")) {
 			boolean exists = false;
-			for (Measure measure : meassures) {
+			for (Measure measure : measures) {
 				if (measure.equals(subject)) {
 					if (predicate.equals("http://www.w3.org/2000/01/rdf-schema#label")) {
 						measure.setLabel(object);
@@ -146,7 +146,7 @@ public class CubeStructure {
 			}
 			if (!exists) {
 				Measure measure = new Measure(subject);
-				meassures.add(measure);
+				measures.add(measure);
 			}
 		} else if (type.equals("http://purl.org/linked-data/cube#DimensionProperty")) {
 			boolean exists = false;

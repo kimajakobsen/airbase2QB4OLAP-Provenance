@@ -17,6 +17,7 @@ import org.apache.commons.io.FilenameUtils;
 
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
 import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
@@ -58,7 +59,8 @@ public class App {
 						} else if (fileLine.startsWith("clean")) {
 							Config.setDbCleanWrite(fileLine.split(" ")[1]);
 						} else if (fileLine.startsWith("datafolder")) {
-							File folder = new File(fileLine.split(" ")[1]);
+							Config.setDataFolder(fileLine.split(" ")[1]);
+							File folder = new File(Config.getDataFolder());
 							System.out.println(folder);
 							for (final File fileEntry : folder.listFiles()) {
 						        if (fileEntry.isDirectory()) {
@@ -101,7 +103,6 @@ public class App {
 							
 							Tuple tuple = (Tuple) fileStructure.next();
 							TripleContainer triples = new TripleContainer(tuple);
-							
 							dbConnection.writeToDisk(triples);
 						}
 					} catch (IOException e) {
@@ -119,9 +120,11 @@ public class App {
 					Tuple tuple = (Tuple) fileStructure.next();
 					String countryCode = tuple.getValue("country_iso_code");
 					Config.setXMLfilePath(getXMLFile(countryCode));
+					Config.setCountryCode(countryCode);
 					TripleContainer triples = new TripleContainer(tuple);
 					
 					dbConnection.writeToDisk(triples);
+					Provenance.getInstance().clearProvenance();
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -131,7 +134,7 @@ public class App {
 	}
 	
 	private static String getXMLFile(String countryCode) {
-		return Config.getDataNamespace() + "/" + "Airbase_" + countryCode + "_v8/" + countryCode + "_meta.xml";
+		return Config.getDataFolder() + "/" + "AirBase_" + countryCode + "_v8/" + countryCode + "_meta.parsed.xml";
 	}
 
 	private static void printHelp(ParseException exp, Options options) {
