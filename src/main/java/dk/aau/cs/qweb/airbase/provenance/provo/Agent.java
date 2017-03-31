@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.apache.jena.vocabulary.RDF;
@@ -34,18 +33,16 @@ public class Agent implements PROV {
 		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
 		}
-		
+		Provenance.getInstance().registerSubject(subject);
 		quads.addAll(getType());
 		
-		for (Entry<String, Object> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
+		for (String key : customProperties.keySet()) {
+			quads.add(new Quad(subject, key, customProperties.get(key), Config.getProvenanceGraphLabel()));
 		}
 		
 		if (atLocation != null) {
 			quads.add(getAtLocation());
 		}
-		
-		Provenance.getInstance().registerSubject(subject);
 		
 		return quads;
 	}

@@ -55,6 +55,7 @@ public class Activity implements PROV {
 		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
 		}
+		Provenance.getInstance().registerSubject(subject);
 		
 		quads.addAll(getType());
 		
@@ -71,8 +72,6 @@ public class Activity implements PROV {
 			quads.add(new Quad(subject, PROVvocabulary.wasAssociatedWith,new Object(agent.getSubject()),Config.getProvenanceGraphLabel()));
 			quads.addAll(agent.getQuads());
 		}
-		
-		Provenance.getInstance().registerSubject(subject);
 		
 		return quads;
 	}
@@ -96,6 +95,11 @@ public class Activity implements PROV {
 
 	public String getShortName() {
 		return shortName;
+	}
+	
+	@Override
+	public String toString() {
+		return subject;
 	}
 
 }

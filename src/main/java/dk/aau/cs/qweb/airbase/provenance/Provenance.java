@@ -16,7 +16,7 @@ public class Provenance {
 	private static Provenance instance = null;
 	private Map<ProvenanceSignature,String> provenanceMap = new HashMap<ProvenanceSignature, String>();
 	private Map<String,ProvenanceGraph> provenanceGraphMap = new HashMap<String, ProvenanceGraph>();
-	private static Set<String> subjects = new LinkedHashSet<>();
+	private Set<String> subjects = new LinkedHashSet<>();
 	
 	
 	private Provenance() { }
@@ -50,7 +50,8 @@ public class Provenance {
 		Set<Quad> provenanceQuads = new HashSet<Quad>();
 		for (ProvenanceGraph provenanceGraph : provenanceGraphMap.values()) {
 			if (!subjects.contains(provenanceGraph.getProvenanceIdentifier())) {
-				provenanceQuads.addAll(provenanceGraph.getQuads());
+				Set<Quad> qds = provenanceGraph.getQuads();
+				provenanceQuads.addAll(qds);
 				subjects.add(provenanceGraph.getProvenanceIdentifier());
 			}
 			
@@ -65,18 +66,10 @@ public class Provenance {
 	}
 	
 	public boolean subjectExists(String subject) {
-		if (subject.contains("http://qweb.cs.aau.dk/airbase/Organization/Gesellschaft_fÜr_Umweltmessungen_u._Umwelterhebungen_(UMEG)")) {
-			System.out.println(subjects.contains(subject));
-			Thread.dumpStack();
-		}
 		return subjects.contains(subject);
 	}
 	
 	public void registerSubject(String subject) {
-		if (subject.contains("http://qweb.cs.aau.dk/airbase/Organization/Gesellschaft_fÜr_Umweltmessungen_u._Umwelterhebungen_(UMEG)")) {
-			System.out.println(subjects.contains(subject));
-			Thread.dumpStack();
-		}
 		subjects.add(subject);
 	}
 

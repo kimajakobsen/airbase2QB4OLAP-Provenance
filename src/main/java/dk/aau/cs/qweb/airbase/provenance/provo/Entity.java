@@ -70,6 +70,7 @@ public class Entity implements PROV {
 		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
 		}
+		Provenance.getInstance().registerSubject(subject);
 		
 		quads.addAll(getType());
 		
@@ -92,16 +93,17 @@ public class Entity implements PROV {
 		
 		for (Agent agent : wasAttributedTo) {
 			quads.add(new Quad(subject, PROVvocabulary.wasAttributedTo, new Object(agent.getSubject()), Config.getProvenanceGraphLabel()));
-			quads.addAll(agent.getQuads());
+			if (!Provenance.getInstance().subjectExists(agent.getSubject())) {
+				quads.addAll(agent.getQuads());
+				Provenance.getInstance().registerSubject(agent.getSubject());
+			}
 		}
 		
 		for (Entity entity : nestedEntities) {
 			quads.add(new Quad(entity.getSubject(), PROVvocabulary.wasDerivedFrom, new Object(getSubject()), Config.getProvenanceGraphLabel()));
 			quads.addAll(entity.getQuads());
 		}
-		
-		Provenance.getInstance().registerSubject(subject);
-		
+
 		return quads;
 	}
 
@@ -149,6 +151,10 @@ public class Entity implements PROV {
 
 	public void setShortName(String shortName) {
 		this.shortName = shortName;
+	}
+	
+	public String toString() {
+		return subject;
 	}
 
 }

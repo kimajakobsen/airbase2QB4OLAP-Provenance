@@ -79,5 +79,10 @@ public class ProvenanceSignature {
 	public void setFiles(List<String> file) {
 		this.files = file;
 	}
+	
+	@Override
+	public String toString() {
+		return "[" + quad.toString() + ", " + level + ", " + tuple + "]";
+	}
 
 }

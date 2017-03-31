@@ -122,7 +122,6 @@ public class App {
 					Config.setXMLfilePath(getXMLFile(countryCode));
 					Config.setCountryCode(countryCode);
 					TripleContainer triples = new TripleContainer(tuple);
-					
 					dbConnection.writeToDisk(triples);
 					Provenance.getInstance().clearProvenance();
 				}
