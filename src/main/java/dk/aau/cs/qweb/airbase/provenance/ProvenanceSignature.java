@@ -58,7 +58,7 @@ public class ProvenanceSignature {
 	public String getFileName() {
 		StringBuilder strBuilder = new StringBuilder();
 		for (String file : files) {
-			return "AirBase_"+tuple.getValue("country_iso_code")+"_v8_" + file + ".csv,";
+			strBuilder.append("AirBase_"+tuple.getValue("country_iso_code")+"_v8_" + file + ".csv,");
 		}
 		strBuilder.deleteCharAt(strBuilder.length() - 1);
 		return strBuilder.toString();

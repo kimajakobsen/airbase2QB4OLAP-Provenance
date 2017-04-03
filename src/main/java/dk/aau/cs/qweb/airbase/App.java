@@ -99,8 +99,7 @@ public class App {
 						Config.setCurrentInputFilePath(file);
 						dbConnection.cleanWrite();
 						fileStructure = new FileStructure(file);
-						while (fileStructure.hasNext()) {
-							
+						while (fileStructure.hasNext()) {							
 							Tuple tuple = (Tuple) fileStructure.next();
 							TripleContainer triples = new TripleContainer(tuple);
 							dbConnection.writeToDisk(triples);
@@ -116,13 +115,16 @@ public class App {
 				Config.setCurrentInputFilePath(singleDataFile);
 				dbConnection.cleanWrite();
 				fileStructure = new FileStructure(singleDataFile);
+				int ln = 1;
 				while (fileStructure.hasNext()) {
 					Tuple tuple = (Tuple) fileStructure.next();
 					String countryCode = tuple.getValue("country_iso_code");
 					Config.setXMLfilePath(getXMLFile(countryCode));
 					Config.setCountryCode(countryCode);
 					TripleContainer triples = new TripleContainer(tuple);
+					System.out.println("Line: " + ln);
 					dbConnection.writeToDisk(triples);
+					++ln;
 					Provenance.getInstance().clearProvenance();
 				}
 			} catch (IOException e) {

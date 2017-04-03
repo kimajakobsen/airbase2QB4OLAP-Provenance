@@ -50,9 +50,7 @@ public class Object {
 	@Override
 	public String toString() {
 		String object = this.object;
-		if (!object.matches(".*[a-zA-Z]+.*") && !type.equals(XSD.stringType)) {
-			object = this.object;
-		} else if (!type.isEmpty()) {
+		if (!type.isEmpty()) {
 			object = "\""+this.object+"\"";
 		} else {
 			object = "<"+this.object+">";

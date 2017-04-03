@@ -48,7 +48,7 @@ public class Agent implements PROV {
 	}
 	
 	private Quad getAtLocation() {
-		return new Quad(subject,PROVvocabulary.atLocation,new Object(Config.getProvenanceGraphLabel()));
+		return new Quad(subject,PROVvocabulary.atLocation, atLocation, Config.getProvenanceGraphLabel());
 	}
 
 	@Override

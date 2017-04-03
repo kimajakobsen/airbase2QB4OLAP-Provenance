@@ -243,12 +243,23 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					Element eElement = (Element) nNode;
 					Agent agent = new Organization(stringify(eElement.getElementsByTagName("organization_name").item(0).getTextContent()));;
 					
-					agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-					agent.setCustomProperty(FOAF.name.toString(), eElement.getElementsByTagName("organization_name").item(0).getTextContent());
-					agent.setCustomProperty(Config.getNamespace()+"address", eElement.getElementsByTagName("organization_address").item(0).getTextContent());
-					agent.setCustomProperty(Config.getNamespace()+"city", eElement.getElementsByTagName("organization_city").item(0).getTextContent());
-					agent.setCustomProperty(FOAF.phone.toString(), eElement.getElementsByTagName("organization_phone_number").item(0).getTextContent());
-					agent.setCustomProperty(Config.getNamespace()+"fax", eElement.getElementsByTagName("organization_fax_number").item(0).getTextContent());
+					if (eElement.getParentNode() != null)
+						agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
+					
+					if (eElement.getElementsByTagName("organization_name").item(0) != null)
+						agent.setCustomProperty(FOAF.name.toString(), eElement.getElementsByTagName("organization_name").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_address").item(0) != null)
+						agent.setCustomProperty(Config.getNamespace()+"address", eElement.getElementsByTagName("organization_address").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_city").item(0) != null)
+						agent.setCustomProperty(Config.getNamespace()+"city", eElement.getElementsByTagName("organization_city").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_phone_number").item(0) != null)
+						agent.setCustomProperty(FOAF.phone.toString(), eElement.getElementsByTagName("organization_phone_number").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_fax_number").item(0) != null)
+						agent.setCustomProperty(Config.getNamespace()+"fax", eElement.getElementsByTagName("organization_fax_number").item(0).getTextContent());
 					
 					agents.add(agent);
 				}
@@ -267,11 +278,14 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					NodeList title = eElement.getElementsByTagName("person_title");
 					
 					if (firstname.getLength() > 0 && lastname.getLength() > 0) {
-						Agent agent = new Person(stringify(firstname.item(0).getTextContent()+"_"+lastname.item(0).getTextContent()));;
+						Agent agent = new Person(stringify(firstname.item(0).getTextContent()+"_"+lastname.item(0).getTextContent()));
 						
-						agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-						agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
-						agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
+						if (eElement.getParentNode() != null)
+							agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
+						if (firstname.item(0) != null)
+							agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
+						if (lastname.item(0) != null)
+							agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
 						
 						if (title.getLength() > 0) {
 							agent.setCustomProperty(FOAF.title.toString(), title.item(0).getTextContent());
