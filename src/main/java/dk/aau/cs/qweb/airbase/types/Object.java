@@ -1,7 +1,5 @@
 package dk.aau.cs.qweb.airbase.types;
 
-import dk.aau.cs.qweb.airbase.vocabulary.XSD;
-
 public class Object {
 	private String object = "";
 	private String type = "";

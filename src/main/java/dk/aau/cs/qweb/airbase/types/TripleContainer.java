@@ -26,6 +26,7 @@ public class TripleContainer {
 	
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
+		Set<String> producedEntites = new LinkedHashSet<>();
 		
 		if (tupleIsAllowed()) {
 			int index = 0;
@@ -42,15 +43,19 @@ public class TripleContainer {
 					List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
 					
 					for (String level : levels) {
-						String literal = tuple.getData().get(index);
+						String literal = tuple.getData().get(index).trim();
+						if (literal.equals(""))
+							continue;
 						String subject = createSubject(level);
+						if (subject == null)
+							continue;
 						
 						// If it is not a measure then check if we have already talked about this entity
 						if (!level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
 							if (dimensionEntities.contains(subject)) {
 								continue;
 							} else {
-								dimensionEntities.add(subject);
+								producedEntites.add(subject);
 							}
 						}						
 						
@@ -74,6 +79,8 @@ public class TripleContainer {
 				}
 				index++;
 			}
+			
+			dimensionEntities.addAll(producedEntites);
 		}
 	}
 
@@ -86,17 +93,13 @@ public class TripleContainer {
 	}
 
 	private boolean tupleIsAllowed() {
-		if (Config.getCurrentInputFilePath().contains("statistics")) {
-			
-			if (!tuple.getValue("statistic_shortname").equals("Mean")) {
-				return false;
-			} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"))) {
-				return true;
-			} else {
-				return false;
-			}
+		if (!tuple.getValue("statistic_shortname").equals("Mean")) {
+			return false;
+		} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"))) {
+			return true;
+		} else {
+			return false;
 		}
-		return true;
 	}
 
 	private String getGraphLabel(Quad quad, String level, List<String> files, Tuple tuple) {
@@ -112,13 +115,16 @@ public class TripleContainer {
 			measureCounter++;
 		} else {
 			List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
-			
-			subject += removePrefix(level)+"/";
+			String suffix = "";
 			for (String index : attributes) {
-				subject += tuple.getValue(index)+"_";
+				suffix += tuple.getValue(index)+"_";
 			}
-			subject = replacelastUnderscoreWithSlash(subject);
-			subject = subject.replaceAll(" ", "_");
+			suffix = replacelastUnderscoreWithSlash(suffix);
+			if (suffix.equals("/"))
+				return null;
+			
+			suffix = suffix.replaceAll(" ", "_");
+			subject = subject + removePrefix(level)+ "/" + suffix;
 		}
 		
 		return subject;
@@ -142,7 +148,7 @@ public class TripleContainer {
 		//level = cs.transformPrefixIntoFullURL(level);
 		Set<Quad> quads = new HashSet<Quad>();
 		
-		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
+		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handle Observations
 			Quad quad1 = new Quad(subject, RDF.type.toString() , new Object("http://purl.org/linked-data/cube#Observation"),Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			
@@ -163,8 +169,10 @@ public class TripleContainer {
 			quads.add(quad1);
 			for (HierarchyStep hs : cs.getHierarchyStepByParentLevel(level)) {
 				String childLevel = createSubject(hs.getChildLevel());
-				Quad quad2 = new Quad(childLevel, hs.getRollup() , new Object(subject) ,Config.getMetadataGraphLabel());
-				quads.add(quad2);
+				if (childLevel != null) {
+					Quad quad2 = new Quad(childLevel, hs.getRollup() , new Object(subject) ,Config.getMetadataGraphLabel());
+					quads.add(quad2);
+				}
 			}
 		}
 		return quads;

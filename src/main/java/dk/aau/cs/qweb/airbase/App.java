@@ -67,7 +67,7 @@ public class App {
 						        	files.add(fileEntry);
 						        } 
 						    }
-						} else if (fileLine.startsWith("datafile")) {
+						} else if (fileLine.startsWith("input")) {
 							singleDataFile = fileLine.split(" ")[1];
 						}
 					}
@@ -115,16 +115,13 @@ public class App {
 				Config.setCurrentInputFilePath(singleDataFile);
 				dbConnection.cleanWrite();
 				fileStructure = new FileStructure(singleDataFile);
-				int ln = 1;
 				while (fileStructure.hasNext()) {
 					Tuple tuple = (Tuple) fileStructure.next();
 					String countryCode = tuple.getValue("country_iso_code");
 					Config.setXMLfilePath(getXMLFile(countryCode));
 					Config.setCountryCode(countryCode);
 					TripleContainer triples = new TripleContainer(tuple);
-					System.out.println("Line: " + ln);
 					dbConnection.writeToDisk(triples);
-					++ln;
 					Provenance.getInstance().clearProvenance();
 				}
 			} catch (IOException e) {
