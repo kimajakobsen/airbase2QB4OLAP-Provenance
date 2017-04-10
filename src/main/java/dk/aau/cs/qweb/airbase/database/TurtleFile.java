@@ -33,6 +33,7 @@ public class TurtleFile extends Database {
 						out.println(quad.toString());
 					}
 				} catch (IOException e) {
+					e.printStackTrace();
 				}
 		}
 	}

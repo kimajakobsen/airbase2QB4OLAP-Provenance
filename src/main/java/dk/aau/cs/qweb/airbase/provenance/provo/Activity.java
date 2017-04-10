@@ -11,7 +11,7 @@ import java.util.Set;
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
-import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
 import dk.aau.cs.qweb.airbase.provenance.ProvenanceSignature;
 import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Quad;
@@ -19,22 +19,26 @@ import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 
 public class Activity implements PROV {
 	private String subject = "";
+	private String shortName = "";
 	private List<Entity> used = new ArrayList<Entity>();
 	private List<Agent> wasAssociatedWith = new ArrayList<Agent>();
 	private Map<String,Object> customProperties = new HashMap<String,Object>();
 	private static int counter = 1;
 	
 	public Activity(String name) {
-		subject = Config.getNamespace()+name+"/"+Config.getCountryCode()+counter;
+		shortName = Config.getCountryCode()+counter;
+		subject = Config.getNamespace()+name+"/"+shortName;
 		counter++;
 	}
 	
-	public Activity(String name,ProvenanceSignature signature) {
-		subject = Config.getNamespace()+name+"/"+signature.getFileName()+signature.getTuple().getLineCount();
+	public Activity(String name, ProvenanceSignature signature) {
+		shortName = signature.getFileName()+signature.getTuple().getLineCount();
+		subject = Config.getNamespace()+name+"/"+ shortName;
 	}
 
 	public Activity(String string, String rawDataFileName) {
-		subject = Config.getNamespace()+string+"/"+rawDataFileName;
+		shortName = string+"/"+rawDataFileName;
+		subject = Config.getNamespace() + shortName;
 	}
 
 	public void used(Entity entity) {
@@ -47,13 +51,11 @@ public class Activity implements PROV {
 
 	@Override
 	public Set<Quad> getQuads() {
-
 		Set<Quad> quads = new HashSet<Quad>();
-		if (ProvenanceIndex.contains(subject)) {
+		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
-		} else {
-			ProvenanceIndex.add(subject);
 		}
+		Provenance.getInstance().registerSubject(subject);
 		
 		quads.addAll(getType());
 		
@@ -88,6 +90,15 @@ public class Activity implements PROV {
 	}
 
 	public String getSubject() {
+		return subject;
+	}
+
+	public String getShortName() {
+		return shortName;
+	}
+	
+	@Override
+	public String toString() {
 		return subject;
 	}
 

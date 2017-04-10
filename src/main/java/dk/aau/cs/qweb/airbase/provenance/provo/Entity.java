@@ -1,20 +1,19 @@
 package dk.aau.cs.qweb.airbase.provenance.provo;
 
 import java.util.ArrayList;
-import dk.aau.cs.qweb.airbase.types.Object;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
-import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
 import dk.aau.cs.qweb.airbase.provenance.ProvenanceSignature;
-import dk.aau.cs.qweb.airbase.provenance.provo.PROV;
+import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 
@@ -25,23 +24,37 @@ public class Entity implements PROV {
 	private Map<String,Object> customProperties = new HashMap<String,Object>();
 	private Object atLocation = null;
 	protected String subject = "";
+	protected String shortName = "";
 	private static int counter = 1;
 	private Object generatedAtTime = null;
+	private List<Entity> nestedEntities = new ArrayList<>();
 
 	public Entity(String string) {
-		subject = Config.getNamespace()+string+"/"+Config.getCountryCode()+counter;
+		shortName = Config.getCountryCode()+counter;
+		subject = Config.getNamespace()+string+"/" + shortName;
 		counter++;
 	}
 	
 	protected Entity() {
+		
 	}
 
 	public Entity(String string, String rawDataFileName) {
+		shortName = rawDataFileName;
 		subject = Config.getNamespace()+string+"/"+rawDataFileName;
 	}
 
 	public Entity(String string, ProvenanceSignature signature) {
-		subject = Config.getNamespace()+string+"/"+Config.getCurrentInputFileName()+signature.getTuple().getLineCount();
+		shortName = Config.getCurrentInputFileName()+signature.getTuple().getLineCount();
+		subject = Config.getNamespace()+string+"/"+ shortName;
+	}
+	
+	public Entity(Activity activity, String string, String fileName, Entity ... entities) {
+		shortName = string + "/" + fileName;
+		subject = Config.getNamespace() + shortName;
+		for (Entity e : entities) {
+			nestedEntities.add(e);
+		}
 	}
 
 	public void atLocation(Object string) {
@@ -54,16 +67,15 @@ public class Entity implements PROV {
 
 	public Set<Quad> getQuads() {
 		Set<Quad> quads = new HashSet<Quad>();
-		if (ProvenanceIndex.contains(subject)) {
+		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
-		} else {
-			ProvenanceIndex.add(subject);
 		}
+		Provenance.getInstance().registerSubject(subject);
 		
 		quads.addAll(getType());
 		
 		for (Entry<String, Object> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),(entry.getValue()),Config.getProvenanceGraphLabel()));
+			quads.add(new Quad(subject, entry.getKey(), (entry.getValue()),Config.getProvenanceGraphLabel()));
 		}
 		
 		if (atLocation != null) {
@@ -75,15 +87,23 @@ public class Entity implements PROV {
 		}
 		
 		for (Activity activity : wasGeneratedBy) {
-			quads.add(new Quad(subject, PROVvocabulary.wasGeneratedBy,new Object(activity.getSubject()),Config.getProvenanceGraphLabel()));
+			quads.add(new Quad(subject, PROVvocabulary.wasGeneratedBy, new Object(activity.getSubject()), Config.getProvenanceGraphLabel()));
 			quads.addAll(activity.getQuads());
 		}
 		
 		for (Agent agent : wasAttributedTo) {
-			quads.add(new Quad(subject, PROVvocabulary.wasAttributedTo,new Object(agent.getSubject()),Config.getProvenanceGraphLabel()));
-			quads.addAll(agent.getQuads());
+			quads.add(new Quad(subject, PROVvocabulary.wasAttributedTo, new Object(agent.getSubject()), Config.getProvenanceGraphLabel()));
+			if (!Provenance.getInstance().subjectExists(agent.getSubject())) {
+				quads.addAll(agent.getQuads());
+				Provenance.getInstance().registerSubject(agent.getSubject());
+			}
 		}
 		
+		for (Entity entity : nestedEntities) {
+			quads.add(new Quad(entity.getSubject(), PROVvocabulary.wasDerivedFrom, new Object(getSubject()), Config.getProvenanceGraphLabel()));
+			quads.addAll(entity.getQuads());
+		}
+
 		return quads;
 	}
 
@@ -124,4 +144,17 @@ public class Entity implements PROV {
 		list.add(agent);
 		return list;
 	}
+	
+	public String getShortName() {
+		return shortName;
+	}
+
+	public void setShortName(String shortName) {
+		this.shortName = shortName;
+	}
+	
+	public String toString() {
+		return subject;
+	}
+
 }

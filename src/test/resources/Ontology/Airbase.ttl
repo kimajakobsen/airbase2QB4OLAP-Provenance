@@ -321,9 +321,9 @@ _:sensor_hs1 rdf:type qb4o:HierarchyStep ;
     qb4o:childLevel schema:sensor ; 
     qb4o:parentLevel schema:component ;
     qb4o:pcCardinality qb4o:ManyToOne ;
-    qb4o:rollup schema:meassures .
+    qb4o:rollup schema:measures .
 
-schema:meassures rdf:type qb4o:RollupProperty.
+schema:measures rdf:type qb4o:RollupProperty.
 
 
 # -- Level sensor

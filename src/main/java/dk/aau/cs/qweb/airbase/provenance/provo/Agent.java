@@ -1,18 +1,17 @@
 package dk.aau.cs.qweb.airbase.provenance.provo;
 
 import java.util.ArrayList;
-import dk.aau.cs.qweb.airbase.types.Object;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Map.Entry;
 
 import org.apache.jena.vocabulary.RDF;
 
 import dk.aau.cs.qweb.airbase.Config;
-import dk.aau.cs.qweb.airbase.provenance.ProvenanceIndex;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
+import dk.aau.cs.qweb.airbase.types.Object;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.vocabulary.PROVvocabulary;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;
@@ -31,16 +30,14 @@ public class Agent implements PROV {
 	@Override
 	public Set<Quad> getQuads() {
 		Set<Quad> quads = new HashSet<Quad>();
-		if (ProvenanceIndex.contains(subject)) {
+		if (Provenance.getInstance().subjectExists(subject)) {
 			return quads;
-		} else {
-			ProvenanceIndex.add(subject);
 		}
-		
+		Provenance.getInstance().registerSubject(subject);
 		quads.addAll(getType());
 		
-		for (Entry<String, Object> entry : customProperties.entrySet()) {
-			quads.add(new Quad(subject, entry.getKey(),entry.getValue(),Config.getProvenanceGraphLabel()));
+		for (String key : customProperties.keySet()) {
+			quads.add(new Quad(subject, key, customProperties.get(key), Config.getProvenanceGraphLabel()));
 		}
 		
 		if (atLocation != null) {
@@ -51,7 +48,7 @@ public class Agent implements PROV {
 	}
 	
 	private Quad getAtLocation() {
-		return new Quad(subject,PROVvocabulary.atLocation,new Object(Config.getProvenanceGraphLabel()));
+		return new Quad(subject,PROVvocabulary.atLocation, atLocation, Config.getProvenanceGraphLabel());
 	}
 
 	@Override

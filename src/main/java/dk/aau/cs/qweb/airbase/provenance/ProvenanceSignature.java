@@ -1,6 +1,7 @@
 package dk.aau.cs.qweb.airbase.provenance;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.Tuple;
@@ -9,15 +10,15 @@ public class ProvenanceSignature {
 
 	private Quad quad;
 	private String level;
-	private String file;
 	private LocalDate now;
+	private List<String> files;
 	private Tuple tuple;
 
-	public ProvenanceSignature(Quad quad, String level, String file, LocalDate now, Tuple tuple) {
+	public ProvenanceSignature(Quad quad, String level, LocalDate now, List<String> files, Tuple tuple) {
 		this.tuple = tuple;
 		this.setQuad(quad);
 		this.setLevel(level);
-		this.setFile(file);
+		this.setFiles(files);
 		this.setNow(now);
 	}
 
@@ -37,14 +38,6 @@ public class ProvenanceSignature {
 		this.level = level;
 	}
 
-	public String getFilePath() {
-		return file;
-	}
-
-	public void setFile(String file) {
-		this.file = file;
-	}
-
 	public LocalDate getNow() {
 		return now;
 	}
@@ -56,27 +49,40 @@ public class ProvenanceSignature {
 	public Tuple getTuple() {
 		return tuple;
 	}
-
-	public String getRawDataFilePath() {
-		String[] split = file.split("/");
-		String path = "";
-		for (int i = 0; i < split.length-1; i++) {
-			path += split[i]+"/"; 
-		}
-		path += getRawDataFileName();
-		return path;
-	}
-
+	
+	
 	public String getRawDataFileName() {
-		String[] splitPath = file.split("/");
-		String[] splitName = splitPath[splitPath.length-1].split("_");
-		String name = "AirBase_"+splitName[1]+"_v8Vrawdata.zip";
-		return name;
+		return "AirBase_"+tuple.getValue("country_iso_code")+"_v8Vrawdata.zip";
 	}
 
 	public String getFileName() {
-		String[] split = file.split("/");
-		return split[split.length-1];
+		StringBuilder strBuilder = new StringBuilder();
+		for (String file : files) {
+			strBuilder.append("AirBase_"+tuple.getValue("country_iso_code")+"_v8_" + file + ".csv,");
+		}
+		strBuilder.deleteCharAt(strBuilder.length() - 1);
+		return strBuilder.toString();
+	}
+	
+	public String getFileName(String suffix) {
+		return "AirBase_"+tuple.getValue("country_iso_code")+"_v8_" + suffix + ".csv";
+	}
+	
+	public String getRemoteFileName(String suffix) {
+		return "http://ftp.eea.europa.eu/www/AirBase_v8/AirBase_" + tuple.getValue("country_iso_code")+ "_v8.zip";
+	}
+
+	public List<String> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<String> file) {
+		this.files = file;
+	}
+	
+	@Override
+	public String toString() {
+		return "[" + quad.toString() + ", " + level + ", " + tuple + "]";
 	}
 
 }

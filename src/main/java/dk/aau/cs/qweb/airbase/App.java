@@ -17,13 +17,14 @@ import org.apache.commons.io.FilenameUtils;
 
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
+import dk.aau.cs.qweb.airbase.provenance.Provenance;
 import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
 public class App {
 
 	public static void main(String[] args) {
-		
+		String singleDataFile = null;
 		CommandLineParser parser = new DefaultParser();
 		List<File> files = new ArrayList<File>();
 		// create the Options
@@ -58,14 +59,17 @@ public class App {
 						} else if (fileLine.startsWith("clean")) {
 							Config.setDbCleanWrite(fileLine.split(" ")[1]);
 						} else if (fileLine.startsWith("datafolder")) {
-							File folder = new File(fileLine.split(" ")[1]);
+							Config.setDataFolder(fileLine.split(" ")[1]);
+							File folder = new File(Config.getDataFolder());
 							System.out.println(folder);
 							for (final File fileEntry : folder.listFiles()) {
 						        if (fileEntry.isDirectory()) {
 						        	files.add(fileEntry);
 						        } 
 						    }
-						} 
+						} else if (fileLine.startsWith("input")) {
+							singleDataFile = fileLine.split(" ")[1];
+						}
 					}
 				}
 		    }
@@ -78,38 +82,59 @@ public class App {
 		}
 		Database dbConnection = Database.build();
 		
-		for (File folder : files) {
-			List<String> csvFiles = new ArrayList<String>();
-			for (final File fileEntry : folder.listFiles()) {
-				if (fileEntry.isDirectory()) {
-					for (final File XMLFile : fileEntry.listFiles()) {
-						Config.setXMLfilePath(XMLFile.toString());
+		if (singleDataFile == null) {
+			for (File folder : files) {
+				List<String> csvFiles = new ArrayList<String>();
+				for (final File fileEntry : folder.listFiles()) {
+					if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
+						Config.setXMLfilePath(fileEntry.toString());
+					} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
+						csvFiles.add(fileEntry.toString());
+					} 
+				}
+				
+				for (String file : csvFiles) {
+					FileStructure fileStructure;
+					try {
+						Config.setCurrentInputFilePath(file);
+						dbConnection.cleanWrite();
+						fileStructure = new FileStructure(file);
+						while (fileStructure.hasNext()) {							
+							Tuple tuple = (Tuple) fileStructure.next();
+							TripleContainer triples = new TripleContainer(tuple);
+							dbConnection.writeToDisk(triples);
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
-				} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
-					csvFiles.add(fileEntry.toString());
-				} 
-			}
-			
-			for (String file : csvFiles) {
-				FileStructure fileStructure;
-				try {
-					Config.setCurrentInputFilePath(file);
-					dbConnection.cleanWrite();
-					fileStructure = new FileStructure(file);
-					while (fileStructure.hasNext()) {
-						
-						Tuple tuple = (Tuple) fileStructure.next();
-						TripleContainer triples = new TripleContainer(tuple);
-						
-						dbConnection.writeToDisk(triples);
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
 				}
 			}
+		} else {
+			FileStructure fileStructure;
+			try {
+				Config.setCurrentInputFilePath(singleDataFile);
+				dbConnection.cleanWrite();
+				fileStructure = new FileStructure(singleDataFile);
+				while (fileStructure.hasNext()) {
+					Tuple tuple = (Tuple) fileStructure.next();
+					String countryCode = tuple.getValue("country_iso_code");
+					Config.setXMLfilePath(getXMLFile(countryCode));
+					Config.setCountryCode(countryCode);
+					TripleContainer triples = new TripleContainer(tuple);
+					dbConnection.writeToDisk(triples);
+					Provenance.getInstance().clearProvenance();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 	
+	private static String getXMLFile(String countryCode) {
+		return Config.getDataFolder() + "/" + "AirBase_" + countryCode + "_v8/" + countryCode + "_meta.parsed.xml";
+	}
+
 	private static void printHelp(ParseException exp, Options options) {
 		String header = "";
 		HelpFormatter formatter = new HelpFormatter();

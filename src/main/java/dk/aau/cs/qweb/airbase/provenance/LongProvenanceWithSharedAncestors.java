@@ -37,6 +37,7 @@ import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	
 	Entity provenanceIdentifierEntity;
+	List<Entity> provenanceIdentifierSubentities;
 	ProvenanceSignature signature;
 
 	public LongProvenanceWithSharedAncestors(ProvenanceSignature signature) {
@@ -47,16 +48,34 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		List<Agent> countryOrganizations = extractAgentsFromXml();
 		Agent owner = getEuropeanEnvironmentAgency();
+		Agent luis = getLuis();	
+		Agent kim = getKim();
+		provenanceIdentifierSubentities = new ArrayList<>();
+
+		Entity[] composingFiles = new Entity[signature.getFiles().size()];
 		
-		Entity file = file(aggregation, countryOrganizations, owner);
+		Entity finalFile = null;
+		if (signature.getFiles().size() > 1) {
+			for (int i = 0; i < signature.getFiles().size(); ++i) {
+				String suffix = signature.getFiles().get(i);
+				composingFiles[i] = file(aggregation, signature.getFileName(suffix), signature.getRemoteFileName(suffix), countryOrganizations, owner);	
+				Activity createSubjectForInputFile = createSubject(composingFiles[i], luis);
+				provenanceIdentifierSubentities.add(inputFileEntity(createSubjectForInputFile));
+			}
+			
+			Activity join = join(luis, signature.getFileName(), composingFiles);
+			
+			finalFile = file(join, "airbase.csv", luis, composingFiles);
+		} else {
+			String suffix = signature.getFiles().get(0);
+			finalFile = file(aggregation, signature.getFileName(suffix), signature.getRemoteFileName(suffix), countryOrganizations, owner);
+		}
 		
 		Agent thisSoftware = thisSoftware();
 				
-		Activity extract = extract(file, thisSoftware);
+		Activity extract = extract(finalFile, thisSoftware);
 		
 		Entity tuple = tuple(extract);
-
-		Agent kim = getKim();
 		
 		Entity mapping = mapping(kim);
 		
@@ -67,31 +86,29 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		provenanceIdentifierEntity = raw;
 	}
 
-//	private Entity quad(Activity setGraphLabel) {
-//		Entity quad = new ProvenanceIdentifierEntity();
-//		quad.wasGeneratedBy(setGraphLabel);
-//		quad.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
-//		return quad;
-//	}
-//
-//	private Activity setGraphLabel(Entity informationTriple) {
-//		Activity setGraphLabel = new Activity("setGraphLabel");
-//		setGraphLabel.used(informationTriple);
-//		return setGraphLabel;
-//	}
-//
-//	private Entity informationTriple(Activity clean) {
-//		Entity informationTriple = new Entity("informationTriple");
-//		informationTriple.wasGeneratedBy(clean);
-//		return informationTriple;
-//	}
-//
-//	private Activity clean(Agent thisSoftware, Entity raw) {
-//		Activity clean = new Activity(getCallbackClassName(signature));
-//		clean.used(raw);
-//		clean.wasAssociatedWith(thisSoftware);
-//		return clean;
-//	}
+
+	private Entity inputFileEntity(Activity createSubjectForFile) {
+		ProvenanceIdentifierEntity raw = new ProvenanceIdentifierEntity("provenanceIdentifier", "file/"+ createSubjectForFile.getShortName());
+		raw.wasGeneratedBy(createSubjectForFile);
+		String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+		raw.generatedAtTime(new Object(timeStamp,XSD.dateType));
+		return raw;
+	}
+
+
+	private Activity createSubject(Entity entity, Agent author) {
+		Activity activity = new Activity("createSubject", entity.getShortName());
+		activity.wasAssociatedWith(author);
+		return activity;
+	}
+
+
+	private Activity join(Agent author, String joinedName, Entity ...composingFiles) {
+		Activity activity = new Activity("join", joinedName);
+		activity.wasAssociatedWith(author);
+		return activity;
+	}
+
 
 	private Entity raw(Activity createSubject) {
 		ProvenanceIdentifierEntity raw = new ProvenanceIdentifierEntity("provenanceIdentifier",getCallbackClassName(signature)+"/"+signature.getTuple().getLineCount());
@@ -131,13 +148,20 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		return extract;
 	}
 
-	private Entity file(Activity activity, List<Agent> countryOrganizations, Agent owner) {
-		Entity file = new Entity("file",signature.getFileName());
-		file.atLocation(new Object(signature.getFilePath(),XSD.stringType));
+	private Entity file(Activity activity, String fileName, String fileRemoteLocation, List<Agent> countryOrganizations, Agent owner) {
+		Entity file = new Entity("file", fileName);
+		file.atLocation(new Object(fileRemoteLocation, XSD.stringType));
 		file.wasAttributedTo(countryOrganizations);
 		file.wasAttributedTo(owner);
 		file.wasGeneratedBy(activity);
 		file.setCustomProperty(Config.getNamespace()+"copyrightURL", new Object("http://www.eea.europa.eu/legal/copyright",XSD.stringType));
+		return file;
+	}
+	
+	private Entity file(Activity activity, String fileName, Agent author, Entity ...components) {
+		Entity file = new Entity(activity, "file", fileName, components);
+		file.wasGeneratedBy(activity);
+		file.wasAttributedTo(author);
 		return file;
 	}
 
@@ -149,23 +173,16 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private Entity rawFile() {
 		Entity rawFile = new Entity("rawFile",signature.getRawDataFileName());
-		rawFile.atLocation(new Object(signature.getRawDataFilePath(),XSD.stringType));
+		rawFile.atLocation(new Object(signature.getRawDataFileName(),XSD.stringType));
 		return rawFile;
 	}
 
 	private boolean isQualityApproved(ProvenanceSignature signature) {
-		String[] split = signature.getFilePath().split("/");
-		String fileName = split[split.length-1];
-		String[] words = fileName.split("_");
-		
-		
-		if (words[words.length-1].equals("statistics.csv")) {
-			Tuple tuple = signature.getTuple();
-			int year = Integer.parseInt(tuple.getValue("statistics_year"));
-			if (year >= 2002) {
-				return true;
-			}	
-		}
+		Tuple tuple = signature.getTuple();
+		int year = Integer.parseInt(tuple.getValue("statistics_year"));
+		if (year >= 2002) {
+			return true;
+		}	
 		return false;
 	}
 
@@ -185,6 +202,13 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		Agent agent = new Person("kim");
 		agent.setCustomProperty(FOAF.name.toString(),new Object("Kim Ahlstrøm",XSD.stringType));
 		agent.setCustomProperty(FOAF.mbox.toString(),"kah@cs.aau.dk");
+		return agent;
+	}
+	
+	private Agent getLuis() {
+		Agent agent = new Person("luis");
+		agent.setCustomProperty(FOAF.name.toString(),new Object("Luis Galárraga",XSD.stringType));
+		agent.setCustomProperty(FOAF.mbox.toString(),"galarraga@cs.aau.dk");
 		return agent;
 	}
 
@@ -219,12 +243,23 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					Element eElement = (Element) nNode;
 					Agent agent = new Organization(stringify(eElement.getElementsByTagName("organization_name").item(0).getTextContent()));;
 					
-					agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-					agent.setCustomProperty(FOAF.name.toString(), eElement.getElementsByTagName("organization_name").item(0).getTextContent());
-					agent.setCustomProperty(Config.getNamespace()+"address", eElement.getElementsByTagName("organization_address").item(0).getTextContent());
-					agent.setCustomProperty(Config.getNamespace()+"city", eElement.getElementsByTagName("organization_city").item(0).getTextContent());
-					agent.setCustomProperty(FOAF.phone.toString(), eElement.getElementsByTagName("organization_phone_number").item(0).getTextContent());
-					agent.setCustomProperty(Config.getNamespace()+"fax", eElement.getElementsByTagName("organization_fax_number").item(0).getTextContent());
+					if (eElement.getParentNode() != null)
+						agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
+					
+					if (eElement.getElementsByTagName("organization_name").item(0) != null)
+						agent.setCustomProperty(FOAF.name.toString(), eElement.getElementsByTagName("organization_name").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_address").item(0) != null)
+						agent.setCustomProperty(Config.getNamespace()+"address", eElement.getElementsByTagName("organization_address").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_city").item(0) != null)
+						agent.setCustomProperty(Config.getNamespace()+"city", eElement.getElementsByTagName("organization_city").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_phone_number").item(0) != null)
+						agent.setCustomProperty(FOAF.phone.toString(), eElement.getElementsByTagName("organization_phone_number").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("organization_fax_number").item(0) != null)
+						agent.setCustomProperty(Config.getNamespace()+"fax", eElement.getElementsByTagName("organization_fax_number").item(0).getTextContent());
 					
 					agents.add(agent);
 				}
@@ -243,11 +278,14 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 					NodeList title = eElement.getElementsByTagName("person_title");
 					
 					if (firstname.getLength() > 0 && lastname.getLength() > 0) {
-						Agent agent = new Person(stringify(firstname.item(0).getTextContent()+"_"+lastname.item(0).getTextContent()));;
+						Agent agent = new Person(stringify(firstname.item(0).getTextContent()+"_"+lastname.item(0).getTextContent()));
 						
-						agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
-						agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
-						agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
+						if (eElement.getParentNode() != null)
+							agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
+						if (firstname.item(0) != null)
+							agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
+						if (lastname.item(0) != null)
+							agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
 						
 						if (title.getLength() > 0) {
 							agent.setCustomProperty(FOAF.title.toString(), title.item(0).getTextContent());

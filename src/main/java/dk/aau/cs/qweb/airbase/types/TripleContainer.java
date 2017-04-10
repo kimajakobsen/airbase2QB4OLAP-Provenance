@@ -3,6 +3,7 @@ package dk.aau.cs.qweb.airbase.types;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -21,9 +22,11 @@ public class TripleContainer {
 	private Set<Quad> informationTriples = new HashSet<Quad>();
 	private Set<Quad> metadataTriples = new HashSet<Quad>();
 	private static int measureCounter = 1;
+	private static Set<String> dimensionEntities = new LinkedHashSet<>();
 	
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
+		Set<String> producedEntites = new LinkedHashSet<>();
 		
 		if (tupleIsAllowed()) {
 			int index = 0;
@@ -32,6 +35,7 @@ public class TripleContainer {
 				
 				if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
 					String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
+					List<String> files = Airbase2QB4OLAP.getFiles(predicateString);
 					if (predicate.equals("measure")) {
 						predicate = "http://qweb.cs.aau.dk/airbase/schema/"+removeIllegalChars(tuple.getValue("component_caption"));
 					}
@@ -39,8 +43,22 @@ public class TripleContainer {
 					List<String> levels = Airbase2QB4OLAP.getLevels(predicateString); 
 					
 					for (String level : levels) {
-						String literal = tuple.getData().get(index);
+						String literal = tuple.getData().get(index).trim();
+						if (literal.equals(""))
+							continue;
 						String subject = createSubject(level);
+						if (subject == null)
+							continue;
+						
+						// If it is not a measure then check if we have already talked about this entity
+						if (!level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
+							if (dimensionEntities.contains(subject)) {
+								continue;
+							} else {
+								producedEntites.add(subject);
+							}
+						}						
+						
 						CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunctionRawPredicate(predicateString);
 						Object object = new Object(literal);
 						
@@ -51,7 +69,7 @@ public class TripleContainer {
 						if (!object.isEmpty()) {
 							Quad quad =  new Quad(subject,predicate,(object));
 							
-							String graphLabel = getGraphLabel(quad,level,tuple);
+							String graphLabel = getGraphLabel(quad, level, files, tuple);
 							quad.setGraphLabel(graphLabel);
 							
 							metadataTriples.addAll(createMetadata(subject, level));
@@ -61,6 +79,8 @@ public class TripleContainer {
 				}
 				index++;
 			}
+			
+			dimensionEntities.addAll(producedEntites);
 		}
 	}
 
@@ -73,25 +93,18 @@ public class TripleContainer {
 	}
 
 	private boolean tupleIsAllowed() {
-		if (Config.getCurrentInputFilePath().contains("statistics")) {
-			
-			if (!tuple.getValue("statistic_shortname").equals("Mean")) {
-				return false;
-			} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"))) {
-				return true;
-			} else {
-				return false;
-			}
+		if (!tuple.getValue("statistic_shortname").equals("Mean")) {
+			return false;
+		} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"))) {
+			return true;
+		} else {
+			return false;
 		}
-		return true;
 	}
 
-	private String getGraphLabel(Quad quad,String level, Tuple tuple) {
-		String file = Config.getCurrentInputFilePath();
+	private String getGraphLabel(Quad quad, String level, List<String> files, Tuple tuple) {
 		Provenance index = Provenance.getInstance();
-		System.out.println(quad);
-		String provenanceIdentifier = index.getProvenanceIdentifier(quad,level,file,tuple);
-		System.out.println(index.getProvenanceGraph(provenanceIdentifier));
+		String provenanceIdentifier = index.getProvenanceIdentifier(quad, level, files, tuple);
 		return provenanceIdentifier;
 	}
 
@@ -102,13 +115,16 @@ public class TripleContainer {
 			measureCounter++;
 		} else {
 			List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
-			
-			subject += removePrefix(level)+"/";
+			String suffix = "";
 			for (String index : attributes) {
-				subject += tuple.getValue(index)+"_";
+				suffix += tuple.getValue(index)+"_";
 			}
-			subject = replacelastUnderscoreWithSlash(subject);
-			subject = subject.replaceAll(" ", "_");
+			suffix = replacelastUnderscoreWithSlash(suffix);
+			if (suffix.equals("/"))
+				return null;
+			
+			suffix = suffix.replaceAll(" ", "_");
+			subject = subject + removePrefix(level)+ "/" + suffix;
 		}
 		
 		return subject;
@@ -132,7 +148,7 @@ public class TripleContainer {
 		//level = cs.transformPrefixIntoFullURL(level);
 		Set<Quad> quads = new HashSet<Quad>();
 		
-		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handel Observations
+		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handle Observations
 			Quad quad1 = new Quad(subject, RDF.type.toString() , new Object("http://purl.org/linked-data/cube#Observation"),Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			
@@ -153,8 +169,10 @@ public class TripleContainer {
 			quads.add(quad1);
 			for (HierarchyStep hs : cs.getHierarchyStepByParentLevel(level)) {
 				String childLevel = createSubject(hs.getChildLevel());
-				Quad quad2 = new Quad(childLevel, hs.getRollup() , new Object(subject) ,Config.getMetadataGraphLabel());
-				quads.add(quad2);
+				if (childLevel != null) {
+					Quad quad2 = new Quad(childLevel, hs.getRollup() , new Object(subject) ,Config.getMetadataGraphLabel());
+					quads.add(quad2);
+				}
 			}
 		}
 		return quads;
@@ -170,6 +188,6 @@ public class TripleContainer {
 	
 	public Set<Quad> getProvenanceTriples() {
 		Provenance index = Provenance.getInstance();
-		return index.getProvenanceTriples();
+		return index.getProvenanceQuads();
 	}
 }
