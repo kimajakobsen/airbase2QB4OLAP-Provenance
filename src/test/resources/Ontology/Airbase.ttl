@@ -330,6 +330,8 @@ schema:measures rdf:type qb4o:RollupProperty.
 
 schema:sensor rdf:type qb4o:LevelProperty ; 
   rdfs:label "sensor Level"@en ;
+  qb4o:hasAttribute property:code ;
+  qb4o:hasAttribute property:europeanCode ;
   qb4o:hasAttribute property:startDate ;
   qb4o:hasAttribute property:endDate ;
   qb4o:hasAttribute property:automaticMeasurement ;
@@ -338,6 +340,14 @@ schema:sensor rdf:type qb4o:LevelProperty ;
   qb4o:hasAttribute property:samplingPoint ;
   qb4o:hasAttribute property:samplingTime ;
   qb4o:hasAttribute property:calibrationMethod ;
+
+property:code rdf:type qb4o:LevelAttribute ; 
+  rdfs:label "code"@en ; 
+  rdfs:range xsd:integer .
+
+property:europeanCode rdf:type qb4o:LevelAttribute ; 
+  rdfs:label "european code"@en ; 
+  rdfs:range xsd:string .
 
 property:startDate rdf:type qb4o:LevelAttribute ; 
   rdfs:label "start date"@en ; 

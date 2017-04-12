@@ -47,6 +47,7 @@ public class Airbase2QB4OLAP {
 			put("integration_time_unit",			new ColumnMetadata(Arrays.asList("measurement_configurations")));
 			put("calibration_method",				new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/calibrationMethod",level("http://qweb.cs.aau.dk/airbase/schema/sensor",false), new String2String(), Arrays.asList("measurement_configurations")));
 			put("calibration_description",			new ColumnMetadata(Arrays.asList("measurement_configurations")));
+			put("station_surrogate_code",			new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/europeanCode",level("http://qweb.cs.aau.dk/airbase/schema/station",true), new String2String(), Arrays.asList("stations", "statistics", "measurement_configurations")));			
 			put("station_european_code",			new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/europeanCode",level("http://qweb.cs.aau.dk/airbase/schema/sensor",true), new String2String(), Arrays.asList("stations", "statistics", "measurement_configurations")));
 			put("station_local_code",				new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/localCode",level("http://qweb.cs.aau.dk/airbase/schema/station",true), new String2String(), Arrays.asList("stations")));
 			put("country_iso_code",					new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/isoCode",level("http://qweb.cs.aau.dk/airbase/schema/country",false), new String2String(), Arrays.asList("stations")));

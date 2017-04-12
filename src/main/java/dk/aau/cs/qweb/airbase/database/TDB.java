@@ -2,7 +2,6 @@ package dk.aau.cs.qweb.airbase.database;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -21,18 +20,12 @@ import org.apache.jena.tdb.TDBFactory;
 
 import dk.aau.cs.qweb.airbase.Config;
 import dk.aau.cs.qweb.airbase.types.Quad;
-import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
 public class TDB extends Database {
 	
 	@Override
-	public void writeToDisk(TripleContainer triples) {
-		Set<Quad> all = new HashSet<Quad>();
-		all.addAll(triples.getInformationTriples());
-		all.addAll(triples.getMetadataTriples());
-		all.addAll(triples.getProvenanceTriples());
-		
+	public void writeToDisk(Set<Quad> all) {
 		Dataset dataset = TDBFactory.createDataset(Config.getDBLocation()) ;
 		dataset.begin(ReadWrite.WRITE) ;
 		

@@ -3,7 +3,6 @@ package dk.aau.cs.qweb.airbase.types;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -22,17 +21,14 @@ public class TripleContainer {
 	private Set<Quad> informationTriples = new HashSet<Quad>();
 	private Set<Quad> metadataTriples = new HashSet<Quad>();
 	private static int measureCounter = 1;
-	private static Set<String> dimensionEntities = new LinkedHashSet<>();
 	
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
 		this.tuple = tuple;
-		Set<String> producedEntites = new LinkedHashSet<>();
 		
 		if (tupleIsAllowed()) {
 			int index = 0;
 			
 			for (String predicateString : this.tuple.getHeader()) {
-				
 				if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
 					String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
 					List<String> files = Airbase2QB4OLAP.getFiles(predicateString);
@@ -48,22 +44,17 @@ public class TripleContainer {
 							continue;
 						String subject = createSubject(level);
 						if (subject == null)
-							continue;
-						
-						// If it is not a measure then check if we have already talked about this entity
-						if (!level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) {
-							if (dimensionEntities.contains(subject)) {
-								continue;
-							} else {
-								producedEntites.add(subject);
-							}
-						}						
+							continue;					
 						
 						CallBack cleanFunction = Airbase2QB4OLAP.getCallbackFunctionRawPredicate(predicateString);
 						Object object = new Object(literal);
 						
 						if (cleanFunction != null) {
-							object = cleanFunction.callBackMethod(literal,tuple);
+							try {
+								object = cleanFunction.callBackMethod(literal,tuple);
+							} catch (IllegalArgumentException e) {
+								continue;
+							}
 						}
 						
 						if (!object.isEmpty()) {
@@ -79,8 +70,6 @@ public class TripleContainer {
 				}
 				index++;
 			}
-			
-			dimensionEntities.addAll(producedEntites);
 		}
 	}
 
