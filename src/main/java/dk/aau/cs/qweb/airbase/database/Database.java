@@ -1,13 +1,14 @@
 package dk.aau.cs.qweb.airbase.database;
 
 import java.io.IOException;
+import java.util.Set;
 
 import dk.aau.cs.qweb.airbase.Config;
-import dk.aau.cs.qweb.airbase.types.TripleContainer;
+import dk.aau.cs.qweb.airbase.types.Quad;
 
 public abstract class Database {
 
-	public abstract void writeToDisk(TripleContainer triples); 
+	public abstract void writeToDisk(Set<Quad> quads); 
 	
 	public abstract void cleanWrite() throws IOException;
 

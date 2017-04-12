@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -18,6 +20,7 @@ import org.apache.commons.io.FilenameUtils;
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
 import dk.aau.cs.qweb.airbase.provenance.Provenance;
+import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.types.Tuple;
 
@@ -60,13 +63,6 @@ public class App {
 							Config.setDbCleanWrite(fileLine.split(" ")[1]);
 						} else if (fileLine.startsWith("datafolder")) {
 							Config.setDataFolder(fileLine.split(" ")[1]);
-							File folder = new File(Config.getDataFolder());
-							System.out.println(folder);
-							for (final File fileEntry : folder.listFiles()) {
-						        if (fileEntry.isDirectory()) {
-						        	files.add(fileEntry);
-						        } 
-						    }
 						} else if (fileLine.startsWith("input")) {
 							singleDataFile = fileLine.split(" ")[1];
 						}
@@ -80,54 +76,29 @@ public class App {
 		catch (Exception exp) {
 			exp.printStackTrace();
 		}
-		Database dbConnection = Database.build();
 		
-		if (singleDataFile == null) {
-			for (File folder : files) {
-				List<String> csvFiles = new ArrayList<String>();
-				for (final File fileEntry : folder.listFiles()) {
-					if (FilenameUtils.getExtension(fileEntry.toString()).equals("xml")) {
-						Config.setXMLfilePath(fileEntry.toString());
-					} else if (FilenameUtils.getExtension(fileEntry.toString()).equals("csv")) {
-						csvFiles.add(fileEntry.toString());
-					} 
-				}
-				
-				for (String file : csvFiles) {
-					FileStructure fileStructure;
-					try {
-						Config.setCurrentInputFilePath(file);
-						dbConnection.cleanWrite();
-						fileStructure = new FileStructure(file);
-						while (fileStructure.hasNext()) {							
-							Tuple tuple = (Tuple) fileStructure.next();
-							TripleContainer triples = new TripleContainer(tuple);
-							dbConnection.writeToDisk(triples);
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
+		Database dbConnection = Database.build();
+		assert(singleDataFile != null);
+		FileStructure fileStructure;
+		try {
+			Config.setCurrentInputFilePath(singleDataFile);
+			dbConnection.cleanWrite();
+			fileStructure = new FileStructure(singleDataFile);
+			Set<Quad> metadata = new LinkedHashSet<>();
+			while (fileStructure.hasNext()) {
+				Tuple tuple = (Tuple) fileStructure.next();
+				String countryCode = tuple.getValue("country_iso_code");
+				Config.setXMLfilePath(getXMLFile(countryCode));
+				Config.setCountryCode(countryCode);
+				TripleContainer triples = new TripleContainer(tuple);
+				dbConnection.writeToDisk(triples.getInformationTriples());
+				dbConnection.writeToDisk(triples.getProvenanceTriples());
+				metadata.addAll(triples.getMetadataTriples());
+				Provenance.getInstance().clearProvenance();
 			}
-		} else {
-			FileStructure fileStructure;
-			try {
-				Config.setCurrentInputFilePath(singleDataFile);
-				dbConnection.cleanWrite();
-				fileStructure = new FileStructure(singleDataFile);
-				while (fileStructure.hasNext()) {
-					Tuple tuple = (Tuple) fileStructure.next();
-					String countryCode = tuple.getValue("country_iso_code");
-					Config.setXMLfilePath(getXMLFile(countryCode));
-					Config.setCountryCode(countryCode);
-					TripleContainer triples = new TripleContainer(tuple);
-					dbConnection.writeToDisk(triples);
-					Provenance.getInstance().clearProvenance();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
+			dbConnection.writeToDisk(metadata);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
