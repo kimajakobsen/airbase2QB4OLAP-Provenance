@@ -220,7 +220,6 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private Agent getEuropeanEnvironmentAgency() {
 		Agent agent = new Organization("European_Environment_Agency");
-		agent.setCustomProperty(FOAF.name.toString(),"airbase2QB4OLAP-Provenance");
 		agent.setCustomProperty(FOAF.homepage.toString(),"http://www.eea.europa.eu");
 		agent.atLocation(new Object("Kongens Nytorv 6, 1050, Copenhagen, Denmark",XSD.stringType));
 		return agent;
