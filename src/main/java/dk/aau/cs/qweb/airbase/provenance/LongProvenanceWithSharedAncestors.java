@@ -35,7 +35,7 @@ import dk.aau.cs.qweb.airbase.types.Tuple;
 import dk.aau.cs.qweb.airbase.vocabulary.XSD;
 
 public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
-	
+	private static Entity ontology; 
 	Entity provenanceIdentifierEntity;
 	List<Entity> provenanceIdentifierSubentities;
 	ProvenanceSignature signature;
@@ -54,22 +54,16 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 		Entity[] composingFiles = new Entity[signature.getFiles().size()];
 		
-		Entity finalFile = null;
-		if (signature.getFiles().size() > 1) {
-			for (int i = 0; i < signature.getFiles().size(); ++i) {
-				String suffix = signature.getFiles().get(i);
-				composingFiles[i] = file(aggregation, signature.getFileName(suffix), signature.getRemoteFileName(suffix), countryOrganizations, owner);	
-				Activity createSubjectForInputFile = createSubject(composingFiles[i], luis);
-				provenanceIdentifierSubentities.add(inputFileEntity(createSubjectForInputFile));
-			}
-			
-			Activity join = join(luis, signature.getFileName(), composingFiles);
-			
-			finalFile = file(join, "airbase.csv", luis, composingFiles);
-		} else {
-			String suffix = signature.getFiles().get(0);
-			finalFile = file(aggregation, signature.getFileName(suffix), signature.getRemoteFileName(suffix), countryOrganizations, owner);
+		for (int i = 0; i < signature.getFiles().size(); ++i) {
+			String suffix = signature.getFiles().get(i);
+			composingFiles[i] = file(aggregation, signature.getFileName(suffix), signature.getRemoteFileName(suffix), countryOrganizations, owner);	
+			Activity createSubjectForInputFile = createTriple(composingFiles[i], luis);
+			provenanceIdentifierSubentities.add(inputFileEntity(createSubjectForInputFile));
 		}
+		
+		Activity join = join(luis, signature.getFileName(), composingFiles);
+		
+		Entity finalFile = file(join, "airbase.csv", luis, composingFiles);
 		
 		Agent thisSoftware = thisSoftware();
 				
@@ -77,13 +71,26 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		Entity tuple = tuple(extract);
 		
-		Entity mapping = mapping(kim);
+		Entity theOntology = createOntology(kim);
+		
+		Entity mapping = mapping(kim, theOntology);
 		
 		Activity createSubject = createSubject(tuple, mapping);
 		
 		Entity raw = raw(createSubject);
 		
 		provenanceIdentifierEntity = raw;
+	}
+
+
+	private Entity createOntology(Agent agent) {
+		if (ontology == null) {
+			ontology = new Entity("ontology", "Airbase.ttl");
+			ontology.generatedAtTime(new Object("2017-04-10", XSD.dateType));
+			ontology.wasAttributedTo(agent);
+		}
+		
+		return ontology;
 	}
 
 
@@ -96,8 +103,8 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	}
 
 
-	private Activity createSubject(Entity entity, Agent author) {
-		Activity activity = new Activity("createSubject", entity.getShortName());
+	private Activity createTriple(Entity entity, Agent author) {
+		Activity activity = new Activity("createTriple", entity.getShortName());
 		activity.wasAssociatedWith(author);
 		return activity;
 	}
@@ -111,7 +118,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 
 	private Entity raw(Activity createSubject) {
-		ProvenanceIdentifierEntity raw = new ProvenanceIdentifierEntity("provenanceIdentifier",getCallbackClassName(signature)+"/"+signature.getTuple().getLineCount());
+		ProvenanceIdentifierEntity raw = new ProvenanceIdentifierEntity("provenanceIdentifier",getCallbackClassName(signature)+"/"+ signature.getTuple().getValue("country_iso_code") +signature.getTuple().getLineCount());
 		raw.wasGeneratedBy(createSubject);
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
 		raw.generatedAtTime(new Object(timeStamp,XSD.dateType));
@@ -125,10 +132,11 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		return createSubject;
 	}
 
-	private Entity mapping(Agent kim) {
+	private Entity mapping(Agent kim, Entity theOntology) {
 		Entity mapping = new Entity("mapping");
 		mapping.wasAttributedTo(kim);
 		mapping.generatedAtTime(new Object("2016-11-18",XSD.dateType));
+		mapping.wasDerivedFrom(theOntology);
 		return mapping;
 	}
 

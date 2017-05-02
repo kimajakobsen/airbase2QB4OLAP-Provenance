@@ -100,7 +100,7 @@ public class Entity implements PROV {
 		}
 		
 		for (Entity entity : nestedEntities) {
-			quads.add(new Quad(entity.getSubject(), PROVvocabulary.wasDerivedFrom, new Object(getSubject()), Config.getProvenanceGraphLabel()));
+			quads.add(new Quad(getSubject(), PROVvocabulary.wasDerivedFrom, new Object(entity.getSubject()), Config.getProvenanceGraphLabel()));
 			quads.addAll(entity.getQuads());
 		}
 
@@ -122,6 +122,12 @@ public class Entity implements PROV {
 	public void wasAttributedTo(Agent agent) {
 		wasAttributedTo.add(agent);
 	}
+	
+
+	public void wasDerivedFrom(Entity entity) {
+		nestedEntities.add(entity);
+	}
+
 
 	public void wasAttributedTo(List<Agent> countryOrganizations) {
 		for (Agent agent : countryOrganizations) {
