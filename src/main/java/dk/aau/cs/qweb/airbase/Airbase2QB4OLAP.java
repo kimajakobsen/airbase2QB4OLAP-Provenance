@@ -16,6 +16,7 @@ import dk.aau.cs.qweb.airbase.callback.Integer2Integer;
 import dk.aau.cs.qweb.airbase.callback.String2String;
 import dk.aau.cs.qweb.airbase.callback.YesNo2TrueFalse;
 import dk.aau.cs.qweb.airbase.types.ColumnMetadata;
+import dk.aau.cs.qweb.airbase.types.Tuple;
 
 public class Airbase2QB4OLAP {
 	private static Map<String,ColumnMetadata> columns = new HashMap<String,ColumnMetadata>() {
@@ -177,5 +178,33 @@ public class Airbase2QB4OLAP {
 
 	public static List<String> getFiles(String predicateString) {
 		return Arrays.asList("stations", "statistics", "measurement_configurations");
+	}
+	
+	public static String removePrefix(String level) {
+		String[] split =level.split("/");
+		return split[split.length-1];
+	}
+
+
+	public static String getSuffixUsedInIRI(String level, Tuple tuple) {
+		List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
+		String suffix = "";
+		for (String index : attributes) {
+			suffix += tuple.getValue(index)+"_";
+		}
+		suffix = replacelastUnderscoreWithSlash(suffix);
+		if (suffix.equals("/"))
+			return null;
+		
+		suffix = suffix.replaceAll(" ", "_");
+		return suffix;
+	}
+	
+	private static String replacelastUnderscoreWithSlash(String str) {
+	    if (str != null && str.length() > 0 && str.charAt(str.length()-1)=='_') {
+	      str = str.substring(0, str.length()-1);
+	      str += "/";
+	    }
+	    return str;
 	}
 }

@@ -75,11 +75,25 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		Entity mapping = mapping(kim, theOntology);
 		
-		Activity createSubject = createSubject(tuple, mapping);
+		Activity createSubject = createTriple(tuple, mapping);
 		
-		Entity raw = raw(createSubject);
-		
+		Entity raw = null;
+		raw = raw(createSubject);
 		provenanceIdentifierEntity = raw;
+	}
+
+
+	private Entity raw(Activity createSubject) {
+		ProvenanceIdentifierEntity raw = null;
+		if (signature.isObservation()) {
+			raw = new ProvenanceIdentifierEntity("provenanceIdentifier",getCallbackClassName(signature)+"/"+ signature.getTuple().getValue("country_iso_code") +signature.getTuple().getLineCount());
+		} else {
+			raw = new ProvenanceIdentifierEntity("provenanceIdentifier", getCallbackClassName(signature) + "/" + Airbase2QB4OLAP.removePrefix(signature.getLevel()) + "/" + Airbase2QB4OLAP.getSuffixUsedInIRI(signature.getLevel(), signature.getTuple()));
+		}
+		raw.wasGeneratedBy(createSubject);
+		String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+		raw.generatedAtTime(new Object(timeStamp,XSD.dateType));
+		return raw;
 	}
 
 
@@ -116,17 +130,8 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		return activity;
 	}
 
-
-	private Entity raw(Activity createSubject) {
-		ProvenanceIdentifierEntity raw = new ProvenanceIdentifierEntity("provenanceIdentifier",getCallbackClassName(signature)+"/"+ signature.getTuple().getValue("country_iso_code") +signature.getTuple().getLineCount());
-		raw.wasGeneratedBy(createSubject);
-		String timeStamp = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-		raw.generatedAtTime(new Object(timeStamp,XSD.dateType));
-		return raw;
-	}
-
-	private Activity createSubject(Entity tuple, Entity mapping) {
-		Activity createSubject = new Activity("createSubject");
+	private Activity createTriple(Entity tuple, Entity mapping) {
+		Activity createSubject = new Activity("createTriple");
 		createSubject.used(mapping);
 		createSubject.used(tuple);
 		return createSubject;

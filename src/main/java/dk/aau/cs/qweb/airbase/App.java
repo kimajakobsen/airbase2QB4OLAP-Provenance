@@ -85,6 +85,7 @@ public class App {
 			dbConnection.cleanWrite();
 			fileStructure = new FileStructure(singleDataFile);
 			Set<Quad> metadata = new LinkedHashSet<>();
+			Set<Quad> attributes = new LinkedHashSet<>();
 			while (fileStructure.hasNext()) {
 				Tuple tuple = (Tuple) fileStructure.next();
 				String countryCode = tuple.getValue("country_iso_code");
@@ -94,9 +95,11 @@ public class App {
 				dbConnection.writeToDisk(triples.getInformationTriples());
 				dbConnection.writeToDisk(triples.getProvenanceTriples());
 				metadata.addAll(triples.getMetadataTriples());
+				attributes.addAll(triples.getAttributeTriples());
 				Provenance.getInstance().clearProvenance();
 			}
 			dbConnection.writeToDisk(metadata);
+			dbConnection.writeToDisk(attributes);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

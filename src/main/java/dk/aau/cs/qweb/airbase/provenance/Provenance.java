@@ -29,13 +29,12 @@ public class Provenance {
 	}
 
 	public String getProvenanceIdentifier(Quad quad, String level, List<String> files, Tuple tuple) {
-		ProvenanceSignature signature = new ProvenanceSignature(quad,level,LocalDate.now(), files, tuple);
+		ProvenanceSignature signature = new ProvenanceSignature(quad, level, LocalDate.now(), files, tuple);
 		if (provenanceMap.containsKey(signature)) {
 			return provenanceMap.get(signature);
 		} else {
 			String provenanceIdentifier = createProvenanceGraph(signature);
-			provenanceMap.put(signature, provenanceIdentifier);
-			
+			provenanceMap.put(signature, provenanceIdentifier);			
 			return provenanceIdentifier;
 		}
 	}

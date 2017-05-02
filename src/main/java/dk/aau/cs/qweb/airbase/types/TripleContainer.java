@@ -2,6 +2,7 @@ package dk.aau.cs.qweb.airbase.types;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,8 +19,9 @@ import dk.aau.cs.qweb.airbase.provenance.Provenance;
 public class TripleContainer {
 
 	private Tuple tuple;
-	private Set<Quad> informationTriples = new HashSet<Quad>();
+	private Set<Quad> measureTriples = new HashSet<Quad>();
 	private Set<Quad> metadataTriples = new HashSet<Quad>();
+	private Set<Quad> attributeTriples = new HashSet<Quad>();
 	private static int measureCounter = 1;
 	
 	public TripleContainer(Tuple tuple) throws FileNotFoundException, IOException {
@@ -27,12 +29,12 @@ public class TripleContainer {
 		
 		if (tupleIsAllowed()) {
 			int index = 0;
-			
 			for (String predicateString : this.tuple.getHeader()) {
 				if (Airbase2QB4OLAP.isPredicatePartOfCube(predicateString)) {
 					String predicate = Airbase2QB4OLAP.getPredicate(predicateString);
 					List<String> files = Airbase2QB4OLAP.getFiles(predicateString);
-					if (predicate.equals("measure")) {
+					boolean observationTriple = predicate.equals("measure"); 
+					if (observationTriple) {
 						predicate = "http://qweb.cs.aau.dk/airbase/schema/"+removeIllegalChars(tuple.getValue("component_caption"));
 					}
 					
@@ -64,7 +66,10 @@ public class TripleContainer {
 							quad.setGraphLabel(graphLabel);
 							
 							metadataTriples.addAll(createMetadata(subject, level));
-							informationTriples.add(quad);
+							if (observationTriple)	
+								measureTriples.add(quad);
+							else
+								attributeTriples.add(quad);
 						}
 					}
 				}
@@ -103,34 +108,13 @@ public class TripleContainer {
 			subject+="observation/"+Config.getCountryCode()+measureCounter;
 			measureCounter++;
 		} else {
-			List<String> attributes = Airbase2QB4OLAP.getAttributesUsedInIRI(level);
-			String suffix = "";
-			for (String index : attributes) {
-				suffix += tuple.getValue(index)+"_";
-			}
-			suffix = replacelastUnderscoreWithSlash(suffix);
-			if (suffix.equals("/"))
-				return null;
-			
-			suffix = suffix.replaceAll(" ", "_");
-			subject = subject + removePrefix(level)+ "/" + suffix;
+			String suffix = Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple);
+			subject = subject + Airbase2QB4OLAP.removePrefix(level)+ "/" + suffix;
 		}
 		
 		return subject;
 	}
 
-	private String removePrefix(String level) {
-		String[] split =level.split("/");
-		return split[split.length-1];
-	}
-
-	private String replacelastUnderscoreWithSlash(String str) {
-	    if (str != null && str.length() > 0 && str.charAt(str.length()-1)=='_') {
-	      str = str.substring(0, str.length()-1);
-	      str += "/";
-	    }
-	    return str;
-	}
 	
 	private Set<Quad> createMetadata(String subject, String level) throws FileNotFoundException, IOException {
 		CubeStructure cs = CubeStructure.getInstance();
@@ -168,7 +152,7 @@ public class TripleContainer {
 	}
 	
 	public Set<Quad> getInformationTriples() {
-		return informationTriples;
+		return measureTriples;
 	}
 	
 	public Set<Quad> getMetadataTriples() {
@@ -178,5 +162,9 @@ public class TripleContainer {
 	public Set<Quad> getProvenanceTriples() {
 		Provenance index = Provenance.getInstance();
 		return index.getProvenanceQuads();
+	}
+
+	public Set<Quad> getAttributeTriples() {
+		return attributeTriples;
 	}
 }

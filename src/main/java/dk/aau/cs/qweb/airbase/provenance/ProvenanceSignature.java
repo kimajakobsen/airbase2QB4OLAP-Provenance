@@ -1,6 +1,7 @@
 package dk.aau.cs.qweb.airbase.provenance;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
@@ -20,6 +21,10 @@ public class ProvenanceSignature {
 		this.setLevel(level);
 		this.setFiles(files);
 		this.setNow(now);
+	}
+	
+	public boolean isObservation() {
+		return quad.getPredicate().equals("http://qweb.cs.aau.dk/airbase/schema/value");
 	}
 
 	public Quad getQuad() {
