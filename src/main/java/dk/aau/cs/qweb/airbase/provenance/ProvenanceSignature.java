@@ -24,7 +24,7 @@ public class ProvenanceSignature {
 	}
 	
 	public boolean isObservation() {
-		return quad.getPredicate().equals("http://qweb.cs.aau.dk/airbase/schema/value");
+		return level.equals("http://qweb.cs.aau.dk/airbase/schema/value");
 	}
 
 	public Quad getQuad() {

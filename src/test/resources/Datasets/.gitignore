@@ -1,1 +1,5 @@
 *.zip
+/airbase.sqlite
+/airbase_DK.fixed.tsv
+/airbase_IE.fixed.tsv
+/head.tsv
