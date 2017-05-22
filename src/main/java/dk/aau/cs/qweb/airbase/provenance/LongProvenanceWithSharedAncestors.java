@@ -39,6 +39,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	Entity provenanceIdentifierEntity;
 	List<Entity> provenanceIdentifierSubentities;
 	ProvenanceSignature signature;
+	private static List<Agent> countryOrganizations;
 
 	public LongProvenanceWithSharedAncestors(ProvenanceSignature signature) {
 		this.signature = signature;
@@ -46,7 +47,9 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		Activity aggregation = aggregation(rawFile);
 		
-		List<Agent> countryOrganizations = extractAgentsFromXml();
+		if (countryOrganizations == null)
+			countryOrganizations = extractAgentsFromXml();
+		
 		Agent owner = getEuropeanEnvironmentAgency();
 		Agent luis = getLuis();	
 		Agent kim = getKim();

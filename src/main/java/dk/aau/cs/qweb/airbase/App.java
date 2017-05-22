@@ -15,7 +15,6 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.apache.commons.io.FilenameUtils;
 
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
@@ -80,6 +79,7 @@ public class App {
 		Database dbConnection = Database.build();
 		assert(singleDataFile != null);
 		FileStructure fileStructure;
+		long times = System.currentTimeMillis();
 		try {
 			Config.setCurrentInputFilePath(singleDataFile);
 			dbConnection.cleanWrite();
@@ -103,6 +103,7 @@ public class App {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Data generation for file " + singleDataFile + " took " + ((System.currentTimeMillis() - times) / 1000) + "s"); 
 	}
 	
 	private static String getXMLFile(String countryCode) {
