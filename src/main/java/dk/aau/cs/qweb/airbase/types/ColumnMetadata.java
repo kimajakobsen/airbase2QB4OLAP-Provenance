@@ -1,7 +1,6 @@
 package dk.aau.cs.qweb.airbase.types;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import dk.aau.cs.qweb.airbase.callback.CallBack;
