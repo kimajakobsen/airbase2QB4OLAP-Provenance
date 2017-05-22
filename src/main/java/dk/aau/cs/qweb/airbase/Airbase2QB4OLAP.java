@@ -72,8 +72,8 @@ public class Airbase2QB4OLAP {
 			put("statistics_period",				new ColumnMetadata());
 			put("statistics_year",					new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/yearNum",level("http://qweb.cs.aau.dk/airbase/schema/year",true), new Integer2Integer()));
 			put("statistics_average_group",			new ColumnMetadata());
-			put("statistic_shortname",				new ColumnMetadata());
-			put("statistic_name",					new ColumnMetadata());
+			put("statistic_shortname",				new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/statisticShortName",level("http://qweb.cs.aau.dk/airbase/schema/sensor",true), new String2String()));
+			put("statistic_name",					new ColumnMetadata("http://qweb.cs.aau.dk/airbase/property/statisticName",level("http://qweb.cs.aau.dk/airbase/schema/sensor",false), new String2String()));
 			put("statistic_value",					new ColumnMetadata("measure",level("http://qweb.cs.aau.dk/airbase/schema/value",true), new Decimal2Decimal()));
 			put("statistics_percentage_valid",		new ColumnMetadata());
 			put("statistics_number_valid",			new ColumnMetadata());

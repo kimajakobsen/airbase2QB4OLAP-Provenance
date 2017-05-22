@@ -15,6 +15,7 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.jena.vocabulary.OWL;
 
 import dk.aau.cs.qweb.airbase.database.Database;
 import dk.aau.cs.qweb.airbase.input.FileStructure;
@@ -22,6 +23,8 @@ import dk.aau.cs.qweb.airbase.provenance.Provenance;
 import dk.aau.cs.qweb.airbase.types.Quad;
 import dk.aau.cs.qweb.airbase.types.TripleContainer;
 import dk.aau.cs.qweb.airbase.types.Tuple;
+import dk.aau.cs.qweb.airbase.vocabulary.DBpedia;
+import dk.aau.cs.qweb.airbase.vocabulary.Yago;
 
 public class App {
 
@@ -86,9 +89,11 @@ public class App {
 			fileStructure = new FileStructure(singleDataFile);
 			Set<Quad> metadata = new LinkedHashSet<>();
 			Set<Quad> attributes = new LinkedHashSet<>();
+			String countryName = null;
 			while (fileStructure.hasNext()) {
 				Tuple tuple = (Tuple) fileStructure.next();
 				String countryCode = tuple.getValue("country_iso_code");
+				countryName = tuple.getValue("country_name");
 				Config.setXMLfilePath(getXMLFile(countryCode));
 				Config.setCountryCode(countryCode);
 				TripleContainer triples = new TripleContainer(tuple);
@@ -99,6 +104,7 @@ public class App {
 				Provenance.getInstance().clearProvenance();
 			}
 			dbConnection.writeToDisk(metadata);
+			dbConnection.writeToDisk(getCountryLinks(countryName));
 			dbConnection.writeToDisk(attributes);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -106,6 +112,20 @@ public class App {
 		System.out.println("Data generation for file " + singleDataFile + " took " + ((System.currentTimeMillis() - times) / 1000) + "s"); 
 	}
 	
+	/**
+	 * Get the links of the country to the
+	 * @return
+	 */
+	private static Set<Quad> getCountryLinks(String countryName) {
+		Set<Quad> result = new LinkedHashSet<>(2);
+		String subject = "<" + Config.getNamespace() + "/country/" + countryName + "/>";
+		Quad dbpedia = new Quad(subject, OWL.sameAs.toString(), new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + countryName), Config.getMetadataGraphLabel());
+		Quad yago = new Quad(subject, OWL.sameAs.toString(),  new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + countryName), Config.getMetadataGraphLabel());
+		result.add(dbpedia);
+		result.add(yago);
+		return result;
+	}
+
 	private static String getXMLFile(String countryCode) {
 		return Config.getDataFolder() + "/" + "AirBase_" + countryCode + "_v8/" + countryCode + "_meta.parsed.xml";
 	}

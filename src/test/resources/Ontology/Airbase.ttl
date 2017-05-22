@@ -340,6 +340,8 @@ schema:sensor rdf:type qb4o:LevelProperty ;
   qb4o:hasAttribute property:samplingPoint ;
   qb4o:hasAttribute property:samplingTime ;
   qb4o:hasAttribute property:calibrationMethod ;
+  qb4o:hasAttribute property:statisticShortName ;
+  qb4o:hasAttribute property:statisticName ;
 
 property:code rdf:type qb4o:LevelAttribute ; 
   rdfs:label "code"@en ; 
@@ -379,6 +381,14 @@ property:samplingTime rdf:type qb4o:LevelAttribute ;
 
 property:calibrationMethod rdf:type qb4o:LevelAttribute ; 
   rdfs:label "calibration method"@en ; 
+  rdfs:range xsd:string .
+
+property:statisticShortName rdf:type qb4o:LevelAttribute ; 
+  rdfs:label "shortname of the measure of central tendency"@en ; 
+  rdfs:range xsd:string .
+
+property:statisticName rdf:type qb4o:LevelAttribute ; 
+  rdfs:label "measure of central tendency"@en ; 
   rdfs:range xsd:string .
 
 # -- Level component

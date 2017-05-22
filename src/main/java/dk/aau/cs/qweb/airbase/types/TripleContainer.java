@@ -6,7 +6,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang3.text.WordUtils;
+import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.RDFS;
 
 import dk.aau.cs.qweb.airbase.Airbase2QB4OLAP;
 import dk.aau.cs.qweb.airbase.Config;
@@ -14,6 +17,8 @@ import dk.aau.cs.qweb.airbase.Qb4OLAP.CubeStructure;
 import dk.aau.cs.qweb.airbase.Qb4OLAP.HierarchyStep;
 import dk.aau.cs.qweb.airbase.callback.CallBack;
 import dk.aau.cs.qweb.airbase.provenance.Provenance;
+import dk.aau.cs.qweb.airbase.vocabulary.DBpedia;
+import dk.aau.cs.qweb.airbase.vocabulary.Yago;
 
 public class TripleContainer {
 
@@ -86,13 +91,7 @@ public class TripleContainer {
 	}
 
 	private boolean tupleIsAllowed() {
-		if (!tuple.getValue("statistic_shortname").equals("Mean")) {
-			return false;
-		} else if (Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"))) {
-			return true;
-		} else {
-			return false;
-		}
+		return Airbase2QB4OLAP.getAllowedComponents().contains(tuple.getValue("component_caption"));
 	}
 
 	private String getGraphLabel(Quad quad, String level, List<String> files, Tuple tuple) {
@@ -136,6 +135,62 @@ public class TripleContainer {
 			Quad station = new Quad(subject, "http://qweb.cs.aau.dk/airbase/schema/station", new Object (createSubject("http://qweb.cs.aau.dk/airbase/schema/station")),Config.getMetadataGraphLabel());
 			quads.add(station);
 			
+		} else if (level.equals("http://qweb.cs.aau.dk/airbase/schema/city")) {
+			String sj = createSubject(level);
+			Quad dbpedia = new Quad(sj, OWL.sameAs.toString(), new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + wikify(Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple))), Config.getMetadataGraphLabel());
+			Quad yago = new Quad(sj, OWL.sameAs.toString(),  new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + wikify(Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple))), Config.getMetadataGraphLabel());
+			quads.add(dbpedia);
+			quads.add(yago);
+		} else if (level.equals("http://qweb.cs.aau.dk/airbase/schema/component")) {
+			String object = null;
+			String relation = OWL.sameAs.toString();			
+			switch(tuple.getValue("component_caption")) {
+			case "SO2" :
+				object = "Sulfure_Dioxide";
+				break;
+			case "SPM" : case "PM10" : case "PM2.5" :
+				object = "Particulates";
+				relation = RDFS.seeAlso.toString();
+				break;
+			case "BS" :
+				break;
+			case "O3" :
+				object = "Ozone";
+				break;
+			case "NO2" :
+				object = "Nitrogen_dioxide";
+				break;
+			case "NOX" :
+				object = "NOx";
+				break;
+			case "CO" :
+				object = "Carbon_monoxide";
+				break;
+			case "Pb" :
+				object = "Lead";
+				break;
+			case "Hg" : 
+				object = "Mercury_(element)";
+				break;
+			case "Cd" :
+				object = "Cadmium";
+				break;
+			case "Ni" :
+				object = "Nickel";
+				break;
+			case "As" :
+				object = "Arsenic";
+				break;
+			case "C6H6" :
+				object = "Benzene";
+				break;
+				
+			}
+			if (object != null) {
+				quads.add(new Quad(createSubject(level), relation, new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + object), Config.getMetadataGraphLabel()));
+				quads.add(new Quad(createSubject(level), relation, new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + object), Config.getMetadataGraphLabel()));
+			}
+			
 		} else {
 			Quad quad1 = new Quad(subject, "http://purl.org/qb4olap/cubes#memberOf" , new Object(level),Config.getMetadataGraphLabel());
 			quads.add(quad1);
@@ -150,6 +205,10 @@ public class TripleContainer {
 		return quads;
 	}
 	
+	private String wikify(String subject) {
+		return WordUtils.capitalizeFully(subject).replaceAll(" ", "_").replace("/", "");
+	}
+
 	public Set<Quad> getInformationTriples() {
 		return measureTriples;
 	}
