@@ -184,6 +184,16 @@ public class Airbase2QB4OLAP {
 		String[] split =level.split("/");
 		return split[split.length-1];
 	}
+	
+	public static String removeIllegalChars(String value) {
+		String result = value.replaceAll(",", "");
+		result = result.replaceAll("\\(", "");
+		result = result.replaceAll("\\)", "");
+		result = result.replaceAll(" ", "_");
+		result = result.replaceAll(">", "gt");
+		result = result.replaceAll("<", "lt");
+		return result;
+	}
 
 
 	public static String getSuffixUsedInIRI(String level, Tuple tuple) {
@@ -196,7 +206,7 @@ public class Airbase2QB4OLAP {
 		if (suffix.equals("/"))
 			return null;
 		
-		suffix = suffix.replaceAll(" ", "_");
+		suffix = removeIllegalChars(suffix);
 		return suffix;
 	}
 	
