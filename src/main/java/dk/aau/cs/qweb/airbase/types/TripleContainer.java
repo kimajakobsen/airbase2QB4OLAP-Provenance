@@ -113,7 +113,6 @@ public class TripleContainer {
 	
 	private Set<Quad> createMetadata(String subject, String level) throws FileNotFoundException, IOException {
 		CubeStructure cs = CubeStructure.getInstance();
-		//level = cs.transformPrefixIntoFullURL(level);
 		Set<Quad> quads = new HashSet<Quad>();
 		
 		if (level.equals("http://qweb.cs.aau.dk/airbase/schema/value")) { //Handle Observations
@@ -132,70 +131,71 @@ public class TripleContainer {
 			Quad station = new Quad(subject, "http://qweb.cs.aau.dk/airbase/schema/station", new Object (createSubject("http://qweb.cs.aau.dk/airbase/schema/station")),Config.getMetadataGraphLabel());
 			quads.add(station);
 			
-		} else if (level.equals("http://qweb.cs.aau.dk/airbase/schema/city")) {
-			String sj = createSubject(level);
-			if (sj != null) {
-				Quad dbpedia = new Quad(sj, OWL.sameAs.toString(), new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + wikify(Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple))), Config.getMetadataGraphLabel());
-				Quad yago = new Quad(sj, OWL.sameAs.toString(),  new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + wikify(Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple))), Config.getMetadataGraphLabel());
-				quads.add(dbpedia);
-				quads.add(yago);
-			}
-		} else if (level.equals("http://qweb.cs.aau.dk/airbase/schema/component")) {
-			String object = null;
-			String sj = createSubject(level);
-			if (sj == null) {
-				return quads;
-			}
-			
-			String relation = OWL.sameAs.toString();			
-			switch(tuple.getValue("component_caption")) {
-			case "SO2" :
-				object = "Sulfure_Dioxide";
-				break;
-			case "SPM" : case "PM10" : case "PM2.5" :
-				object = "Particulates";
-				relation = RDFS.seeAlso.toString();
-				break;
-			case "BS" :
-				break;
-			case "O3" :
-				object = "Ozone";
-				break;
-			case "NO2" :
-				object = "Nitrogen_dioxide";
-				break;
-			case "NOX" :
-				object = "NOx";
-				break;
-			case "CO" :
-				object = "Carbon_monoxide";
-				break;
-			case "Pb" :
-				object = "Lead";
-				break;
-			case "Hg" : 
-				object = "Mercury_%28element%29";
-				break;
-			case "Cd" :
-				object = "Cadmium";
-				break;
-			case "Ni" :
-				object = "Nickel";
-				break;
-			case "As" :
-				object = "Arsenic";
-				break;
-			case "C6H6" :
-				object = "Benzene";
-				break;
+		} else { 
+			if (level.equals("http://qweb.cs.aau.dk/airbase/schema/city")) {
+				String sj = createSubject(level);
+				if (sj != null) {
+					Quad dbpedia = new Quad(sj, OWL.sameAs.toString(), new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + wikify(Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple))), Config.getMetadataGraphLabel());
+					Quad yago = new Quad(sj, OWL.sameAs.toString(),  new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + wikify(Airbase2QB4OLAP.getSuffixUsedInIRI(level, tuple))), Config.getMetadataGraphLabel());
+					quads.add(dbpedia);
+					quads.add(yago);
+				}
+			} else if (level.equals("http://qweb.cs.aau.dk/airbase/schema/component")) {
+				String object = null;
+				String sj = createSubject(level);
+				if (sj == null) {
+					return quads;
+				}
 				
-			}
-			if (object != null) {
-				quads.add(new Quad(sj, relation, new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + object), Config.getMetadataGraphLabel()));
-				quads.add(new Quad(sj, relation, new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + object), Config.getMetadataGraphLabel()));
+				String relation = OWL.sameAs.toString();			
+				switch(tuple.getValue("component_caption")) {
+				case "SO2" :
+					object = "Sulfure_Dioxide";
+					break;
+				case "SPM" : case "PM10" : case "PM2.5" :
+					object = "Particulates";
+					relation = RDFS.seeAlso.toString();
+					break;
+				case "BS" :
+					break;
+				case "O3" :
+					object = "Ozone";
+					break;
+				case "NO2" :
+					object = "Nitrogen_dioxide";
+					break;
+				case "NOX" :
+					object = "NOx";
+					break;
+				case "CO" :
+					object = "Carbon_monoxide";
+					break;
+				case "Pb" :
+					object = "Lead";
+					break;
+				case "Hg" : 
+					object = "Mercury_%28element%29";
+					break;
+				case "Cd" :
+					object = "Cadmium";
+					break;
+				case "Ni" :
+					object = "Nickel";
+					break;
+				case "As" :
+					object = "Arsenic";
+					break;
+				case "C6H6" :
+					object = "Benzene";
+					break;
+					
+				}
+				if (object != null) {
+					quads.add(new Quad(sj, relation, new dk.aau.cs.qweb.airbase.types.Object(DBpedia.Resource + object), Config.getMetadataGraphLabel()));
+					quads.add(new Quad(sj, relation, new dk.aau.cs.qweb.airbase.types.Object(Yago.Resource + object), Config.getMetadataGraphLabel()));
+				}
 			}
 			
-		} else {
 			Quad quad1 = new Quad(subject, "http://purl.org/qb4olap/cubes#memberOf" , new Object(level),Config.getMetadataGraphLabel());
 			quads.add(quad1);
 			for (HierarchyStep hs : cs.getHierarchyStepByParentLevel(level)) {
@@ -205,6 +205,7 @@ public class TripleContainer {
 					quads.add(quad2);
 				}
 			}
+			
 		}
 		return quads;
 	}

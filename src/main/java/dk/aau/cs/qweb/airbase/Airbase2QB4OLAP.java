@@ -133,6 +133,7 @@ public class Airbase2QB4OLAP {
 		for (String level : thing) {
 			levels.add(level);
 		}
+		
 		return levels;
 		
 	}
