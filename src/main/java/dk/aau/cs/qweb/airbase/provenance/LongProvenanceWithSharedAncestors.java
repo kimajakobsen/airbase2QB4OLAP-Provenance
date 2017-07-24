@@ -66,7 +66,9 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		Activity join = join(luis, signature.getFileName(), composingFiles);
 		
-		Entity finalFile = file(join, "airbase.csv", luis, composingFiles);
+		String cc = signature.getTuple().getValue("country_iso_code");
+		
+		Entity finalFile = file(join, cc + "_airbase.csv", luis, composingFiles);
 		
 		Agent thisSoftware = thisSoftware();
 				
@@ -102,7 +104,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 
 	private Entity createOntology(Agent agent) {
 		if (ontology == null) {
-			ontology = new Entity("ontology", "Airbase.ttl");
+			ontology = new Entity("ontology", "QBOAirbase.ttl");
 			ontology.generatedAtTime(new Object("2017-04-10", XSD.dateType));
 			ontology.wasAttributedTo(agent);
 		}
@@ -298,7 +300,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 						if (eElement.getParentNode() != null)
 							agent.setCustomProperty(Config.getNamespace()+"title", eElement.getParentNode().getNodeName());
 						if (firstname.item(0) != null)
-							agent.setCustomProperty(FOAF.firstName.toString(), firstname.item(0).getTextContent());
+							agent.setCustomProperty(FOAF.givenname.toString(), firstname.item(0).getTextContent());
 						if (lastname.item(0) != null)
 							agent.setCustomProperty(FOAF.family_name.toString(), lastname.item(0).getTextContent());
 						

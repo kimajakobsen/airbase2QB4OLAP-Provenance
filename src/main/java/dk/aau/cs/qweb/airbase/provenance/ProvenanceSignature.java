@@ -1,7 +1,6 @@
 package dk.aau.cs.qweb.airbase.provenance;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 import dk.aau.cs.qweb.airbase.types.Quad;
