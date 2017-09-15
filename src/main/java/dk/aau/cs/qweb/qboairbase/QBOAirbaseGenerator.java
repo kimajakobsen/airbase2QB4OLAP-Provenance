@@ -131,12 +131,12 @@ public class QBOAirbaseGenerator {
 	
 	/**
 	 * Generates the quad 
-	 * <http://qweb.cs.aau.dk/airbase/metadata> <http://qweb.cs.aau.dk/airbase/isMetadaGraph> "True"^^xsd:boolean <http://qweb.cs.aau.dk/airbase/provenance>
+	 * <http://qweb.cs.aau.dk/airbase/metadata> <http://qweb.cs.aau.dk/airbase/isMetadataGraph> "True"^^xsd:boolean <http://qweb.cs.aau.dk/airbase/provenance>
 	 * needed, for example, to exclude the metadata graph from queries (as this graph is extremely large).
 	 * @return
 	 */
 	private static Quad getMetadataGraphDescription() {
-		String property = Config.getNamespace() + "isMetadataGraph/";
+		String property = Config.getNamespace() + "isMetadataGraph";
 		return new Quad(Config.getMetadataGraphLabel(), property, new dk.aau.cs.qweb.qboairbase.types.Object("True", XSD.booleanType), Config.getProvenanceGraphLabel());
 	}
 
