@@ -9,6 +9,7 @@ import org.apache.jena.vocabulary.RDF;
 import dk.aau.cs.qweb.qboairbase.Config;
 import dk.aau.cs.qweb.qboairbase.types.Object;
 import dk.aau.cs.qweb.qboairbase.types.Quad;
+import dk.aau.cs.qweb.qboairbase.vocabulary.PROVvocabulary;
 
 public class Organization extends Agent implements PROV {
 	
@@ -22,6 +23,8 @@ public class Organization extends Agent implements PROV {
 		list.addAll(super.getType());
 		Quad agent = new Quad(subject, RDF.type.toString(),new Object(FOAF.Organization.toString()),Config.getProvenanceGraphLabel());
 		list.add(agent);
+		Quad agent2 = new Quad(subject, RDF.type.toString(),new Object(PROVvocabulary.Organization),Config.getProvenanceGraphLabel());
+		list.add(agent2);
 		return list;
 	}
 }

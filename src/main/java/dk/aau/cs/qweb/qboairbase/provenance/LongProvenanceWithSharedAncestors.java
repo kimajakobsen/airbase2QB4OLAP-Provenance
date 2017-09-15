@@ -84,6 +84,7 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 		
 		Entity raw = null;
 		raw = raw(createSubject);
+		raw.wasAttributedTo(thisSoftware);
 		provenanceIdentifierEntity = raw;
 	}
 
@@ -132,6 +133,9 @@ public class LongProvenanceWithSharedAncestors implements ProvenanceFlow {
 	private Activity join(Agent author, String joinedName, Entity ...composingFiles) {
 		Activity activity = new Activity("join", joinedName);
 		activity.wasAssociatedWith(author);
+		for (Entity file : composingFiles) {
+			activity.used(file);
+		}
 		return activity;
 	}
 

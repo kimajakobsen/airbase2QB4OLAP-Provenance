@@ -9,6 +9,8 @@ public class PROVvocabulary {
 	public static String Activity = provNS+"Activity";
 	public static String Agent = provNS+"Agent";
 	public static String Bundle = provNS+"Bundle";
+	public static String Organization = provNS+"Organization";
+	public static String Person = provNS+"Person";
 	public static String SoftwareAgent = provNS+"SoftwareAgent";
 	
 	//prov properties
